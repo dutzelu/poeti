@@ -118,30 +118,30 @@ include "controllers/slider-header.php";
 								</div>
 								<div class="alphabetic mb20">
 									<ul class="alphabetic_list">
-										<li><a href="poeti-pe-litere.html">a</a></li>
-										<li><a href="poeti-pe-litere.html">b</a></li>
-										<li><a href="poeti-pe-litere.html">c</a></li>
-										<li><a href="poeti-pe-litere.html">d</a></li>
-										<li><a href="poeti-pe-litere.html">e</a></li>
-										<li><a href="poeti-pe-litere.html">f</a></li>
-										<li><a href="poeti-pe-litere.html">g</a></li>
-										<li><a href="poeti-pe-litere.html">h</a></li>
-										<li><a href="poeti-pe-litere.html">i</a></li>
-										<li><a href="poeti-pe-litere.html">j</a></li>
-										<li><a href="poeti-pe-litere.html">k</a></li>
-										<li><a href="poeti-pe-litere.html">l</a></li>
-										<li><a href="poeti-pe-litere.html">m</a></li>
-										<li><a href="poeti-pe-litere.html">n</a></li>
-										<li><a href="poeti-pe-litere.html">o</a></li>
-										<li><a href="poeti-pe-litere.html">p</a></li>
-										<li><a href="poeti-pe-litere.html">q</a></li>
-										<li><a href="poeti-pe-litere.html">r</a></li>
-										<li><a href="poeti-pe-litere.html">s</a></li>
-										<li><a href="poeti-pe-litere.html">t</a></li>
-										<li><a href="poeti-pe-litere.html">u</a></li>
-										<li><a href="poeti-pe-litere.html">v</a></li>
-										<li><a href="poeti-pe-litere.html">x</a></li>
-										<li><a href="poeti-pe-litere.html">z</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=A">a</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=B">b</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=C">c</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=D">d</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=E">e</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=F">f</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=G">g</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=H">h</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=I">i</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=J">j</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=K">k</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=L">l</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=M">m</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=N">n</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=O">o</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=P">p</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=Q">q</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=R">r</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=S">s</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=T">t</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=U">u</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=V">v</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=X">x</a></li>
+										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=Z">z</a></li>
 									</ul>
 									<div class="douaBtnHeader">
 										<a class="poetiPeLitere" href="poeti-pe-litere.php">Poeți pe litere »</a>

@@ -1741,7 +1741,7 @@ footer a {
 img {
     max-width: 100%;
 }
-
+div.single_poet_letter > a > img {max-width: unset;}
 .mt5 {
     margin-top: 5px;
 }
