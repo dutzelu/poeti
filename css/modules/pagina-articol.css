@@ -1,0 +1,27 @@
+.first-col{
+    border-right: 1px solid #cdcdcd;
+    box-sizing: border-box;
+    max-width: 260px;
+    padding-right: 18.5px;
+    width: 100%;
+}
+.second-col{
+    padding-left: 18.5px;
+    max-width: 810px;
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    .first-col{
+        text-align: center;
+        max-width: 100%;
+        padding: 0;
+        border: 0;
+    }
+    .second-col{
+        padding-left: 0;
+    }
+}
+
+.second-col{
+    padding-left: 0;
+}

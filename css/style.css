@@ -1,0 +1,2176 @@
+@import "modules/poezie.css";
+@import "modules/color-variables.css";
+@import "modules/bibliografie.css";
+@import "modules/categorie-de-articole.css";
+@import "modules/grid-utils.css";
+@import "modules/videoteca.css";
+@import "modules/tematica-poeziei-carcerale.css";
+@import "modules/pagina-articol.css";
+@import "modules/index26.03.css";
+@import "modules/biografie-poet.css";
+@import "modules/poeti-pe-litere.css";
+@import "modules/pagina-search.css";
+@import "modules/pagina-filtrata-poezii.css";
+@import "modules/fisa-biografica.css";
+@import "modules/fisa-carcerala.css";
+@import "modules/poezii-poet.css";
+@import "modules/intiberariu-detentie.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, p, ul, ul li, h1, h2, a {
+    margin: 0;
+    padding: 0;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Museo300_Regular';
+    src: url('../fonts/Museo300-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Museo300-Regular.woff2'), /* Super Modern Browsers */ url('../fonts/Museo300-Regular.woff'), /* Pretty Modern Browsers */ url('../fonts/Museo300-Regular.ttf'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'Norton';
+    src: url('../fonts/Norton.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Norton.woff2'), /* Super Modern Browsers */ url('../fonts/Norton.woff'), /* Pretty Modern Browsers */ url('../fonts/Norton.ttf'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'Grafolita';
+    src: url('../fonts/Grafolita_Script_Medium.otf');
+}
+
+body, html {
+    font-family: 'Museo300_Regular', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.flex_space_between,
+footer .content_footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_start_between {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex_start {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex_between {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex_wrap_between {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.zindex10 {
+    z-index: 10;
+}
+
+.testimonal_section {
+    border-top: 10px solid #f1f1f1;
+    border-bottom: 10px solid #f1f1f1;
+}
+
+.quotation_mark {
+    font-style: italic;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.quotation_mark:after {
+    content: '"';
+    position: absolute;
+    /*bottom: 0;*/
+    right: 10px;
+    color: #dd0000;
+    font-size: 55px;
+    line-height: 1px;
+    font-family: 'Norton';
+}
+
+.quotation_mark::before {
+    content: '”';
+    position: absolute;
+    bottom: -25px;
+    left: -10px;
+    color: #dd0000;
+    font-size: 55px;
+    line-height: 35px;
+    font-family: 'Norton';
+}
+
+.quotation_mark::after {
+    content: '”';
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    color: #dd0000;
+    font-size: 55px;
+    line-height: 1px;
+    font-family: 'Norton';
+}
+
+
+.content_thematic_poems,
+.poem_section,
+.content_video_section,
+.poetry_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quotation_mark:before {
+    content: '"';
+    position: absolute;
+    /*top: 0;*/
+    /*left: 0;*/
+    color: #dd0000;
+    font-size: 55px;
+    line-height: 35px;
+    font-family: 'Norton';
+}
+
+@media screen and  (max-width: 600px) {
+    .quotation_mark::before {
+        /*bottom: -45px;*/
+        bottom: -30px;
+        left: -13px;
+    }
+}
+
+.border_left_gray {
+    border-left: 1px solid #bfbfbf;
+}
+
+.border_left_darkgray {
+    border-left: 2px solid #020202;
+}
+
+.child_poem_section {
+    width: 33%;
+}
+
+.content_poem {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-bottom:20px;
+}
+
+.short_poem {
+    font-family: 'Grafolita', sans-serif;
+    font-style: italic;
+}
+
+.short_poem p, .citesteMaiMult {
+    display: inline-block;
+}
+
+.poem_lirics p {text-align:left!important;}
+
+.short_poem:before {
+    content: '“';
+    position: absolute;
+    left: -5px;
+    top: -3px;
+}
+
+.short_poem:after {
+    content: '”';
+    right: 0px;
+    bottom: 0px;
+}
+
+.poem_content p {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+/*.read_more a, */
+/*.read_more a:hover,*/
+.read_more {
+    /*bottom: 0;*/
+    /*left: 40px;*/
+    /*border: 1px solid red;*/
+    /*padding: 3px 8px;*/
+    /*border-radius: 2px;*/
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid red;
+    display: inline-block;
+    /*margin-top: 20px;*/
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.read_more a, .read_more a:hover, .see_all_thematic a, .see_all_thematic a:hover {
+    color: var(--red-1);
+    /*text-decoration: underline;*/
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+
+/*.see_all_thematic a,*/
+/*.see_all_thematic a:hover {*/
+/*	color:#000;*/
+/*	text-decoration:underline;*/
+/*	font-size: 16px;*/
+/*	font-weight: bold;*/
+/*}*/
+
+.title_thematic_poems {
+    letter-spacing: 9px;
+}
+
+.title_lspacing {
+    letter-spacing: 5px;
+}
+
+.letterspacing7 {
+    letter-spacing: 7px;
+}
+
+.read_more {
+    bottom: 5px;
+    left: 40px;
+}
+
+.event_title {
+    background: #000;
+    padding: 5px 25px;
+    display: inline-block;
+}
+
+.event_title p {
+    color: #fff;
+}
+
+.content_evens_child {
+    width: 33%;
+}
+
+.content_evens {
+    background: #f1efea;
+    border-top: 1px solid #7d7c7b;
+    padding: 45px 30px;
+}
+
+.text_content_event {
+    overflow: hidden;
+    height: 98px;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.read_more_red {
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid #4c4b49;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.red_hr {
+    border: 0;
+    background: #dd0000;
+    height: 4px;
+    margin-bottom: 10px;
+}
+
+.smallred_hr {
+    border: 0;
+    background: #dd0000;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+.gray_hr {
+    border: 0;
+    background: #f1f1f1;
+    height: 4px;
+    margin-top: 20px;
+}
+
+.darkgray_hr {
+    border: 0;
+    background: #101010;
+    height: 1px;
+    margin-top: 20px;
+}
+
+.small_hr {
+    border: 0;
+    background: #202020;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+.syntheses_section {
+    background: #f4f4f4;
+}
+
+.syntheses_left {
+    position: relative;
+    width: 37%;
+}
+
+.syntheses_left:before {
+    content: '';
+    background: url(../images/bg_poem.png);
+    background-position: 100% 65%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.details_txt_right {
+    overflow: hidden;
+    height: 60px;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.title_txt_right {
+    overflow: hidden;
+    height: 60px;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.syntheses_right {
+    padding: 0 35px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.img_syntheses_right img {
+    max-width: 207px;
+}
+
+.more_syntheses {
+    bottom: 0;
+    right: 0;
+}
+
+.more_syntheses_bg {
+    padding: 11px 20px;
+    background: #dd0000;
+    color: #fff;
+}
+
+.more_syntheses a {
+    color: #fff;
+}
+
+.triangle_red {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 41px 30px;
+    border-color: transparent transparent #dd0000 transparent;
+}
+
+.thematic_list {
+    column-count: 2;
+    column-gap: 10px;
+}
+
+.thematic_list li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.thematic_list li:nth-child(odd) {
+    color: #383838;
+}
+
+.thematic_list li:nth-child(even) {
+    color: #a5a5a5;
+}
+
+.see_all_thematic {
+    bottom: 15px;
+    left: 40px;
+}
+
+.video_section {
+    background: #dd0000;
+    padding: 20px 30px;
+    color: #fff;
+}
+
+.title_video_section {
+    font-weight: 100;
+}
+
+.video_section_list li {
+    display: inline-block;
+    list-style-type: none;
+    font-size: 22px;
+}
+
+.video_section_list li a {
+    color: #fff;
+}
+
+.video_section_list li:nth-child(2) {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    padding: 0 5px;
+}
+
+.video_desc {
+    color: #383838;
+}
+
+.other_interpretations li {
+    margin-bottom: 25px;
+    list-style-type: none;
+    color: #383838;
+}
+
+.comm_section span:first-child {
+    padding: 0 50px 0 15px;
+    letter-spacing: 7px;
+}
+
+.comm_section span:nth-child(2) {
+    font-weight: 100;
+    display: inline-block;
+}
+
+.current_month {
+    position: absolute;
+    right: 0;
+    top: 35%;
+    transform: translateY(-50%);
+    color: #030001;
+    font-weight: 100;
+}
+
+.all_poets {
+    border-top: 1px solid #202020;
+    padding: 50px 0;
+    column-count: 2;
+}
+
+.single_poet {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/*Header*/
+input {
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+.hide_md {
+    display: none;
+}
+
+.pos_rel {
+    position: relative;
+}
+
+.bg_gray10 {
+    background: #f1f1f1;
+    padding: 10px;
+}
+
+.max-width {
+    max-width: 100%;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.flex_centerp {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.flex_startp {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex_between {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex_center_topp {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logop {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.color_blackp {
+    color: #000;
+}
+
+.label_searchp {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+}
+
+.searchp {
+    margin-right: 15px;
+    width: 37%;
+}
+
+.searchp_form {
+    width: 100%;
+}
+
+.input_searchp {
+    background: #f1f1f1;
+    border: 1px solid #b2b2b2;
+    box-sizing: border-box;
+    height: 39px;
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Museo300_Regular';
+    padding: 10px 15px;
+    z-index: 9;
+    position: relative;
+}
+
+.input_searchp:focus {
+    border: 1px solid #dd0000;
+}
+
+.input_searchp::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-weight: 600;
+}
+
+.input_searchp::-moz-placeholder { /* Firefox 19+ */
+    font-weight: 600;
+}
+
+.input_searchp:-ms-input-placeholder { /* IE 10+ */
+    font-weight: 600;
+}
+
+.input_searchp:-moz-placeholder { /* Firefox 18- */
+    font-weight: 600;
+}
+
+.list_style li a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+
+.fcp a {
+    background: #dd0000;
+    color: #fff;
+    padding: 10px 5px;
+}
+
+.fcp {
+    position: absolute;
+    right: 0;
+}
+
+.list_style li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 13px;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown_list {
+    background: #fff;
+    position: absolute;
+    display: none;
+    left: -1px;
+    padding: 0 15px;
+    top: 30px;
+    width: 180px;
+    z-index: 9;
+}
+
+.dropdown_list li {
+    border-bottom: 1px solid #a0a0a0;
+    display: block;
+    padding: 8px 0;
+}
+
+.dropdown_list .active_link {
+    border-bottom: 2px solid #c6c6c6;
+}
+
+.dropdown_list .active_link a {
+    color: #dd0000;
+}
+
+.dropdown_list li:last-child {
+    border-bottom: 0;
+}
+
+.dropdown_list li a {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dropdown_list a:hover {
+    color: #dd0000;
+}
+
+.input_searchp::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #000;
+}
+
+.input_searchp::-moz-placeholder { /* Firefox 19+ */
+    color: #000;
+}
+
+.input_searchp:-ms-input-placeholder { /* IE 10+ */
+    color: #000;
+}
+
+.input_searchp:-moz-placeholder { /* Firefox 18- */
+    color: #000;
+}
+
+.button_searchp {
+    background: #dd0000;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    height: 39px;
+    position: relative;
+    width: 39px;
+    z-index: 3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+.button_searchp:before {
+    background: url(../images/search-btn.png) no-repeat;
+    content: '';
+    height: 19px;
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    width: 17px;
+}
+
+.button_searchp:hover:before {
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.menu_mobile {
+    background: #4c4c4c;
+    border: 0;
+    cursor: pointer;
+    height: 39px;
+    position: relative;
+    width: 39px;
+    z-index: 3;
+}
+
+.menu_mobile:before {
+    color: #fff;
+    content: '\f0c9';
+    font-size: 25px;
+    font-family: FontAwesome;
+}
+
+.poetiPeLitere {
+    background:#383838;
+    color:#FFF;
+    padding:3px 10px;
+}
+
+.poetiPeLitere:hover {
+    background:#F94B4B;
+}
+
+.PoeziiHeader {
+    background:#DD0000;
+    color:#FFF;
+    padding:3px 10px;
+}
+
+.PoeziiHeader:hover {
+    background:#F94B4B;
+}
+
+.douaBtnHeader {
+    margin-left: 29px;
+    margin-top: 4px;
+    font-size: 15px;
+  }
+
+/*End Header*/
+
+/*Slider*/
+.items_list li {
+    display: inline-block;
+    height: 98px;
+    margin: 0 6px 6px 0;
+    position: relative;
+    width: 88px;
+}
+
+.items_list img {
+    max-width: 100%;
+}
+
+.items_list li:last-child,
+.items_list li:nth-child(8) {
+    margin: 0 0 6px 0;
+}
+
+.tablet_max_width {
+    max-width: 820px;
+}
+
+.items_list {
+    margin: 5px;
+    width: 100%;
+    z-index: 99;
+    position: relative;
+}
+
+
+.items-list img {
+    max-width: 100%;
+}
+
+.set_max_width {
+    display: inline-block;
+    max-width: 820px;
+    vertical-align: top;
+    width: 100%;
+}
+
+.slick-next {
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 0;
+    display: flex;
+    font-size: 0;
+    height: 94%;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    right: 0;
+    opacity: 1;
+    top: 46.8%;
+    width: 25px;
+    z-index: 999;
+}
+
+.slick-next:before {
+    color: #383838;
+    content: '\f0da';
+    font-size: 25px;
+    font-family: FontAwesome;
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled,
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: 0;
+}
+
+.slick-prev {
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 0;
+    display: flex;
+    font-size: 0;
+    height: 15%;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    left: -26px;
+    width: 25px;
+    top: 46.8%;
+    z-index: 999;
+  }
+
+.slick-prev:before {
+    color: #383838;
+    content: '\f0d9';
+    font-size: 25px;
+    font-family: FontAwesome;
+}
+
+.slick-next:hover,
+.slick-prev:hover {
+    background: #f1f1f1;
+}
+
+.alphabetic {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.alphabetic_span {
+    background: #f1f1f1;
+    color: #1e1e1e;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.alphabetic_list li {
+    display: inline-block;
+    margin-right: -4px;
+    margin-top: 4px;
+}
+
+.alphabetic_list a {
+    color: #000000;
+    font-size: 17px;
+    padding: 0 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+.alphabetic_list a:hover {
+    color: #000;
+}
+
+/*End Slider*/
+
+/*Custom dropdown*/
+.custom_dropdown {
+    width: 100%;
+}
+
+.custom_dropdown li {
+    position: relative;
+    max-width: 267px;
+    width: 100%;
+}
+
+.custom_dropdown > li a {
+    background: #f1f1f1;
+    color: #000;
+    display: block;
+    font-size: 17px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.custom_dropdown_list > li a {
+    background: #dd0000;
+    color: #fff;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.custom_dropdown_list {
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 9;
+}
+
+.custom_dropdown_list > li a:hover {
+    background: #ad0404;
+}
+
+.custom_dropdown .angle_down a i,
+.list_style li a i,
+.custom_dropdown > li a i {
+    color: #dd0000;
+}
+
+.custom_dropdown > li a i {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.flex_spaceb {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bg_gray {
+    background: #f1f1f1;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.full_custom_dropdown li {
+    margin-right: 10px;
+}
+
+.full_custom_dropdown li:last-child {
+    margin-right: 0;
+}
+
+.full_custom_dropdown > li a {
+    font-size: 15px;
+}
+
+/*End Custom dropdown*/
+
+.one {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.two {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 3.8%;
+    width: 21.75%;
+}
+
+.two img {
+    max-width: 100%;
+}
+
+.three {
+    display: inline-block;
+    vertical-align: top;
+    width: 74%;
+}
+
+.logo_mobie,
+.mob_logo {
+    display: none;
+}
+
+/*  P O E Z I I */
+.big_gray_hr {
+    border: 0;
+    background: #f1f1f1;
+    height: 10px;
+    margin: 10px 0 30px 0;
+}
+
+.poetry_content {
+    margin-bottom: 60px;
+}
+
+.poetry_txt {
+    padding-right: 30px;
+}
+
+.details_poetry {
+    border: 1px solid #d1d1d1;
+    border-top-left-radius: 80px;
+    padding: 40px 5px 30px 40px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.more_details_poetry {
+    left: -30px;
+    top: 60%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+    background: #fff;
+    padding: 5px 25px;
+    border-top: 1px solid #d1d1d1;
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    border-top-left-radius: 20px;
+    letter-spacing: 2px;
+}
+
+.poetry_subcategory li {
+    list-style-type: none;
+    padding-left: 10px;
+    font-size: 17px;
+    color: var(--font-grey);
+}
+
+.poetry_subcategory li:before {
+    content: url('../images/list_arrow.png');
+    padding-right: 10px;
+}
+
+.source_poetry {
+    /*todo modificat de la 60% la 100% pt poezie.html*/
+    width: 100%;
+    color: #777777;
+    margin-top: 5px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.content_audio_version {
+    padding: 0 40px 20px;
+}
+
+.poetry_story_title {
+    padding: 0 10px 5px 0;
+    border-bottom: 2px solid #202020;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.poetry_story_content p {
+    margin-bottom: 30px;
+}
+
+.poetry_story_comment,
+.poetry_story_txt {
+    width: 48%;
+}
+
+.small_border {
+    border: 0;
+    background: #808080;
+    height: 1px;
+    margin: -1px 0 10px 0;
+}
+
+.other_poetries li {
+    padding: 0 5px 0 15px;
+    list-style-type: none;
+}
+
+.see_all_potries a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.see_all_arrow {
+    background: #000;
+    padding: 2px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.see_all_arrow i,
+.testimonials_arrow i {
+    color: #fff;
+    font-weight: 100;
+    font-size: 10px;
+}
+
+.border_b_red {
+    border-bottom: 1px solid #f09090;
+}
+
+.poet_testimonials a {
+    text-decoration: underline;
+}
+
+.testimonials_arrow {
+    background: #dd0000;
+    padding: 2px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.btn_poet button {
+    outline: none;
+    border: 1px solid #606060;
+    background: transparent;
+    max-width: 190px;
+    width: 100%;
+    text-align: center;
+    padding: 3px 0;
+    cursor: pointer;
+    margin-right: 25px;
+    font-family: Museo300_Regular;
+}
+
+.btn_poet .single_poet_name {
+    display: inline-block;
+}
+
+.poet_info {
+    margin-bottom: 12px;
+}
+
+.poet_info1 li,
+.poet_info2 li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.poet_info1 span,
+.poet_info2 span {
+    color: #6d6d6d;
+}
+
+.poet_info2 span {
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.section_audio_poetry {
+    column-count: 2;
+}
+
+.audio_version_no {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* E N D   P O E Z I I */
+
+/* Categorie de articole */
+
+.title_cat {
+    letter-spacing: 7px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.content_art {
+    color: #828282;
+}
+
+.single_art {
+    width: 40%;
+}
+
+/* E N D  Categorie de articole */
+
+/* Poeti pe litere */
+
+.all_letter {
+    padding: 0 20px;
+}
+
+.single_poet_letter {
+    width: 40%;
+}
+
+.letter_alphabetic span {
+    vertical-align: middle;
+}
+
+.letter_alphabetic ul li,
+.letter_alphabetic ul {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.letter_alphabetic ul li a {
+    color: #999;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* E N D  Poeti pe litere */
+
+/* Pagina articol */
+
+.first_col {
+    /*border-right: 1px solid #cdcdcd;*/
+    box-sizing: border-box;
+    max-width: 270px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+
+
+
+.content_single_art p {
+    margin-bottom: 25px;
+}
+
+.lightgray {
+    color: #7f7f7f;
+}
+
+.article_left_side li {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+.article_left_side li a {
+    position: relative;
+    color: #000;
+}
+
+.article_left_side li a i {
+    margin-right: -20px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+
+
+.share_btn span {
+    border: 1px solid #f0f0f0;
+}
+
+.share_btn span a {
+    color: #747474;
+}
+
+/* E N D  Pagina articol */
+
+/*Biografie*/
+.portret {
+    height: 100%;
+}
+
+.name_of_author p {
+    color: #000;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+
+.details_of_author p span {
+    color: #000;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.details_of_author p span:first-child {
+    color: #727272;
+}
+
+.set_border_bottom .details_of_author {
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 20px;
+}
+
+.set_border_bottom .details_of_author:last-child {
+    border-bottom: none;
+}
+
+.custom_name_of_author {
+    max-width: 348px;
+    padding-top: 4px;
+    width: 100%;
+}
+
+.custom_name_of_author h2 {
+    color: #dd0000;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.custom_go_to_page {
+    color: #383838;
+    background: #f1f1f1;
+    border: 2px solid transparent;
+    display: block;
+    font-size: 17px;
+    max-width: 190px;
+    padding: 8px 5px;
+    position: relative;
+    text-align: center;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.custom_go_to_page:hover {
+    background: #fff;
+    border: 2px solid #f1f1f1;
+}
+
+.custom_go_to_page:after {
+    content: '';
+    /*fixme -resursa negasita*/
+    /*background: url(../images/red-arrow.png);*/
+    height: 14px;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 15px;
+}
+
+.title_of_page span {
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.content_of_page p {
+    /*color: #000;*/
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.author_of_article .name_of_author span {
+    color: var(--font-grey);
+    font-size: 17px;
+}
+
+.author_of_article .name_of_author span:first-child {
+    color: #dd0000;
+}
+
+/*.second_col {*/
+/*    padding-left: 45px;*/
+/*    max-width: 820px;*/
+/*    width: 100%;*/
+
+/*}*/
+.second_col {
+    padding-left: 30px;
+    max-width: 820px;
+    width: 100%;
+    border-left: 1px solid #cdcdcd;
+}
+
+/*End Biografie*/
+
+/*Poet*/
+.custom_list_of_author li {
+    border-bottom: 1px solid #cdcdcd;
+    padding: 9px 0;
+    text-align: center;
+}
+
+.custom_list_of_author a {
+    color: #383838;
+    font-size: 17px;
+}
+
+.custom_list_of_author li:hover {
+    background:#EEE;
+}
+
+.max_width_full {
+    max-width: 100%;
+}
+
+.set_width_45 .details_of_author {
+    width: 45%;
+}
+
+.author_confess .custom_go_to_page {
+    border: none;
+    box-sizing: border-box;
+    font-weight: bold;
+    max-width: 100%;
+    padding: 17px 5px;
+    position: relative;
+    text-align: left;
+    z-index: 4;
+}
+
+.author_confess .custom_go_to_page:hover {
+    background: #f1f1f1;
+    border: none;
+}
+
+.author_confess .custom_go_to_page:after {
+    content: '';
+    display: none;
+}
+
+.author_confess .custom_go_to_page span {
+    display: inline-block;
+    position: relative;
+    text-decoration: underline;
+}
+
+.author_confess .custom_go_to_page span:after {
+    content: '';
+    /*fixme resursa negasita*/
+    /*background: url(../images/red-arrow.png);*/
+    height: 14px;
+    position: absolute;
+    top: 4px;
+    right: -21px;
+    width: 15px;
+}
+
+.author_confess .custom_go_to_page:before {
+    background: #f1f1f1;
+    content: '';
+    height: 100%;
+    position: absolute;
+    left: -3.8%;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.list_of_articles a,
+.about_auth_title h3 {
+    color: #000;
+    font-size: 17px;
+}
+
+.list_of_articles {
+    padding-left: 15px;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+}
+
+.list_of_articles a {
+    line-height: 25px;
+    position: relative;
+}
+
+.list_of_articles li {
+    padding-left: 5px;
+}
+
+.list_of_articles a:before {
+    /*fixme resursa negasita */
+    /*background: url(../images/arrow-right.png);*/
+    content: '';
+    height: 9px;
+    position: absolute;
+    left: -13px;
+    top: 5px;
+    width: 6px;
+}
+
+.top_color {
+    border-top: 4px solid #2b2b2b;
+    margin: 20px 0;
+}
+
+.remove_border_right {
+    border-right: none;
+}
+
+.add_border_left {
+    border-left: 1px solid #cdcdcd;
+}
+
+.lirics_title {
+    margin-bottom: 20px;
+}
+
+.lirics_title h2 {
+    color: #dd0000;
+    font-size: 27px;
+}
+
+.most_popular p {
+    color: #a3a3a3;
+    font-size: 14px;
+}
+
+.remove_column_count {
+    column-count: auto;
+}
+
+.remove_column_count a:before {
+    left: auto;
+    right: -15px;
+}
+
+.poem_title h1 {
+    color: #383838;
+    font-size: 29px;
+}
+
+.poems {
+    width: 42%;
+}
+
+.poem_lirics p {
+    color: #000;
+    font-size: 18px;
+}
+
+.poems {
+    margin-bottom: 20px;
+}
+
+.center_to_bottom {
+    color: #dd0000;
+    display: block;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.set_on_column {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list_completed p {
+    color: #a3a3a3;
+    font-size: 14px;
+}
+
+.custom_pagination li {
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.custom_pagination a {
+
+    background: #f1f1f1;
+    color: #303030;
+    /*display: block;*/
+    font-size: 15px;
+    padding: 7px 12px;
+    text-align: center;
+}
+
+.custom_pagination li:first-child a,
+.custom_pagination li:last-child a {
+    color: #dd0000;
+    font-size: 15px;
+}
+@media screen and (max-width: 1024px){
+    .custom_pagination a {
+        padding: 3px;
+    }
+}
+@media screen and (max-width: 768px){
+	.custom_pagination a {
+		padding: 6px;
+	}
+}
+
+/*End Poet*/
+
+
+/*FOOTER*/
+footer .content_footer {
+    border-top: 1px solid red;
+    /*border-bottom:5px solid red;*/
+    padding: 40px 0;
+    font-weight: 600;
+}
+
+.footer_second_logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer a {
+    color: #000;
+}
+
+.footer_main_logo {
+    display: inline-block;
+    vertical-align: middle;
+    letter-spacing: 2px;
+}
+
+.footer_main_logo p {
+    position: absolute;
+    left: 90px;
+    bottom: 0;
+}
+
+.silver {
+    color: #8c8c8c;
+}
+
+.footer_contact {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 67px;
+}
+
+.footer_contact ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.footer_contact ul.footer_contact_net li {
+    display: inline-block;
+}
+
+.footer_contact_net a {
+    background: #dd0000;
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 100%;
+}
+
+/*.footer_contact_net a.fb { padding: 3px 8px; } */
+/*END FOOTER*/
+
+/* Content LOADER */
+.loading_container {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background: #fff;
+}
+
+.loading:after {
+    border-width: 0 3px 0 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    display: block;
+    height: 50px;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+
+    content: "";
+
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/*----------------*/
+
+img {
+    max-width: 100%;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mt8{
+    margin-top: 8px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb25 {
+    margin-bottom: 25px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb35 {
+    margin-bottom: 35px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mb25 {
+    margin-bottom: 25px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.mb100 {
+    margin-bottom: 100px;
+}
+
+.mr50 {
+    margin-right: 50px;
+}
+
+.ml50 {
+    margin-left: 50px;
+}
+
+.mr45 {
+    margin-right: 45px;
+}
+
+.ml45 {
+    margin-left: 45px;
+}
+
+.mr40 {
+    margin-right: 40px;
+}
+
+.ml40 {
+    margin-left: 40px;
+}
+
+.pt5 {
+    padding-top: 5px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt15 {
+    padding-top: 15px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.pt25 {
+    padding-top: 25px;
+}
+
+.pb5 {
+    padding-bottom: 5px;
+}
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pb15 {
+    padding-bottom: 15px;
+}
+
+.pb20 {
+    padding-bottom: 20px;
+}
+
+.pb25 {
+    padding-bottom: 25px;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.p15 {
+    padding: 15px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.p25 {
+    padding: 25px;
+}
+
+
+.pt30 {
+    padding-top: 30px;
+}
+
+.pl40 {
+    padding-left: 40px;
+}
+
+.pr40 {
+    padding-right: 40px;
+}
+
+.pr35 {
+    padding-right: 35px;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt50 {
+    padding-top: 50px;
+}
+
+.pb50 {
+    padding-bottom: 50px;
+}
+
+.pb10 {
+    padding-bottom: 10px;
+}
+
+.pr10 {
+    padding-right: 10px;
+}
+
+.pl10 {
+    padding-left: 10px;
+}
+
+.pt25 {
+    padding-top: 25px;
+}
+
+.pb25 {
+    padding-bottom: 25px;
+}
+
+.pl50 {
+    padding-left: 50px;
+}
+
+.pr60 {
+    padding-right: 60px;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.semibold {
+    font-weight: 700;
+}
+
+.font34 {
+    font-size: 34px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.font15 {
+    font-size: 15px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+
+.font17 {
+    font-size: 17px;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.font19 {
+    font-size: 19px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+.font22 {
+    font-size: 22px;
+}
+
+.font23 {
+    font-size: 23px;
+}
+
+.font27 {
+    font-size: 27px;
+}
+
+.font28 {
+    font-size: 28px;
+}
+
+.font29 {
+    font-size: 29px;
+}
+
+.font32 {
+    font-size: 32px;
+}
+
+.font43 {
+    font-size: 43px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.red {
+    color: #dd0000;
+}
+
+.gray {
+    color: #828282;
+}
+
+.relative {
+    position: relative;
+}
+
+.main_container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+
+.max_width_400 {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.max_width_690 {
+    max-width: 690px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.border_none {
+    border: 0;
+}
+
+/*======================*/
+/*utilitati*/
+/*======================*/
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.p-4 {
+    padding: 4rem;
+}
+
+/* Padding Top */
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pt-2 {
+    padding-top: 2rem;
+}
+
+.pt-3 {
+    padding-top: 3rem;
+}
+
+.pt-4 {
+    padding-top: 4rem;
+}
+
+/* Padding Bottom */
+.pb-1 {
+    padding-bottom: 1rem;
+}
+
+.pb-2 {
+    padding-bottom: 2rem;
+}
+
+.pb-3 {
+    padding-bottom: 3rem;
+}
+
+.pb-4 {
+    padding-bottom: 4rem;
+}
+
+/* Padding Left */
+.pl-1 {
+    padding-left: 1rem;
+}
+
+.pl-2 {
+    padding-left: 2rem;
+}
+
+.pl-3 {
+    padding-left: 3rem;
+}
+
+.pl-4 {
+    padding-left: 4rem;
+}
+
+/* Padding Right */
+.pr-1 {
+    padding-right: 1rem;
+}
+
+.pr-2 {
+    padding-right: 2rem;
+}
+
+.pr-3 {
+    padding-right: 3rem;
+}
+
+.pr-4 {
+    padding-right: 4rem;
+}

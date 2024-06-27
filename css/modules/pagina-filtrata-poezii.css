@@ -1,0 +1,208 @@
+.border-bottom-big {
+    border-bottom: 2px solid var(--grey-2);
+}
+
+.filter-ul {
+    font-size: var(--f-standard);
+    padding: .7rem;
+    background-color: var(--btn-grey);
+    letter-spacing: var(--lineSpacing-1);
+    margin: 0 0 1rem 0;
+}
+
+.filter-item {
+    color: var(--font-grey-2);
+}
+
+
+.form-container{
+    width: 350px;
+    max-width: 500px;
+    min-width: 300px;
+    font-size: var(--f-standard);
+    display: block;
+
+}
+
+.form-group {
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.form-input {
+    width: 100%;
+    display: block;
+    background: url('../../images/svg/lupa.svg') no-repeat right center / contain;
+    content: url('../../images/svg/lupa.svg');
+    vertical-align: -0.125em;
+    background-size: 1.2rem;
+   margin-right: 10px;
+}
+.form-input-simple{
+    width: 100%;
+    display: block;
+    background-image: none;
+}
+/*.form-input-select{*/
+/*    width: 100%;*/
+/*    display: block;*/
+/*    padding: 12px 16px;*/
+/*    margin: 8px 0;*/
+/*    box-sizing: border-box;*/
+/*    border-radius:var(--radius);*/
+/*    border: 1px solid var(--btn-grey);*/
+/*    color: var(--border) !important;*/
+/*    font-size: 15px;*/
+/*    transition: var(--transition);*/
+/*}*/
+/*================*/
+.form-input-select{
+    width: 100%;
+    display: block;
+    padding: 12px 16px;
+    margin: 9px 0 -4px 0;
+    box-sizing: border-box;
+    border-radius: var(--radius);
+    border: 1px solid #000;
+    color: var(--border-filters)!important;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+/*================*/
+
+
+
+
+.form-input-select:focus{
+    outline-width: 0;
+}
+.form-input-select:hover{
+    border: 1px solid var(--red-1);
+}
+
+/*==================*/
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border: 1px solid #CCC;
+    font-size: 15px;
+    transition: var(--transition);
+    border-bottom-left-radius: 5px;
+  }
+
+/*==================*/
+
+
+
+input[type=text]:focus {
+    background-color: var(--grey-3);
+    outline-width: 0;
+
+}
+input[type=text]:hover{
+    border: 1px solid var(--red-1);
+}
+
+input::placeholder{
+    color: var(--border);
+    font-size: 15px;
+}
+.reset-btn{
+    background-color: var(--btn-grey);
+    /*letter-spacing: var(--lineSpacing-1);*/
+    border: none;
+    color: black;
+    padding: .6rem 1rem;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 10rem;
+    transition: var(--transition);
+    font-size: 17px;
+}
+.reset-btn:hover{
+    background-color: var(--red-1);
+    letter-spacing: var(--lineSpacing-1);
+    border: none;
+    color: var(--white);
+    padding: .6rem 1rem;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.filter-btn{
+    background-color: var(--red-1);
+    /*letter-spacing: var(--lineSpacing-1);*/
+    border: none;
+    color: var(--white);
+    padding: .6rem 1rem;
+    text-decoration: none;
+    margin: .2rem .1rem .2rem .1rem;
+    cursor: pointer;
+    width: 10rem;
+    transition: var(--transition);
+    font-size: 17px;
+
+}
+.filter-btn:hover{
+    background-color: var(--btn-grey);
+    color: var(--black-1);
+}
+.red-box{
+    padding: .5rem;
+    margin: .5rem 0;
+    border: 1px solid var(--red-1);
+    border-radius: 2px;
+}
+.row-flex-wrap-100{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+}
+.red-box-title{
+    text-transform: uppercase;
+    color: var(--black-1);
+    font-weight: 700;
+}
+.result-title-container{
+    padding: 1rem;
+    margin: 0 1rem;
+}
+.result-title{
+font-size: 18px;
+    font-weight:900;
+    color: var(--black-1);
+
+}
+.sublink-result{
+    font-size: .9rem;
+    margin: .5rem 0 1rem 0;
+    color: var(--grey-2);
+}
+.sublink-result p{
+
+}
+.border-grey{
+    background-color: var(--btn-grey);
+    padding: .15rem 0;
+}
+@media screen and (max-width: 768px){
+    .result-title-container{
+        padding: .5rem;
+        margin: .5rem;
+    }
+    .form-input-select{
+        height: 2.5rem;
+    }
+}
+@media screen and (max-width: 320px){
+.form-group {
+    width: 310px;
+    min-width: 250px;
+}
+}

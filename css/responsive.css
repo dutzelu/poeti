@@ -1,0 +1,854 @@
+@media screen and (max-width: 1200px) {
+	.logop {
+		height: auto;
+		margin-right: 15px;
+	}
+
+	.list_style li {
+		padding: 0 12px;
+	}
+
+	.list_style .fcp {
+		padding: 0 12px;
+	}
+
+	.input_searchp {
+		font-size: 15px;
+	}
+
+	.dropdown_list {
+		left: -15px;
+		text-align: left;
+		width: 200px;
+	}
+
+	.list_style li {
+		padding: 5px 12px;
+	}
+
+	.items_list li {
+		height: auto;
+		width: 10.8%;
+	}
+
+	.custom_name_of_author h2 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.text_content_event {
+		font-size: 16px;
+		height: 79px;	
+	}
+
+	.syntheses_left .font43 { font-size: 38px; }
+
+	.custom_dropdown > li a {
+		/*todo modificat 16.04*/
+		/*padding: 10px;*/
+		padding: 15px;
+		font-size: 13px;
+	}
+
+
+	.list_style li a {
+		font-size: 14px;
+	}
+
+	.custom_dropdown .angle_down:before {
+		top: 6px;
+	}
+
+	.two {
+		margin-right: 2.5%;
+	}
+
+	.searchp {
+		margin-right: 0;
+	}
+
+	.items_list li {
+		width: 10.5%;
+	}
+
+	.three {
+		width: 75%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.testimonal_section {
+		display: block;
+	}
+
+	.two,
+	.logop {
+		display: none;
+	}
+
+	.three {
+		width: 100%;
+	}
+
+	.input_searchp {
+		opacity: 0;
+		left: 0;
+		max-width: 0;
+		position: absolute;
+		z-index: 2;
+		transition: 0.5s;
+	}
+
+	.active_input:hover .input_searchp {
+		opacity: 1;
+		left: 73px;
+		max-width: 29%;
+		transition: 0.5s;
+	}
+
+	.mob_remove_mg {
+		margin: 0;
+	}
+
+	.mob_remove_padd {
+		padding: 0;
+	}
+
+	.mob_padd_15 {
+		padding: 0 15px;
+	}
+
+	.rem_mt10 {
+		margin-top: 0;
+	}
+
+	.hide_md {
+		display: block;
+	}
+
+	.searchp {
+		width: auto;
+	}
+
+	.nav_widthp {
+		text-align: center;
+		width: 100%;
+	}
+
+	.searchp_form {
+		width: auto;
+	}
+
+	.logo_left {
+		max-width: 209px;
+		margin-right: 30px;
+	}
+
+	.set_max_width {
+		max-width: 100%;
+	}
+
+	.tablet_padd_15 {
+		padding: 0 15px;
+	}
+
+	.items_list li:last-child {
+		display: none;
+	}
+
+	.items_list li:nth-child(8) {
+    margin: 0 6px 6px 0;
+	}
+
+	.items_list {
+		padding: 0 0px 0 20px;
+		box-sizing: border-box;
+		text-align: left;
+		width: 100%;
+	}
+
+	.items_list li {
+		width: 17.2%;
+	}
+
+	.items_list img {
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.alphabetic_list,
+	.alphabetic_list_bottom {
+		background: #f1f1f1;
+		display: none;
+		max-width: 230px;
+		position: absolute;
+		left: 142px;
+		top: 0;
+		z-index: 9;
+	}
+
+	.letter_alphabetic {
+		text-align: left;
+	}
+
+	.letter_alphabetic ul li a {
+		margin-left: 0;
+		font-size: 20px;
+	}
+
+	.alphabetic_span_bottom {
+		background: #f1f1f1;
+		padding: 5px;
+		display: inline-block;
+	}
+
+	.alphabetic {
+		padding-left: 20px;
+	}
+
+	.alphabetic_list li,
+	.alphabetic_list_bottom li {
+		padding: 5px;
+	}
+
+	.alphabetic_span,
+	.alphabetic_span_bottom {
+		cursor: pointer;
+	}
+
+	.clone_class  {
+		display: none;
+		position: absolute;
+		top: 39px;
+		left: 0;
+		margin: 0;
+		z-index: 9;
+		width: 100%;
+	}
+
+	.full_custom_dropdown {
+		display: block;
+	}
+
+	.custom_dropdown_list {
+		position: relative;
+		top: 0;
+		left: 0;
+		text-align: center;
+	}
+
+	.custom_dropdown li {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.mob_logo {
+		display: inline-block;
+		margin-right: 15px;
+		vertical-align: top;
+		width: 20%;
+	}
+
+	.right_col {
+		display: inline-block;
+		vertical-align: top;
+		width: 77%;
+	}
+
+	.slick-next, .slick-prev {
+		display: none !important;
+	}
+
+	.set_tablet_max_width {
+		margin: 0 auto;
+		width: 85%;
+	}
+
+	.testimonal_section,
+	footer .content_footer {
+		display: block;
+	}
+
+	.poem_section .child_poem_section:last-child,
+	.content_video_section .child_poem_section:last-child {
+		display: none;
+	}
+
+	/*.quotation_mark { padding: 25px 20px 0 20px; }*/
+	/*modificat 09.04*/
+	.quotation_mark { padding: 25px 20px 20px 20px; }
+	/*.quotation_mark:before { top:10px; }*/
+
+	.syntheses_section { display: block; overflow: hidden; }
+
+	.syntheses_left { 
+		width: 100%; 
+		padding: 25px 0 25px 30px; 
+		box-sizing: border-box;
+	}
+
+	.syntheses_left:before { 
+		content: '';
+		width: 115%; 
+		background-size: cover;
+		padding: 15px;
+	}
+
+	.syntheses_left .mb100 { margin-bottom: 25px; }
+
+	.syntheses_left .font43 { font-size: 29px; }
+		
+	.syntheses_right {
+		width:100%;
+		padding:15px 15px 45px 15px;
+	}
+
+	.content_thematic_poems { flex-wrap: wrap; } 
+
+		.content_thematic_poems .child_poem_section:last-child {
+			height: auto;
+			width: 100%;
+		}
+
+	.thematic_list { column-count: 3; }
+
+	.content_video_section.mb100 { margin-bottom: 30px; }
+
+	.footer_second_logo {
+		display: block;
+    	margin: 45px auto;
+    	max-width: 225px;
+    	width: 100%;
+	}
+
+	.footer_contact {
+		display: block;
+    	max-width: 150px;
+    	margin: 0 auto;
+    	padding-right: 0;
+	}
+
+	.footer_main_logo {
+		margin: 0 auto;
+    	max-width: 560px;
+    	width: 100%;
+    	padding: 0 20px;
+    	box-sizing: border-box;
+    	display: inherit;
+	}
+
+	.poetry_content { padding: 0 20px; }
+
+	.poet_info { display: block; }
+
+	.single_art {
+		width: 100%;
+		text-align: center;
+	}
+
+	.single_poet_letter {
+		margin-right: 0px;
+	}
+
+	.single_poet_letter {
+		margin-left: 0px;
+	}
+
+	.single_poet_letter {
+		width:49%;
+	}
+
+
+	.first_col {
+		max-width: 30%;
+	}
+
+	.second_col {
+		max-width: 70%;
+	}
+
+	.remove_flex992 {
+		display: block;
+		text-align: center;
+	}
+
+	.custom_name_of_author {
+		max-width: 100%;
+		margin-bottom: 15px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.custom_go_to_page {
+		display: inline-block;
+	}
+
+
+	.poem_title h1 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 776px) {
+	.testimonal_section .font34 { font-size: 24px; }
+
+	.poem_section,
+	.content_evens,
+	.content_video_section,
+	.poem_section .child_poem_section:last-child {
+		display: block;
+	}
+
+	.child_poem_section,
+	.single_poet {
+		width: 100%;
+		margin:0 auto;
+		border-bottom:1px dashed #bfbfbf;
+		/*modificat 15=>25*/
+		padding: 25px;
+		box-sizing: border-box;
+	}
+
+	.single_poet_content { 
+		box-sizing: border-box;
+		padding-left: 0px; 
+	}
+
+	.child_poem_section:last-child { border-bottom:0px dashed #bfbfbf; }
+
+	.border_left_gray {
+		border-left: 0px solid #bfbfbf;
+	}
+
+	.content_poem .font29 { font-size: 20px; }
+
+	.content_evens_child {
+		width:50%;
+		margin:0px auto 35px auto;
+	} 
+	.content_evens { padding-bottom: 5px; }
+
+	.events_section { margin-top: 25px; }
+
+	.mobile_hidden { display: none; }
+
+	.syntheses_left { padding: 5px 10px 5px 20px; }
+		.syntheses_left .mb100 { margin-bottom: 0; padding: 20px 0; }
+
+	.img_syntheses_right img { width:100%; max-width: 100%; }
+
+	.txt_syntheses_right { margin-left: 0px; }
+	
+	.content_syntheses_right,
+	.mobile_block { display: block; }
+
+	.title_txt_right { margin: 10px 0; }
+
+	.more_articles p { margin-bottom: 10px; font-size: 18px; }
+
+	.video_section { flex-wrap: wrap; padding: 15px 10px; }
+
+	.video_desc.font29 { font-size: 18px; }
+
+	.title_video_section.font32 { font-size: 20px; }
+
+	.content_thematic_poems .child_poem_section:nth-child(2) {
+		border-bottom: 0px dashed #bfbfbf;
+	}
+	
+	.child_poem_section.border_left_darkgray {
+		border-left: 0px solid #020202;
+		border-top: 2px solid #020202;
+	}
+
+	.see_all_thematic {
+		left: 10px;
+		padding-left: 14px;
+	}
+
+	.comm_section span { 
+		position: relative; 
+		display: block; 
+		margin-top: 10px; 
+		text-align: left; 
+		transform: translateY(0%);
+		padding-left: 15px; 
+	}
+
+	.comm_section span:nth-child(2) br { display: none; }
+	.comm_section .font34 { font-size: 24px; }
+
+	.all_poets { column-count: 1; margin-bottom: 20px; border-top: 0px; padding:0; }
+	.single_poet { border-bottom: 0; }
+
+	.single_poet_name.font29,
+	.single_poet_name.font28,
+	.other_poetries .font23 { font-size: 20px; }
+
+	.poem_content p { font-size: 16px; }
+	.footer_main_logo p {
+		position: relative;
+		left: 0;
+		text-align: center;
+	}
+	.footer_main_logo span { display: block; }
+	.red_hr { margin-bottom: 0; }
+
+	.triangle_red { display: none; }
+
+	.title_thematic_poems { text-align: left; padding: 10px; }
+		.title_thematic_poems.font32  { 
+			font-size: 20px;
+			letter-spacing: 2px; 
+		}
+
+	.letterspacing7 { letter-spacing: 4px; }
+
+	.more_syntheses { left: 10px; bottom: 15px; }
+
+	.footer_contact ul.footer_contact_net li { margin-right: 5px; }
+
+	.poetry_content { display: block; }
+	.details_poetry { 
+		column-count: 2;
+		margin: 40px auto;
+		max-width: 580px;
+		padding: 30px 10px 30px 20px;
+		box-sizing: border-box;
+	}
+	.more_details_poetry { 
+		top: -30px;
+		right: -1px;
+		transform: translateX(0%); 
+		width: 140px;
+		left: inherit;
+	}
+	.content_audio_version { padding: 0 15px 5px; }
+	.audio_poetry.font17 { font-size: 14px; }
+		.audio_poetry { padding-left: 10px; }
+	.poetry_txt { width: 60%; margin:0 auto; padding: 0; }
+	.poetry_txt .font29 { font-size: 20px; }
+	.source_poetry { width: 100%; }
+	.poetry_story { 
+		display: block;
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+		.poetry_story_comment,
+		.poetry_story_txt { width: 100%; }
+
+	.other_poetries {
+		display: block;
+    	column-count: 2;
+	}
+
+	.other_poetries li { 
+		-webkit-column-break-inside: avoid;
+	    page-break-inside: avoid;
+	    break-inside: avoid;
+	    padding: 0 5px 0 10px;
+	}
+	.btn_poet { display: block; }
+	.btn_poet img { display: block; margin: 0 auto 15px; }
+	.btn_poet .single_poet_content.ml20 { margin-left: 0; }
+	
+  	.see_all_potries { text-align: left; padding-left: 10px; }
+
+	.read_more {
+		bottom: 10px;
+		left: 0;
+		position: relative;
+		margin: 2px 0;
+	}	
+
+	.right_col {
+		width: 76%;
+	}
+	.event_title.font19 {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.fcp,
+	.nav_widthp {
+		display: none;
+	}	
+
+	.poem_content p {
+		margin-bottom: 15px;
+	}
+
+	.list_style {
+		background: #fff;
+	}
+
+	.custom_dropdown {
+		display: block;
+	}
+
+	.custom_dropdown li {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.clone_class {
+		width: 100%;
+	}
+
+	.active_input:hover .input_searchp {
+		max-width: 77%;
+		left:70px;
+	}
+
+	.dropdown_list li,
+	.list_style li {
+		display: block;
+		margin: 0;
+		padding: 5px 0;
+		width: 100%;
+	}
+
+	.dropdown_list {
+		box-sizing: border-box;
+		left: 0; 
+		position: relative;
+		padding: 3px 15px; 
+		top: 0; 
+		text-align: center;
+		width: 100%;
+	}
+
+	.fcp {
+		position: relative;
+		text-align: center;
+		margin-top: 15px;
+	}
+
+	.disp_block {
+		display: block;
+	}
+
+	.mob_logo {
+		display: none;
+	}
+
+	.logo_mobie {
+		text-align: right;
+		width: 100%;
+	}
+
+	.searchp {
+		align-items: flex-start;
+	}
+
+	.set_tablet_max_width {
+		width: 100%;
+	}
+
+	.right_col {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.logo_mobie {
+		display: block;
+		margin-right: 8px;
+		margin-top: 5px;
+	}
+
+	.clone_class {
+		margin: 0;
+	}
+
+	.list_style {
+		text-align: left;
+	}
+
+	.list_style .angle_down:before {
+		display: none;
+	}
+
+	.list_style li a {
+		background: #f1f1f1;
+  		box-sizing: border-box;
+		display: block;
+		padding: 10px 10px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.dropdown_list {
+		text-align: left;
+	}
+
+	.dropdown_list,
+	.list_style li {
+		padding: 0;
+	}
+
+	.dropdown_list li {
+		padding: 0;
+	}
+
+	.dropdown_list li,
+	.dropdown_list .active_link {
+		border-bottom: none;
+	}
+
+	.dropdown_list li a {
+		background: #dd0000;
+		color: #fff;
+		text-transform: capitalize;
+	}
+
+	.dropdown_list li a:hover,
+	.dropdown_list .active_link a {
+		background: #ad0404;
+		color: #fff;
+	}
+
+	.custom_dropdown li a {
+		color: #000;
+		font-size: 14px;
+    	font-weight: 600;
+		text-transform: none;
+	}
+
+	.custom_dropdown_list li a {
+		color: #fff;
+	}
+
+	.video_section_list li {
+		font-size: 15px;
+	}
+
+	.btn_poet button {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.section_audio_poetry {
+		column-count: 1;
+	}
+
+	.title_cat {
+		font-size: 22px;
+		margin:15px 0;
+		letter-spacing: 1px;
+	}
+
+	.single_art {
+		margin:15px;
+	}
+
+	.single_poet_letter {
+		width:100%;
+	}
+
+	.all_letter {
+	    padding: 0 15px;
+	}
+
+	.single_poet_letter {
+		font-size: 14px;
+	}
+
+
+	.custom_go_to_page {
+		display: inline-block;
+		margin: 0 0 10px 0;
+		text-align: center;
+	}
+
+	.remove_flex768 {
+		display: block;
+	}
+
+	.first_col,
+	.second_col {
+		max-width: 100%;
+		padding: 0;
+		border: 0;
+	}
+
+	.first_col,
+	.title_single_art {
+		text-align: center;
+	}
+
+
+	.list_of_articles li,
+	.most_popular,
+	.lirics_title {
+		text-align: center;
+	}
+
+	.custom_pagination  .hide_xs {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	.right_col {
+		width: 100%;
+		margin-top: -20px;
+	}
+
+	.alphabetic,
+	.items_list {
+		padding: 0 0 0 15px;
+	}
+
+	.items_list li {
+		width: 16.2%;
+	}
+
+	.content_evens { padding: 35px 15px; }
+
+	.content_evens_child { width:100%; } 
+	.thematic_list { column-count: 2; }
+	.single_poet { width: 100%; box-sizing: border-box; }
+	.details_poetry { column-count: 1; }
+	.poetry_txt { width: 100%; }
+	.other_poetries { column-count: 1; }
+
+	.single_poet_content .single_poet_name.mb20 { margin-bottom: 15px; }
+
+	.more_details_poetry {
+		top: -29px;
+		letter-spacing: 0px; 
+		width: 111px;
+	}
+
+	.alphabetic_list,
+	.alphabetic_list_bottom {
+		max-width: 150px;
+	}
+
+	.alphabetic_list li,
+	.alphabetic_list_bottom li {
+		padding: 4px;
+	}
+
+	.single_poet_name.font29, 
+	.single_poet_name.font28, 
+	.other_poetries .font23 {
+		font-size: 18px;
+	}
+
+	.set_on_column {
+		flex-direction: column;
+	}
+
+	.poems {
+		width: 100%;
+	}
+
+	.poem_lirics {
+		text-align: left;
+	}
+
+}

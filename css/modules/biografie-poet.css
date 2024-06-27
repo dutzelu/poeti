@@ -1,0 +1,6 @@
+.content-article{
+    font-family: Georgia;
+    text-align: justify;
+    color: var(--font-grey-2) !important;
+    line-height: var(--lineHeight-1);
+}

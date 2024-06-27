@@ -1,0 +1,149 @@
+.fisa-biografica {
+    margin: 2rem .9rem;
+    font-size: var(--f-standard);
+    /*letter-spacing: var(--leter-spacing);*/
+    color: var(--grey-2);
+    text-align: center;
+}
+
+.list-links-items {
+    padding: .8rem 0;
+    /*margin: .5rem 0;*/
+    border-bottom: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.list-links-items:hover {
+    background-color: var(--btn-grey);
+    color: var(--black-1);
+}
+
+.list-links-items a {
+    color: var(--grey-2);
+}
+
+.list-links-items a:hover {
+    color: var(--black-1) !important;
+}
+
+.active-link-item {
+    /*background-color: var(--btn-grey);*/
+    /*background-color: var(--btn-grey);*/
+    font-weight: bolder !important;
+}
+
+.active-href {
+    /*color: var(--black-1) !important;*/
+    color: var(--red-1) !important;
+
+    font-weight: bolder;
+}
+
+/*---------------*/
+.col-left {
+    /*min-width: 300px;*/
+    max-width: 350px;
+    width: 100%;
+    /*padding-left: .6rem;*/
+}
+
+.col-left p {
+    font-size: var(--f-small);
+    padding: .2rem .6rem;
+
+}
+
+.col-right {
+    /*min-width: 300px;*/
+
+    max-width: 350px;
+    width: 100%;
+}
+
+.col-right p {
+    font-size: var(--f-small);
+    padding: .2rem .6rem;
+}
+
+.biografy-chapters {
+    margin: 1rem 0 1.2rem 0;
+}
+
+.biografy-title {
+    font-size: var(--f-small);
+    font-weight: bolder;
+    margin-top: 22px;
+}
+
+.biografy-chapters .biografy-ul {
+    margin: .5rem 0 1rem 0;
+    color: var(--grey-2);
+    padding: 0 1rem;
+}
+
+.biografy-links {
+    padding: .1rem 0;
+    margin: .2rem 0;
+    list-style-type: disc;
+    font-size: var(--f-small);
+}
+
+.biografy-work {
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: row;
+    align-content: center;
+    padding-left: .7rem;
+    font-weight: lighter;
+}
+
+.biografy-work svg {
+    fill: #d00;
+    font-family: GFSJackson-Regular, GFS Jackson;
+    font-size: 40px;
+    width: 8px;
+    height: 38px;
+    padding: 2px 2px 0 0;
+}
+
+.biografy-work p {
+    font-size: 16px;
+    color: var(--font-grey-2);
+    font-weight: lighter;
+}
+
+.biografy-icon {
+    color: var(--red-1);
+    padding: 5px 0 0 0;
+    font-size: 6px;
+}
+
+.first-col-biografy {
+    box-sizing: border-box;
+    max-width: 260px;
+    /*padding-right: 1rem;*/
+    width: 100%;
+}
+
+.second-col-biografy {
+    /*padding-left: 30px;*/
+    max-width: 810px;
+    width: 100%;
+    /*border-left: 1px solid black;*/
+}
+
+.second-wrapper {
+    padding-left: 2.5rem;
+    border-left: 1px solid #cdcdcd;
+}
+
+@media screen and (max-width: 768px) {
+    .second-wrapper {
+        padding-left: .5rem;
+        border-left: none;
+    }
+
+    .first-col-biografy {
+        max-width: 100%;
+    }
+}

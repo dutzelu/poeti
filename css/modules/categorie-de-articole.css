@@ -1,0 +1,137 @@
+.col-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+.col-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+}
+.col-md-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.title-h2{
+    color: var(--red-1);
+    font-weight: 900;
+}
+.text-para{
+    font-size: 17px;
+    color: var(--font-grey);
+    text-align: justify;
+    line-height: var(--lineHeight-3);
+}
+.grey-background{
+    background-color: var(--silver-3);
+}
+.info-icon{
+    font-size: .8rem !important;
+    color: var(--red-1);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.info-link{
+    font-size: 1rem;
+}
+.text-articol{
+    padding:  1rem 0;
+}
+.img-book{
+    /*margin: 2px 0;*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    /*height: 180px;*/
+    /*width: 117px;*/
+}
+.picture-info {
+    height: 320px;
+    object-position: center;
+    padding: 15px 0 15px 10px;
+}
+
+.btn-header{
+    height: 36px;
+    padding-top: 17px !important;
+
+}
+@media (max-width: 992px){
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-7{
+        font-size: 0.8rem;
+    }
+    .info-link{
+        font-size: 0.8rem;
+    }
+}
+.title-page{
+    text-transform: uppercase;
+    font-size: 35px;
+    margin:0 0 10px 0;
+}
+@media (max-width: 768px){
+    .picture-info{
+        height: 22rem;
+        object-position: center;
+        padding: 15px 5px;
+    }
+    .title-page{
+        margin: 0;
+    }
+}
+@media (max-width: 576px){
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 1px 0;
+    }
+    .text-para{
+        padding: 5px !important;
+        font-size: 1rem;
+        text-align: left !important;
+    }
+    .col-7{
+        max-width: 88.333333%;
+        line-height: var(--lineHeight-2);
+    }
+    .col-5{
+        max-width: 88.333333%;
+    }
+    .title-h2{
+        padding: 1px 0 5px 5px !important;
+        font-size: 1.2rem;
+    }
+    .info-link{
+        font-size: 0.7rem;
+    }
+    /*a {*/
+    /*    padding: 0.3rem !important;*/
+    /*}*/
+    .text-articol{
+        padding: 2rem;
+    }
+    .picture-info{
+        height: 18rem;
+        object-position: center;
+        padding: 15px 5px;
+    }
+    .title-page{
+        font-size: 25px;
+        margin: 0;
+    }
+}

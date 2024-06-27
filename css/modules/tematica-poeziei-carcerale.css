@@ -1,0 +1,63 @@
+.alfabet{
+    display: flex;
+}
+.alfabet-list {
+    display: flex ;
+    flex-direction: row ;
+    flex-wrap: wrap;
+
+    text-align: center;
+    margin: auto;
+}
+.alfabet-list a {
+    color: var(--font-grey);
+    font-size: 1.5rem;
+    padding: 0 .4rem;
+    text-transform: uppercase;
+}
+.alfabet-list a:hover{
+    color: var(--red-1);
+}
+.poeti-letter{
+    font-size: 2rem;
+    color: var(--red-1);
+    margin: 1rem 0 0 0;
+    /*padding-left: 0.3rem;*/
+}
+.letter-links{
+    padding: 0.3rem;
+    margin: -0.9rem 2rem 1rem 1.7rem;
+    line-height: var(--lineHeight-2);
+}
+.columns-tematica {
+    flex-grow: 1;
+    min-width:250px;
+    width: 275px;
+    margin: .5rem;
+}
+@media screen and (max-width: 1280px) {
+    .columns-tematica{
+        min-width:225px;
+        width: 270px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .columns-tematica{
+        min-width:235px;
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .letter-links{
+        margin: 2px;
+        padding: 2px;
+    }
+    .columns-tematica{
+        min-width:300px;
+        width: 320px;
+        margin: 2px 10px 2px 30px;
+        padding: 2px 10px 2px 10px;
+    }
+}

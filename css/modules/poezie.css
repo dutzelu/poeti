@@ -1,0 +1,59 @@
+.sublink-poezie{
+    color: var(--font-grey);
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.author-title{
+    font-weight: bold;
+    font-size: 17px;
+    color: var(--red-1);
+}
+.author-description {
+    font-size: 17px;
+    font-weight: normal;
+    color: var(--font-grey);
+}
+.alternative_poetry{
+    display: flex;
+    padding: 1rem 0;
+}
+.alternative_title {
+    text-transform: uppercase;
+    color: var(--red-1);
+}
+.alternative_ul {
+    display: flex;
+    justify-content: flex-start;
+}
+.alternative_link {
+    padding: 0 .5rem;
+}
+.alternative_link:hover{
+    color: var(--red-1);
+    font-weight: bolder;
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: var(--transition);
+}
+.poetry_visualization {
+    padding: 1rem 0;
+    color: var(--font-grey);
+}
+
+
+
+@media (max-width: 768px){
+    .sublink-poezie{
+        font-size: 16px
+    }
+    .author-title{
+        font-size: 16px
+    }
+    .author-description{
+        font-size: 16px
+    }
+}
+.border-top{
+    border-top: 1px solid var(--black-1);
+    padding-top: 20px;
+}

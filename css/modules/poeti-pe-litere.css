@@ -1,0 +1,18 @@
+/*.resizable {*/
+/*    resize: horizontal;*/
+/*    overflow: hidden;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    !*padding: 5px;*!*/
+/*    min-width: 350px;*/
+/*    width: 400px;*/
+/*    max-width: 900px;*/
+/*    height: 110px;*/
+/*    aspect-ratio: 16 / 9;*/
+/*}*/
+.poet_birth_location {
+    font-size: 15px;
+}
+
+
+

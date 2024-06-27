@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--black-1);
+    /*eroare buton meniu cu line-height*/
+    /*TODO strica btn-header*/
+    /*line-height: 5px;*/
+}
+.first-para{
+    line-height: 18px;
+}
+.title-main {
+    text-transform: uppercase;
+    font-family: 'Museo300_Regular', sans-serif;
+    font-size: 40px;
+}
+.red-title{
+    font-size: 15px;
+    color: var(--red-1);
+}
+.text-center {
+    text-align: center;
+}
+.bold{
+    font-size: 15px;
+}
+.bold16{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: var(--black-1);
+}
+
+.color-red {
+    color: var(--red-1);
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-book {
+    font-family: Georgia;
+    font-size: 14px !important;
+    padding: 15px 10px 10px 0;
+    margin: 20px 0;
+    text-align: left;
+    line-height: var(--lineHeight-1);
+    line-break: auto;
+    height:180px;
+    width: 117px;
+}
+
+.img-bibliografie{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.picture-bibliografie{
+    height: 200px;
+    width: 140px;
+    object-position: center;
+    padding: 30px 0 15px 0;
+}
+
+.row {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 10px 5px;
+}
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.book-info{
+    margin:  3px;
+    line-height: var(--lineHeight-2);
+}
+
+.columns-bibliografie {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    width: 500px;
+    margin: .5rem;
+}
+
+@media (max-width: 992px) {
+    .row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 20px 0;
+        margin: auto;
+        width: 100%;
+    }
+    .about-book{
+        margin: .6rem 0 ;
+    }
+    .bold{
+        font-size: 16px;
+    }
+    .color-red{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .book-info{
+        font-size: 15px;
+    }
+    .about-book{
+        margin: 30px 2px 5px 2px;
+        padding: 10px 2px;
+    }
+    .bold{
+        font-size: 14px;
+    }
+    .picture-info{
+        padding: 15px 5px;
+    }
+    .red-title{
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 15px;
+    }
+    .book-info{
+        font-size: 12px;
+        line-height: var(--lineHeight-5);
+        padding:0 0 0 5px;
+        margin: 1px;
+    }
+
+    .about-book{
+        margin: 0 2px 10px 2px;
+        padding: 20px 10px 10px 1px;
+    }
+    .picture-bibliografie{
+        height: 200px;
+        width: 117px;
+        object-position: center;
+        padding: 20px 0 15px 0;
+    }
+    .bold{
+            font-size: 15px;
+            line-height: 20px;
+    }
+    .red-title{
+        font-size: 15px;
+    }
+
+}
+.border-bottom-grey{
+    border: 0;
+    height: 1px;
+    background: var(--grey-1);
+}
+/*pagination*/
+
+.pagination {
+    margin: 0.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: var(--red-1);
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

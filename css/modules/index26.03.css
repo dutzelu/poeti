@@ -1,0 +1,40 @@
+.poem-title{
+    font-size:20px;
+}
+
+.gray-border {
+    border:0;
+    background: var(--grey-1);
+    height: 2px;
+}
+.content_poem-index {
+   height: 320px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/*.btn-read{*/
+/*    bottom: 10px;*/
+/*    left: 0;*/
+/*    position: relative;*/
+/*    margin: 10px 0;*/
+/*    padding: 5px 10px;*/
+/*    font-weight: 500;*/
+/*    font-size: 15px;*/
+/*    border: 1px solid red;*/
+/*    !*display: inline-block;*!*/
+/*    !* margin-top: 20px; *!*/
+/*    cursor: pointer;*/
+/*    border-radius: 2px;*/
+/*}*/
+
+
+
+@media screen and (max-width: 768px){
+    .quotation_mark::before {
+        bottom: -19px;
+        /*left: -30px;*/
+    }
+
+}

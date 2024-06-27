@@ -1,0 +1,54 @@
+.carcer-time{
+    padding: 1rem 0;
+    border-left: 1px solid var(--black-1);
+    margin: 0 0 6rem 0;
+}
+.carcer-head{
+    display: flex;
+    /*justify-content: center;*/
+    /*align-content: center;*/
+}
+.prison-time{
+    background-color: var(--black-1);
+    color: var(--white);
+    text-transform: uppercase;
+    padding: .3rem .5rem .3rem 1rem;
+}
+.prison-time-left{
+    border-right:1.5rem solid transparent;
+    border-top:1.9rem solid var(--black-1);
+
+}
+.prison-time-right{
+    border-left:1.5rem solid transparent;
+    border-bottom:1.9rem solid var(--red-1);
+    position: relative;
+    margin-left: -1rem;
+}
+.prison-years{
+    background-color: var(--red-1);
+    color: var(--white);
+    text-transform: uppercase;
+    padding: .3rem .5rem .3rem 1rem;
+}
+ol li {
+    display:list-item;
+    list-style-position: inside;
+    list-style: decimal;
+    border-bottom: 1px solid #ccc;
+
+}
+.carcer-time ol {
+    padding: 1rem;
+    margin: 1rem;
+    display:block ;
+
+
+}
+.carcer-time ol li {
+    padding: 1rem 0 .2rem 1rem;
+}
+.carcer-time ol li span{
+        text-transform: uppercase;
+
+}
