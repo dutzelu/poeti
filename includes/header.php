@@ -4,7 +4,6 @@
 include "db.php";
 include "functii.php";
 include "controllers/slider-header.php";
-
 ?>
 
 <!DOCTYPE html>
