@@ -1,5 +1,18 @@
 <?php
-
+$numeComplet = NULL;
+$fotoBiografie = NULL;
+$numePseudonim = NULL;
+$poetPeFCP = NULL;
+$aliasPoet = NULL;
+$dataNastere = NULL;
+$dataAdormire  = NULL;
+$aniInchisoare = NULL;
+$loculNasterii = NULL;
+$judetulNasterii = NULL;
+$loculMortii = NULL;
+$decesNumeCimitir = NULL;
+$confesiune = NULL;
+$ocupatii = NULL;
 
 // Preiau numele și id-ul poetului din URL
 
@@ -33,9 +46,9 @@
         $poetPeFCP = 'https:/fericiticeiprigoniti.net/' . $pd['alias'];
         $aliasPoet = $pd['alias'];
         
-        $formatter = new IntlDateFormatter("ro_RO", IntlDateFormatter::LONG, IntlDateFormatter::NONE);
-        $dataNastere = $formatter->format(strtotime($pd['data_nastere']));
-        $dataAdormire  = $formatter->format(strtotime($pd['data_adormire']));
+        // $formatter = new IntlDateFormatter("ro_RO", IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+        $dataNastere =  strftime('%d %B %Y', strtotime($pd['data_nastere']));
+        $dataAdormire  =  strftime('%d %B %Y', strtotime($pd['data_adormire']));
         
         $aniInchisoare = $pd['ani_inchisoare'];
         $loculNasterii = $pd['localitate_nastere'];

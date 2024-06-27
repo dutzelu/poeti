@@ -1,6 +1,7 @@
 
 <?php
 
+setlocale(LC_TIME, 'ro_RO');
 include "db.php";
 include "functii.php";
 include "controllers/slider-header.php";
