@@ -1,4 +1,6 @@
 <?php
+
+// declar nule
 $numeComplet = NULL;
 $fotoBiografie = NULL;
 $numePseudonim = NULL;
