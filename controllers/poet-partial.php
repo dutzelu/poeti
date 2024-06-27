@@ -13,6 +13,8 @@ $loculMortii = NULL;
 $decesNumeCimitir = NULL;
 $confesiune = NULL;
 $ocupatii = NULL;
+$dataNastere = NULL;
+$dataAdormire = NULL;
 
 // Preiau numele și id-ul poetului din URL
 
@@ -45,11 +47,8 @@ $ocupatii = NULL;
         $fotoBiografie = BASE_URL . 'images/biografie/'. creare_url_din_titlu($pd['nume'] . ' ' . $pd['prenume']) . '.jpg';
         $poetPeFCP = 'https:/fericiticeiprigoniti.net/' . $pd['alias'];
         $aliasPoet = $pd['alias'];
-        
-        // $formatter = new IntlDateFormatter("ro_RO", IntlDateFormatter::LONG, IntlDateFormatter::NONE);
         $dataNastere =  strftime('%d %B %Y', strtotime($pd['data_nastere']));
         $dataAdormire  =  strftime('%d %B %Y', strtotime($pd['data_adormire']));
-        
         $aniInchisoare = $pd['ani_inchisoare'];
         $loculNasterii = $pd['localitate_nastere'];
         $judetulNasterii = $pd['judet'];
