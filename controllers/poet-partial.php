@@ -61,7 +61,7 @@ $dataAdormire = NULL;
         
     }
         
-        // Poeziile poetului
+        // Poeziile poetului afisate initial
         
         $stmt = $conn->prepare("Select * FROM fcp_poezii WHERE personaj_id = :id");
         
@@ -70,6 +70,66 @@ $dataAdormire = NULL;
         $poezii = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $poeziiPopulare= array_slice ($poezii, 0, 25);
         $poeziiAfisateInitial= array_slice ($poezii, 0, 12);
+        
+        // Toate Poeziile poetului 
+        
+        $stmt = $conn->prepare("Select poezii.*, pers.alias as alias_poet
+        FROM fcp_poezii poezii 
+        left join fcp_personaje pers 
+        on poezii.personaj_id = pers.id 
+        WHERE personaj_id = :id
+        
+        ");
+        
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $toatePoeziilePoetului = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrPoezii = count($toatePoeziilePoetului);
+        // dd($nrPoezii);
+        
+        // Toate Poeziile create in temnita 
+        
+        $stmt = $conn->prepare("
+            SELECT *
+            FROM fcp_poezii fp 
+            WHERE fp.personaj_id  = :id and fp.perioada_creatiei_id =4
+            ");
+        
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrPoeziiDetentie = count($poeziiInDetentie);
+        // dd($nrPoeziiDetentie);
 
-// Poezia pe scurt
+// Paginatie poezii poet
+
+
+if (isset($_GET['pageno'])) {
+    $pageno = $_GET['pageno'];
+} else {
+    $pageno = 1;
+}
+$no_of_records_per_page = 10;
+$offset = ($pageno-1) * $no_of_records_per_page;
+
+$total_rows = $nrPoezii;
+$total_pages = ceil($total_rows / $no_of_records_per_page);
+
+
+// Poezii ale poetului selectate pe pagina 
+
+$sql = "Select poezii.*, pers.alias as alias_poet
+    FROM fcp_poezii poezii 
+    left join fcp_personaje pers 
+    on poezii.personaj_id = pers.id 
+    WHERE personaj_id = :id LIMIT :offset, :no_of_records_per_page;";
+
+$stmt=$conn->prepare($sql);
+$stmt->bindParam(':id',$idPoet,PDO::PARAM_INT);
+$stmt->bindParam(':offset',$offset,PDO::PARAM_INT);
+$stmt->bindParam(':no_of_records_per_page',$no_of_records_per_page,PDO::PARAM_INT);
+$stmt->execute();
+$poeziiPePagina = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$i=1;
+
 

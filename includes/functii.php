@@ -76,3 +76,30 @@ function taiePoezie ($poem, $nr_linii) {
   
   echo $rezumatPoezie;
 }
+ 
+function rezumatPoezie ($string, $wordsreturned)
+{
+    $retval = $string;  //  Just in case of a problem
+    $array = explode(" ", $string);
+    /*  Already short enough, return the whole thing*/
+    if (count($array)<=$wordsreturned)
+    {
+        $retval = $string;
+    }
+    /*  Need to chop of some words*/
+    else
+    {
+        array_splice($array, $wordsreturned);
+        $retval = implode(" ", $array)." ...";
+    }
+    echo $retval;
+}
+
+
+// functie de verificare daca un numar e par sau impar
+
+function numarPar ($n) {
+  global $nr;
+  if ($n & 1) {$nr = "par";} 
+  else {$nr = "impar";}
+}

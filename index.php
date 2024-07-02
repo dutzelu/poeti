@@ -31,10 +31,10 @@ include "controllers/home-partial.php";
 							</div>
 				<!-- Continut -->
 							<div class="poem_content">
-									<?php echo taiePoezie($poem['continut'], 3);?>
+									<?php echo taiePoezie($poem['continut'], 4);?>
 							</div>
 						</div>
-				<!-- Citeste mai mult -->
+						<!-- Citeste mai mult -->
 						<div class="read_more absolute">
 							<?php echo '<a href="' . BASE_URL . 'poezii.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '">' . 'citește mai mult »</a>'; ?>
 						</div>					

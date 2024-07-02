@@ -17,7 +17,9 @@ $query = "
         ON fcp_personaje.nastere_loc_id  = nom_localitati.id
         left join nom_judete
         on nom_localitati.id_judet = nom_judete.id
-        WHERE fcp_personaje.nume LIKE CONCAT(?, '%')";
+        LEFT JOIN fcp_personaje2roluri 
+        ON fcp_personaje.id = fcp_personaje2roluri.personaj_id 
+        WHERE fcp_personaje2roluri.rol_id = 12 AND fcp_personaje.nume LIKE CONCAT(?, '%')";
 $stmt = $pdo->prepare($query);
 $stmt->bindParam(1, $litera, PDO::PARAM_STR);
 $stmt->execute();

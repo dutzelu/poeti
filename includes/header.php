@@ -98,7 +98,7 @@ include "controllers/slider-header.php";
 
 										<?php 
 											foreach ($poetiSlide1 as $poet) {
-												echo '<li><a href="' . BASE_URL . 'poet.php/' . $poet['alias'] . '/' . $poet['id'] . '"><img src="' . BASE_URL . $poet['avatar'] . '" alt = "' . $poet['prenume'] . ' '  . $poet['nume'] . '"></a></li>';
+												echo '<li><a href="' . BASE_URL . 'poezii-poet.php/' . $poet['alias'] . '/' . $poet['id'] . '"><img src="' . BASE_URL . 'images/avatare/' . $poet['avatar'] . '" alt = "' . $poet['prenume'] . ' '  . $poet['nume'] . '"></a></li>';
 											}  							
 										?>
 											 
@@ -109,7 +109,7 @@ include "controllers/slider-header.php";
 
 										<?php 
 											foreach ($poetiSlide2 as $poet) {
-												echo '<li><a href="' . BASE_URL . 'poet.php/' . $poet['alias'] . '/' . $poet['id'] . '"><img src="' . BASE_URL . $poet['avatar'] . '" alt = "' . $poet['prenume'] . ' '  . $poet['nume'] . '"></a></li>';
+												echo '<li><a href="' . BASE_URL . 'poezii-poet.php/' . $poet['alias'] . '/' . $poet['id'] . '"><img src="' . BASE_URL . 'images/avatare/' . $poet['avatar'] . '" alt = "' . $poet['prenume'] . ' '  . $poet['nume'] . '"></a></li>';
 											}  							
 										?>
 									
@@ -144,7 +144,7 @@ include "controllers/slider-header.php";
 										<li><a href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=Z">z</a></li>
 									</ul>
 									<div class="douaBtnHeader">
-										<a class="poetiPeLitere" href="poeti-pe-litere.php">Poeți pe litere »</a>
+										<a class="poetiPeLitere" href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=A">Poeți pe litere »</a>
 										<a class="PoeziiHeader" href="<?php echo BASE_URL;?>poezii.php">Poezii »</a>
 									</div>
 								</div>

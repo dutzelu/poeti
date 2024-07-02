@@ -19,11 +19,11 @@
 }
 
 .list-links-items a {
-    color: var(--grey-2);
+    color: #000;
 }
 
-.list-links-items a:hover {
-    color: var(--black-1) !important;
+li.list-links-items {
+    color: #000 !important;
 }
 
 .active-link-item {

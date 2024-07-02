@@ -232,26 +232,23 @@ footer .content_footer {
 }
 
 /*.read_more a, */
-/*.read_more a:hover,*/
+a.read_more:hover {
+    background:red;
+    color:#FFF;
+}
 .read_more {
-    /*bottom: 0;*/
-    /*left: 40px;*/
-    /*border: 1px solid red;*/
-    /*padding: 3px 8px;*/
-    /*border-radius: 2px;*/
     padding: 5px 10px;
-    font-weight: 500;
     font-size: 15px;
     border: 1px solid red;
+    color:red;
     display: inline-block;
-    /*margin-top: 20px;*/
+    font-weight: bold;
     cursor: pointer;
     border-radius: 2px;
 }
 
-.read_more a, .read_more a:hover, .see_all_thematic a, .see_all_thematic a:hover {
+ .see_all_thematic a, .see_all_thematic a:hover {
     color: var(--red-1);
-    /*text-decoration: underline;*/
     font-size: 14px;
     font-weight: bold;
     text-transform: lowercase;
@@ -1563,8 +1560,9 @@ li {
     font-size: 29px;
 }
 
+
 .poems {
-    width: 42%;
+    width: 50%;
 }
 
 .poem_lirics p {
@@ -1572,8 +1570,12 @@ li {
     font-size: 18px;
 }
 
+.poem_lirics {
+    width:95%;
+}
+
 .poems {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .center_to_bottom {
@@ -1808,6 +1810,10 @@ div.single_poet_letter > a > img {max-width: unset;}
 
 .mb40 {
     margin-bottom: 40px;
+}
+
+.ml15 {
+    margin-left:15px;
 }
 
 .ml20 {

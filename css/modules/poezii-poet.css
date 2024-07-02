@@ -13,21 +13,23 @@
     justify-content: flex-end;
     align-content: center;
     padding: .3rem 0;
+    text-align:right;
 }
 .sidebar-poem-links a{
     font-size: var(--f-standard);
     color: var(--font-grey-2);
-    text-transform: capitalize;
-
 }
 .poem-icon{
     padding: 0 0 0 .5rem;
     color: var(--red-1);
 }
-.poem-search-title{
-    font-size:24px !important;
-    height: 4rem;
-}
+p.poem-title {
+    font-size: 26px !important;
+    height: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 90%;
+  }
 .poem {
     font-size: var(--f-normal);
 }
