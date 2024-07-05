@@ -229,8 +229,8 @@ footer .content_footer {
 .poem_content p {
     margin-bottom: 24px;
     font-size: 18px;
-}
-
+    text-align: left !important;
+  }
 /*.read_more a, */
 a.read_more:hover {
     background:red;

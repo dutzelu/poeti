@@ -1,273 +1,29 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Poeții închisorilor</title>
-    <!--Slick-->
-    <link href="css/slick.css" rel="stylesheet" type="text/css"/>
-    <link href="css/slick-theme.css" rel="stylesheet" type="text/css"/>
+<?php
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+include "includes/header.php";
+include "controllers/poet-partial.php";
 
-    <!--font-awesome-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="loading_container">
-    <div class="loading"></div>
-</div>
-<header>
-    <div class="mt25 mob_remove_mg">
-        <div class="main_container mob_remove_padd">
-            <div class="two">
-                <div class="logop">
-                    <a href="index.html">
-                        <img alt="logo" class="max-width" src="images/Logo_header_PI@2x.png">
-                    </a>
-                </div>
-            </div>
-            <div class="three">
-                <div class="flex_startp width100 pos_rel disp_block mb30">
-                    <div class="flex_startp searchp">
-                        <button class="hide_md menu_mobile" type="button"></button>
-                        <div class="searchp_form">
-                            <form method="POST">
-                                <div class="flex_centerp active_input">
-                                    <input class="input_searchp" name="input-search"
-                                           placeholder="Caută o poezie sau un poet"
-                                           type="text">
-                                    <button class="button_searchp" type="submit"></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="logo_mobie">
-                            <a href="">
-                                <img alt="logo" class="max-width" src="images/logo-mobile.png">
-                            </a>
-                        </div>
-                    </div>
-                    <nav class="nav_widthp">
-                        <ul class="list_style">
-                            <li class="angle_down">
-                                <a href="javascript:;">
-                                    Despre proiect
-                                    <i aria-hidden="true" class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown_list">
-                                    <li class="active_link"><a href="javascript:;">Povestea proiectului</a></li>
-                                    <li><a href="javascript:;">echipa noastră</a></li>
-                                    <li><a href="javascript:;">drepturi de preluare</a></li>
-                                </ul>
-                            </li>
-                            <li class="angle_down">
-                                <a href="javascript:;">
-                                    Bibliografie
-                                    <i aria-hidden="true" class="fa fa-caret-down"></i>
-                                </a>
-                                <ul class="dropdown_list">
-                                    <li class="active_link"><a href="javascript:;">Povestea proiectului</a></li>
-                                    <li><a href="javascript:;">echipa noastră</a></li>
-                                    <li><a href="javascript:;">drepturi de preluare</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:;">Sustine</a></li>
-                            <li><a href="javascript:;">Contact</a></li>
-                        </ul>
-                    </nav>
-
-                    <p class="fcp"><a class="uppercase" href="javascript:;">fcp</a></p>
-                </div>
-                <div class="set_tablet_max_width">
-                    <div class="mob_logo">
-                        <a href="">
-                            <img alt="logo" class="max-width" src="images/logo.jpg">
-                        </a>
-                    </div>
-                    <div class="right_col">
-                        <div class="slick_carousel">
-                            <div>
-                                <ul class="items_list">
-                                    <li><a href="javascript:;"><img alt="poiet1" src="images/poeti/poiet1.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet2" src="images/poeti/poiet2.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet3" src="images/poeti/poiet3.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet4" src="images/poeti/poiet4.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet5" src="images/poeti/poiet5.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet6" src="images/poeti/poiet6.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet7" src="images/poeti/poiet7.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet8" src="images/poeti/poiet8.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet9" src="images/poeti/poiet9.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet10" src="images/poeti/poiet10.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet11" src="images/poeti/poiet11.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet12" src="images/poeti/poiet12.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet13" src="images/poeti/poiet13.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet14" src="images/poeti/poiet14.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet15" src="images/poeti/poiet15.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet16" src="images/poeti/poiet16.jpg"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="items_list">
-                                    <li><a href="javascript:;"><img alt="poiet1" src="images/poeti/poiet1.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet2" src="images/poeti/poiet2.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet3" src="images/poeti/poiet3.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet4" src="images/poeti/poiet4.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet5" src="images/poeti/poiet5.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet6" src="images/poeti/poiet6.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet7" src="images/poeti/poiet7.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet8" src="images/poeti/poiet8.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet9" src="images/poeti/poiet9.jpg"></a></li>
-                                    <li><a href="javascript:;"><img alt="poiet10" src="images/poeti/poiet10.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet11" src="images/poeti/poiet11.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet12" src="images/poeti/poiet12.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet13" src="images/poeti/poiet13.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet14" src="images/poeti/poiet14.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet15" src="images/poeti/poiet15.jpg"></a>
-                                    </li>
-                                    <li><a href="javascript:;"><img alt="poiet16" src="images/poeti/poiet16.jpg"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="alphabetic mb20">
-                            <span class="alphabetic_span red">Indice alfabetic</span>
-                            <ul class="alphabetic_list">
-                                <li><a href="javascript:;">a</a></li>
-                                <li><a href="javascript:;">b</a></li>
-                                <li><a href="javascript:;">c</a></li>
-                                <li><a href="javascript:;">d</a></li>
-                                <li><a href="javascript:;">e</a></li>
-                                <li><a href="javascript:;">f</a></li>
-                                <li><a href="javascript:;">g</a></li>
-                                <li><a href="javascript:;">h</a></li>
-                                <li><a href="javascript:;">i</a></li>
-                                <li><a href="javascript:;">j</a></li>
-                                <li><a href="javascript:;">k</a></li>
-                                <li><a href="javascript:;">l</a></li>
-                                <li><a href="javascript:;">m</a></li>
-                                <li><a href="javascript:;">n</a></li>
-                                <li><a href="javascript:;">o</a></li>
-                                <li><a href="javascript:;">p</a></li>
-                                <li><a href="javascript:;">q</a></li>
-                                <li><a href="javascript:;">r</a></li>
-                                <li><a href="javascript:;">s</a></li>
-                                <li><a href="javascript:;">t</a></li>
-                                <li><a href="javascript:;">u</a></li>
-                                <li><a href="javascript:;">v</a></li>
-                                <li><a href="javascript:;">x</a></li>
-                                <li><a href="javascript:;">z</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clone_class mt10 mb30">
-                <ul class="custom_dropdown flex_spaceb full_custom_dropdown">
-                    <li class="center">
-                        <a class="angle_down" href="javascript:;">
-                            Poetii
-                            <i aria-hidden="true" class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="custom_dropdown_list left">
-                            <li><a href="javascript:;">În temniță și lagăre</a></li>
-                            <li><a href="javascript:;">După eliberare</a></li>
-                            <li><a href="javascript:;">În rezistența din munți</a></li>
-                            <li><a href="javascript:;">În exil</a></li>
-                            <li><a href="javascript:;">În deportarea siberiană</a></li>
-                            <li><a href="javascript:;">Înainte de arestare</a></li>
-                        </ul>
-                    </li>
-                    <li class="center">
-                        <a class="angle_down" href="javascript:;">
-                            Poezia
-                            <i aria-hidden="true" class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="custom_dropdown_list left">
-                            <li><a href="javascript:;">În temniță și lagăre</a></li>
-                            <li><a href="javascript:;">După eliberare</a></li>
-                            <li><a href="javascript:;">În rezistența din munți</a></li>
-                            <li><a href="javascript:;">În exil</a></li>
-                            <li><a href="javascript:;">În deportarea siberiană</a></li>
-                            <li><a href="javascript:;">Înainte de arestare</a></li>
-                        </ul>
-                    </li>
-                    <li class="center">
-                        <a class="angle_down" href="javascript:;">
-                            Momentul creatiei
-                            <i aria-hidden="true" class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="custom_dropdown_list left">
-                            <li><a href="javascript:;">În temniță și lagăre</a></li>
-                            <li><a href="javascript:;">După eliberare</a></li>
-                            <li><a href="javascript:;">În rezistența din munți</a></li>
-                            <li><a href="javascript:;">În exil</a></li>
-                            <li><a href="javascript:;">În deportarea siberiană</a></li>
-                            <li><a href="javascript:;">Înainte de arestare</a></li>
-                        </ul>
-                    </li>
-                    <li class="center">
-                        <a class="angle_down" href="javascript:;">Videoteca</a>
-                    </li>
-                    <li class="center">
-                        <a class="angle_down" href="javascript:;">
-                            In prezent
-                            <i aria-hidden="true" class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="custom_dropdown_list left">
-                            <li><a href="javascript:;">În temniță și lagăre</a></li>
-                            <li><a href="javascript:;">După eliberare</a></li>
-                            <li><a href="javascript:;">În rezistența din munți</a></li>
-                            <li><a href="javascript:;">În exil</a></li>
-                            <li><a href="javascript:;">În deportarea siberiană</a></li>
-                            <li><a href="javascript:;">Înainte de arestare</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+?>
 
 <div class="main_container">
     <div class="flex_start_between remove_flex768">
         <div class="first-col-biografy">
             <div class="display-flex-se mb20">
-                <img alt="Nichifor Crainic" src="./images/nechifor_crainic.jpg">
+              <img src="<?php echo $fotoBiografie; ?>" alt="<?php echo $numeComplet . ' (' . $numePseudonim . ')';?>">
             </div>
             <div class="name_of_author center mb20">
-                <p class="uppercase">Nichifor Crainic</p>
-                <p class="uppercase">(Ion Dobre)</p>
+                 <p class="uppercase"><?php echo $numeComplet;?></p>
+                <p class="uppercase"><?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?></p>
             </div>
-            <div class="fisa-biografica">
-                <ul class="list-links" id="test">
-                    <li class="list-links-items "><a href="fisa-biografica.html">Fisa
-                        biografica</a></li>
-                    <li class="list-links-items active-link-item"><a class="active-href" href="fisa-carcerala.html">Fisa
-                        carcerala</a></li>
-                    <li class="list-links-items"><a href="itinerariu-detentie.html">Intinerariu detentie</a></li>
-                    <li class="list-links-items"><a href="biografie-poet.html">Biografie</a></li>
-                    <li class="list-links-items"><a href="pagina-filtrata-poezii.html">Poezii</a></li>
-                </ul>
-            </div>
+            <?php include 'controllers/menu-biografic.php';?>
         </div>
         <div class="second-col-biografy">
             <div class="wrapper-right">
                 <div class="flex_start_between mb10 remove_flex992">
                     <div class="custom_name_of_author">
-                        <h2>Nichifor Crainic</h2>
+                    <h2><?php echo $numeComplet;?>
+						<?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?>
+						</h2>
                     </div>
                 </div>
                 <div class="carcer-title">
@@ -298,8 +54,8 @@
                         </div>
                         <div class="carcer-right">
                             <button class="btn-carcer" id="first-btn"><i aria-hidden="true"
-                                                                         class="fa fa-angle-double-right click-icon"
-                                                                         id="first-icon"></i>
+                                class="fa fa-angle-double-right click-icon"
+                                id="first-icon"></i>
                             </button>
                         </div>
 
@@ -617,38 +373,7 @@ Jilava (P) <i class="fa fa-angle-double-right"></i> Arestul Tribunalului Militar
 
 
 </div>
-<footer>
-    <div class="main_container">
-        <div class="content_footer">
-            <div class="footer_main_logo font17 semibold relative">
-                <!--					todo footer neproportionat-->
-                <a href="javascript:void(0)"><img alt="Asociatia Ortodoxia Tinerilor"
-                                                  src="images/Logo_footer_Asset_3@2x.png"
-                                                  style="width: 500px"></a>
-                <!--						<p>Un proiect al <span class="silver">Asociatiei Ortodoxia Tinerilor</span></p>-->
-            </div>
-            <div class="footer_second_logo">
-                <a href="javascript:void(0)"><img alt="fericiti cei prigoniti" src="images/fcp_logo.jpg"
-                                                  style="width: 193px"></a>
-            </div>
-            <div class="footer_contact font17">
-                <ul class="footer_contact_net mb20">
-                    <li><a class="fb" href="javascript:void(0)"><i aria-hidden="true" class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="javascript:void(0)"><i aria-hidden="true" class="fa fa-youtube"></i></a></li>
-                    <li><a href="javascript:void(0)"><i aria-hidden="true" class="fa fa-paypal"></i></a></li>
-                    <li><a href="javascript:void(0)"><i aria-hidden="true" class="fa fa-rss"></i></a></li>
-                </ul>
-                <ul>
-                    <li><a href="javascript:void(0)">Despre proiect</a></li>
-                    <li><a href="javascript:void(0)">Bibliografie</a></li>
-                    <li><a href="javascript:void(0)">Sustine</a></li>
-                    <li><a href="javascript:void(0)">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php include "includes/footer.php"; ?>
 <script>
 	const firstBtn = document.getElementById('first-btn');
 	const firstText = document.getElementById('first-text');
@@ -766,8 +491,4 @@ Jilava (P) <i class="fa fa-angle-double-right"></i> Arestul Tribunalului Militar
 	}
 </script>
 
-<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="js/slick.min.js" type="text/javascript"></script>
-<script src="js/main.js" type="text/javascript"></script>
-</body>
-</html>
+

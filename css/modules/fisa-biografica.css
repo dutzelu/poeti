@@ -21,15 +21,14 @@
 .list-links-items a {
     color: #000;
 }
-
+/* 
 li.list-links-items {
     color: #000 !important;
-}
+} */
 
 .active-link-item {
     /*background-color: var(--btn-grey);*/
     /*background-color: var(--btn-grey);*/
-    font-weight: bolder !important;
 }
 
 .active-href {
@@ -120,7 +119,7 @@ li.list-links-items {
 
 .first-col-biografy {
     box-sizing: border-box;
-    max-width: 260px;
+    max-width: 270px;
     /*padding-right: 1rem;*/
     width: 100%;
 }

@@ -23,6 +23,7 @@ $dataAdormire = NULL;
     $url = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $path = parse_url($url, PHP_URL_PATH);
     $parts = explode('/', trim($path, '/'));
+    $numePagina = $parts[count($parts) - 3];
     $numePoet = $parts[count($parts) - 2];
     $idPoet = $parts[count($parts) - 1];
 

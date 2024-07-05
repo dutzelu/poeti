@@ -22,7 +22,7 @@ include "controllers/home-partial.php";
 							<div class="uppercase red semibold font15 mb15">
 				<!-- Autor -->
 				<?php
-							echo '<a class="red" href="' . BASE_URL . 'poet.php/' . $poem['alias'] . '/' . $poem['id_poet'] . '">';
+							echo '<a class="red" href="' . BASE_URL . 'fisa-biografica.php/' . $poem['alias'] . '/' . $poem['id_poet'] . '">';
 							echo $poem['prenume'] . ' ' . $poem['nume']; if ($poem['nume_pseudonim'] == NULL) {echo "";} else {echo ' (' . $poem['nume_pseudonim'] . ')';}?></a>
 							</div>
 				<!-- Titlu -->
@@ -35,8 +35,8 @@ include "controllers/home-partial.php";
 							</div>
 						</div>
 						<!-- Citeste mai mult -->
-						<div class="read_more absolute">
-							<?php echo '<a href="' . BASE_URL . 'poezii.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '">' . 'citește mai mult »</a>'; ?>
+						<div class="read_more">
+							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '">' . 'citește mai mult »</a>'; ?>
 						</div>					
 					</div>
 				

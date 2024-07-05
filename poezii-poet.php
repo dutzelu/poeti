@@ -3,14 +3,6 @@
 include "includes/header.php";
 include "controllers/poet-partial.php";
 
-// Preiau numele și id-ul poetului din URL
-
-$url = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$path = parse_url($url, PHP_URL_PATH);
-$parts = explode('/', trim($path, '/'));
-$numePoet = $parts[count($parts) - 2];
-$idPoet = $parts[count($parts) - 1];
-
 ?>
 
 <div class="main_container">
@@ -65,7 +57,7 @@ $idPoet = $parts[count($parts) - 1];
 
 						<?php rezumatPoezie ($poezie['continut'], 25); ?>
 
-							<p><a class="read_more mt20" href="<?php echo BASE_URL . 'poezii.php/' . $aliasPoet . '/' . creare_url_din_titlu($poezie['titlu'])  . '/' . $poezie['id'];?>">citește mai mult »</a></p>
+							<p><a class="read_more mt20" href="<?php echo BASE_URL . 'poezie.php/' . $aliasPoet . '/' . creare_url_din_titlu($poezie['titlu'])  . '/' . $poezie['id'];?>">citește mai mult »</a></p>
 
 						</div>
 
