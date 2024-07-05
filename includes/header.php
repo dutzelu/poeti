@@ -13,12 +13,12 @@ include "controllers/slider-header.php";
 		<meta charset="utf-8">
 	      <meta name="viewport" content="width=device-width, initial-scale=1">
 	      <title>Poeții închisorilor</title>
-	      <!--Slick-->
+
+	      <link rel="stylesheet" href="<?php echo BASE_URL;?>css/responsive.css">
+	      <link rel="stylesheet" href="<?php echo BASE_URL;?>css/style.css">
 	      <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/slick.css"/>
 	      <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/slick-theme.css"/>
 
-	      <link rel="stylesheet" href="<?php echo BASE_URL;?>css/style.css">
-	      <link rel="stylesheet" href="<?php echo BASE_URL;?>css/responsive.css">
 
 	      <!--font-awesome-->
 	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

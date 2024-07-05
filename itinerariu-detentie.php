@@ -9,19 +9,21 @@ include "controllers/poet-partial.php";
     <div class="flex_start_between remove_flex768">
         <div class="first-col-biografy">
             <div class="display-flex-se mb20">
-                <img alt="Nichifor Crainic" src="./images/nechifor_crainic.jpg">
-            </div>
-            <div class="name_of_author center mb20">
-                <p class="uppercase">Nichifor Crainic</p>
-                <p class="uppercase">(Ion Dobre)</p>
-            </div>
+              <img src="<?php echo $fotoBiografie; ?>" alt="<?php echo $numeComplet . ' (' . $numePseudonim . ')';?>">
+                </div>
+                <div class="name_of_author center mb20">
+                    <p class="uppercase"><?php echo $numeComplet;?></p>
+                    <p class="uppercase"><?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?></p>
+                </div>
             <?php include 'controllers/menu-biografic.php';?>
         </div>
         <div class="second-col-biografy">
             <div class="second-wrapper" style="border-left: none">
                 <div class="flex_start_between mb30 remove_flex992">
                     <div class="custom_name_of_author">
-                        <h2>Nichifor Crainic</h2>
+                        <h2><?php echo $numeComplet;?>
+                            <?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?>
+                        </h2>
                     </div>
                 </div>
                 <!--        recopiat fisa carcerala-->

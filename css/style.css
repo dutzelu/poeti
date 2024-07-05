@@ -1258,7 +1258,7 @@ li {
 .first_col {
     /*border-right: 1px solid #cdcdcd;*/
     box-sizing: border-box;
-    max-width: 270px;
+    width: 270px;
     padding-right: 30px;
     width: 100%;
 }
@@ -1997,6 +1997,10 @@ div.single_poet_letter > a > img {max-width: unset;}
     font-size: 34px;
 }
 
+.font28 {
+    font-size: 28px;
+}
+
 .font20 {
     font-size: 20px;
 }
@@ -2179,4 +2183,8 @@ div.single_poet_letter > a > img {max-width: unset;}
 
 .pr-4 {
     padding-right: 4rem;
+}
+
+.pozaCitat {
+    border-radius:50%;
 }

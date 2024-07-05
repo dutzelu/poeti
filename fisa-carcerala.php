@@ -9,12 +9,12 @@ include "controllers/poet-partial.php";
     <div class="flex_start_between remove_flex768">
         <div class="first-col-biografy">
             <div class="display-flex-se mb20">
-              <img src="<?php echo $fotoBiografie; ?>" alt="<?php echo $numeComplet . ' (' . $numePseudonim . ')';?>">
-            </div>
-            <div class="name_of_author center mb20">
-                 <p class="uppercase"><?php echo $numeComplet;?></p>
-                <p class="uppercase"><?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?></p>
-            </div>
+            <img src="<?php echo $fotoBiografie; ?>" alt="<?php echo $numeComplet . ' (' . $numePseudonim . ')';?>">
+                </div>
+                <div class="name_of_author center mb20">
+                    <p class="uppercase"><?php echo $numeComplet;?></p>
+                    <p class="uppercase"><?php if ($numePseudonim == NULL) {echo "";} else {echo '(' . $numePseudonim . ')';}?></p>
+                </div>
             <?php include 'controllers/menu-biografic.php';?>
         </div>
         <div class="second-col-biografy">

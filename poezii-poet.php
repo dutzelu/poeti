@@ -25,7 +25,7 @@ include "controllers/poet-partial.php";
 
             <?php
 				foreach ($poeziiPopulare as $poezie) {
-					echo '<li><a href="' . BASE_URL . 'poezii.php/' . $aliasPoet . '/' . creare_url_din_titlu($poezie['titlu'])  . '/' . $poezie['id'] . '">' . $poezie['titlu'] . '</a><i aria-hidden="true" class="fa fa-caret-right poem-icon"></i></li>' ;
+					echo '<li><a href="' . BASE_URL . 'poezie.php/' . $aliasPoet . '/' . creare_url_din_titlu($poezie['titlu'])  . '/' . $poezie['id'] . '">' . $poezie['titlu'] . '</a><i aria-hidden="true" class="fa fa-caret-right poem-icon"></i></li>' ;
 				}
 			?>
             </ul>

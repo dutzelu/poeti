@@ -2,15 +2,25 @@
 
 include "includes/header.php";
 include "controllers/home-partial.php";
+
 ?>
 
 		<div class="main_container">
 			<div class="testimonal_section flex_space_between pt25 pb25 mb35">
-				<div class="max_width_400 center red font34">
-					<p>Virgil <span class="uppercase">Mateiaș</span></p>	
+				<div class="center red font28" style="width:28%";>
+					<p>
+						<?php 
+						echo $autorPrenume . ' <span class="uppercase">' . $autorNume . '</span>';
+						if ($autorPseudonim != NULL) {echo ' (' . $autorPseudonim . ')' ;}?>
+					</p>	
 				</div>
-				<div class="max_width_690  quotation_mark relative pl50 pr60">
-					<p>Poezia de detenție cu tematică carcerală nu este altceva decât o istorie în versuri, care a fost mai ușor de ascuns de vigilența paznicilor, de barbaria perchezițiilor, de suspiciunea anchetatorilor și deci, mai lesne de adus la lumină.</p>
+				<div style="width:12%;">
+					<?php 			
+					echo '<img class="pozaCitat" src="' . BASE_URL . 'images/avatare/' . $autorAvatar . '.jpg"/>';?>
+				</div>
+				<div class="quotation_mark relative pl50 pr60" style="width:60%";>
+					<p><?php echo $citatContinut;?></p>
+					<p><?php echo $citatSursa;?></p>
 				</div>				
 			</div>
 
@@ -27,7 +37,7 @@ include "controllers/home-partial.php";
 							</div>
 				<!-- Titlu -->
 							<div class="semibold mb20">
-								<?php echo '<a class="poem-title" href="' . BASE_URL . 'poezii.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '" style="color: black">' . $poem['titlu'];?></a>
+								<?php echo '<a class="poem-title" href="' . BASE_URL . 'poezie.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '" style="color: black">' . $poem['titlu'];?></a>
 							</div>
 				<!-- Continut -->
 							<div class="poem_content">
