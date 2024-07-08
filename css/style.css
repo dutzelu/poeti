@@ -1256,9 +1256,8 @@ li {
 /* Pagina articol */
 
 .first_col {
-    /*border-right: 1px solid #cdcdcd;*/
     box-sizing: border-box;
-    width: 270px;
+    max-width: 270px;
     padding-right: 30px;
     width: 100%;
 }
