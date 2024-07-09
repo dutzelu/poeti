@@ -67,3 +67,61 @@ $numeAutorArticol =  NULL;
 $prenumeAutorArticol = NULL; 
 $aliasArticol = NULL;
 
+
+
+// Selectare un subiect de poezie random, minim 2 poezii
+
+$stmt = $conn->prepare("
+        SELECT f.*, ft.nume as nume_subiect, ft.alias as alias_subiect, fp.nume as nume_poet, fp.prenume as prenume_poet, fp.nume_pseudonim, fp.id as id_poet, fp.alias as alias_poet
+        FROM fcp_poezii f
+        JOIN (
+            SELECT subiect_id
+            FROM fcp_poezii
+            GROUP BY subiect_id
+            HAVING COUNT(*) > 1
+            ORDER BY RAND()
+            LIMIT 1
+        ) AS subq ON f.subiect_id = subq.subiect_id
+
+        left join fcp_taguri ft 
+        on f.subiect_id = ft.id 
+
+        left join fcp_personaje fp 
+        on f.personaj_id = fp.id 
+
+        limit 2"
+);
+$stmt->execute();
+$poeziiPeSubiect = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$subiect = NULL;
+$numePoet =NULL;
+$prenumePoet = NULL;
+$numePseudonim= NULL;
+$aliasPoet = NULL;
+$idPoet = NULL;
+$titluPoezie = NULL;
+$continutPoezie = NULL;
+
+foreach ($poeziiPeSubiect as $poe) {
+    $subiect = $poe['nume_subiect'];
+    $numePoet = $poe['nume_poet'];
+    $prenumePoet = $poe['prenume_poet'];
+    $numePseudonim= $poe['nume_pseudonim'];
+    $aliasPoet = $poe['alias_poet'];
+    $idPoet = $poe['id_poet'];
+    $titluPoezie = $poe['titlu'];
+    $continutPoezie = $poe['continut'];
+}
+
+// Selectare taguri (subiecte) 
+
+$stmt = $conn->prepare("
+        select *
+        from fcp_taguri ft 
+        order by rand()
+        limit 40"
+        );
+$stmt->execute();
+$taguri = $stmt->fetchAll(PDO::FETCH_ASSOC);
+

@@ -1970,6 +1970,10 @@ div.single_poet_letter > a > img {max-width: unset;}
     padding-bottom: 50px;
 }
 
+.pb100 {
+    padding-bottom: 100px;
+}
+
 .pb10 {
     padding-bottom: 10px;
 }

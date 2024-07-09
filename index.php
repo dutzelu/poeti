@@ -32,7 +32,7 @@ include "controllers/home-partial.php";
 							<div class="uppercase red semibold font15 mb15">
 				<!-- Autor -->
 				<?php
-							echo '<a class="red" href="' . BASE_URL . 'fisa-biografica.php/' . $poem['alias'] . '/' . $poem['id_poet'] . '">';
+							echo '<a class="red" href="' . BASE_URL . 'poezii-poet.php/' . $poem['alias'] . '/' . $poem['id_poet'] . '">';
 							echo $poem['prenume'] . ' ' . $poem['nume']; if ($poem['nume_pseudonim'] == NULL) {echo "";} else {echo ' (' . $poem['nume_pseudonim'] . ')';}?></a>
 							</div>
 				<!-- Titlu -->
@@ -170,69 +170,35 @@ include "controllers/home-partial.php";
 			<hr class="gray-border"/>
 
 			<div class="thematic_poems pt50">
-				<div class="title_thematic_poems semibold uppercase center font32 pb50 pt30">
-					<p>Poezii cu subiectul <span class="red">foamea</span></p>
+	
+				<div class="title_thematic_poems semibold uppercase center font32 pb100 pt30">
+					<p>Poezii cu subiectul <span class="red"><?php echo $subiect;?></span></p>
 				</div>
 				<div class="content_thematic_poems">
-<!--					pt10 pb25 mb35-->
+ 
+					<?php foreach ($poeziiPeSubiect as $poe): ?>
 					<div class="pl40 pr35  pb20 mb25 border_left_gray child_poem_section relative">
 						<div class="content_poem">
 							<div class="uppercase red semibold font15 mb15">
-								<p>Radu Gyr</p>
+						
+							<?php	echo '<a class="red" href="' . BASE_URL . 'poezii-poet.php/' . $poe['alias_poet'] . '/' . $poe['id_poet'] . '">';
+							echo $poe['prenume_poet'] . ' ' . $poe['nume_poet']; if ($poe['nume_pseudonim'] == NULL) {echo "";} else {echo ' (' . $poe['nume_pseudonim'] . ')';}?></a>
+						
 							</div>
 							<div class="semibold font29 mb20">
-								<p>Știu că sunt lut</p>
+								<p><?php echo $poe['titlu']; ?></p>
 							</div>
 							<div class="poem_content">
-								<p>Ştiu că sunt lut, dar nu ştiu cine 
-								mi-a pus în piept albine stranii,
-								să-mi scoată mir din mărăcine,
-								din bălării, împărtăşanii.</p>
-								<p>Minunea mea se-ntâmplă vie
-								din mofturi mici şi biete fleacuri…
-								Un colţ de-al meu e-o-mpărăţie,
-								o zi de-a mea răsfrânge veacuri.</p>
-								<p>De nu strâng mările în braţe,
-								prin câte-o baltă tot deretic
-								și gheara mea tot stă să-nhaţe
-								din orice taină câte-un petic.</p>
-								<p>Și dacă-ncălecat pe-o rază
-								ea nu mă urcă-n cer, încalțe</p>
+								<?php echo taiePoezie($poe['continut'], 4); ?>
 							</div>
 						</div>
-						<div class="read_more absolute">
-							<a href="javascript:void(0)">Citește mai departe</a>
-						</div>
+						<div class="read_more">
+							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poe['alias_poet'] . '/' . creare_url_din_titlu($poe['titlu'])  . '/' . $poe['id'] . '">' . 'citește mai mult »</a>'; ?>
+						</div>	
 					</div>
-					<div class="pl40 pr35  pb20 mb25 border_left_gray child_poem_section relative">
-						<div class="content_poem">
-							<div class="uppercase red semibold font15 mb15">
-								<p>Radu Gyr</p>
-							</div>
-							<div class="semibold font29 mb20">
-								<p>Știu că sunt lut</p>
-							</div>
-							<div class="poem_content">
-								<p>Ştiu că sunt lut, dar nu ştiu cine 
-								mi-a pus în piept albine stranii,
-								să-mi scoată mir din mărăcine,
-								din bălării, împărtăşanii.</p>
-								<p>Minunea mea se-ntâmplă vie
-								din mofturi mici şi biete fleacuri…
-								Un colţ de-al meu e-o-mpărăţie,
-								o zi de-a mea răsfrânge veacuri.</p>
-								<p>De nu strâng mările în braţe,
-								prin câte-o baltă tot deretic
-								și gheara mea tot stă să-nhaţe
-								din orice taină câte-un petic.</p>
-								<p>Și dacă-ncălecat pe-o rază
-								ea nu mă urcă-n cer, încalțe</p>
-							</div>
-						</div>
-						<div class="read_more absolute">
-							<a href="javascript:void(0)">Citește mai departe</a>
-						</div>
-					</div>
+					<?php endforeach;?>
+
+
 					<div class="pl40 pr35  pb20 mb25 border_left_darkgray child_poem_section relative">
 						<div class="uppercase font15 semibold mb35">
 <!--							<span class="red font23 title_lspacing">Tematica</span><br/> poeziei carcerale-->
@@ -241,29 +207,9 @@ include "controllers/home-partial.php";
 								Tematica</a></span><br/> poeziei carcerale
 						</div>
 						<ul class="thematic_list mb20">
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
-							<li>bucuria</li>
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
-							<li>bucuria</li>
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
-							<li>bucuria</li>
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
-							<li>bucuria</li>
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
-							<li>bucuria</li>
-							<li>Adevărul</li>
-							<li>pribegia</li>
-							<li>prietenia</li>
+							<?php foreach ($taguri as $tag) {
+								echo '<li>' . strtolower($tag['nume']) . '</li>';
+							}?>
 						</ul>
 						<div class="see_all_thematic absolute">
 							<a href="javascript:void(0)">Vezi toate subiectele &raquo;</a>

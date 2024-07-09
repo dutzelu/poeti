@@ -1,18 +1,12 @@
 <?php
 include 'includes/db.php';
 include 'includes/functii.php';
+include 'controllers/home-partial.php';
 
 
+foreach ($poeziiPeSubiect as $poe) {
 
-articole_din_categ(100);
-dd($articole);
-
-foreach ($articole as $articol) {
-    $idArticol = $articol['id'];
-    $titluArticol = $articol['titlu'];
-    $continutArticol = $articol['continut'];
-    $numeAutorArticol = $articol['nume'];
-    $prenumeAutorArticol = $articol['prenume'];
-    $imagineArticol = $articol['imagine'];
-    $aliasArticol = creare_url_din_titlu ($titluArticol);		
+    echo $poe['nume_poet'] . ' '. $poe['prenume_poet'] . '<br>';
+    echo $poe['titlu'] .  '<br><hr>';
+    echo $poe['continut'] . '<br><hr>';
 }
