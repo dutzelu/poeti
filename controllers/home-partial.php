@@ -88,7 +88,7 @@ $stmt = $conn->prepare("
 
         left join fcp_personaje fp 
         on f.personaj_id = fp.id 
-
+        
         limit 2"
 );
 $stmt->execute();
@@ -120,8 +120,43 @@ $stmt = $conn->prepare("
         select *
         from fcp_taguri ft 
         order by rand()
-        limit 40"
+        limit 30"
         );
 $stmt->execute();
 $taguri = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+
+//
+
+$stmt = $conn->prepare("
+            SELECT fp.id as idPoet, fp.nume, fp.prenume, fp.nume_pseudonim, fp.alias, fp.avatar,
+            DATE_FORMAT(CURDATE(),'%Y') - DATE_FORMAT(data_adormire,'%Y') as difAni,
+            DATE_FORMAT(data_adormire,'%m') as luna, DATE_FORMAT(data_adormire,'%d') as zi
+            FROM fcp_personaje fp
+            LEFT JOIN fcp_personaje2roluri fpr
+            ON fp.id = fpr.personaj_id 
+            WHERE DATE_FORMAT(CURDATE(),'%d')-5 <= DATE_FORMAT(data_adormire,'%d') AND DATE_FORMAT(data_adormire,'%d') <= DATE_FORMAT(CURDATE(),'%d') + 5
+            AND DATE_FORMAT(CURDATE(),'%m') = DATE_FORMAT(data_adormire,'%m')
+            and fpr.rol_id = 12
+            ORDER BY zi ASC"
+        );
+$stmt->execute();
+$poetiComemorari = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+$lunile_anului = array(
+    '1' => 'Ianuarie',
+    '2' => 'Februarie',
+    '3' => 'Martie',
+    '4' => 'Aprilie',
+    '5' => 'Mai',
+    '6' => 'Iunie',
+    '7' => 'Iulie',
+    '8' => 'August',
+    '9' => 'Septembrie',
+    '10' => 'Octombrie',
+    '11' => 'Noiembrie',
+    '12' => 'Decembrie'
+);

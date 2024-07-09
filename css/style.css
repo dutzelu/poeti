@@ -225,7 +225,10 @@ footer .content_footer {
     right: 0px;
     bottom: 0px;
 }
-
+.content_thematic_poems .poem_content, .poem_section .poem_content  {
+    max-height: 450px;
+    overflow: hidden;
+  }
 .poem_content p {
     margin-bottom: 24px;
     font-size: 18px;
@@ -459,12 +462,16 @@ div.content_syntheses_right:nth-child(3) > div:nth-child(2) {margin-left:0px;}
     font-size: 17px;
 }
 
-.thematic_list li:nth-child(odd) {
+.thematic_list li:nth-child(odd) a{
     color: #383838;
 }
 
-.thematic_list li:nth-child(even) {
+.thematic_list li:nth-child(even) a{
     color: #a5a5a5;
+}
+
+.thematic_list li a:hover {
+    color:red;
 }
 
 .see_all_thematic {
@@ -507,7 +514,6 @@ div.content_syntheses_right:nth-child(3) > div:nth-child(2) {margin-left:0px;}
     list-style-type: none;
     color: #383838;
 }
-
 .comm_section span:first-child {
     padding: 0 50px 0 15px;
     letter-spacing: 7px;
@@ -1809,6 +1815,14 @@ div.single_poet_letter > a > img {max-width: unset;}
     margin-top: 40px;
 }
 
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
 .mb15 {
     margin-bottom: 15px;
 }
@@ -1964,6 +1978,10 @@ div.single_poet_letter > a > img {max-width: unset;}
 
 .pt50 {
     padding-top: 50px;
+}
+
+.pt100 {
+    padding-top: 100px;
 }
 
 .pb50 {

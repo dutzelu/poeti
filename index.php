@@ -45,8 +45,8 @@ include "controllers/home-partial.php";
 							</div>
 						</div>
 						<!-- Citeste mai mult -->
-						<div class="read_more">
-							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '">' . 'citește mai mult »</a>'; ?>
+						<div class="red read_more_red">
+							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poem['alias'] . '/' . creare_url_din_titlu($poem['titlu'])  . '/' . $poem['id_poezie'] . '" class="red">' . 'citește mai mult »</a>'; ?>
 						</div>					
 					</div>
 				
@@ -192,8 +192,8 @@ include "controllers/home-partial.php";
 								<?php echo taiePoezie($poe['continut'], 4); ?>
 							</div>
 						</div>
-						<div class="read_more">
-							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poe['alias_poet'] . '/' . creare_url_din_titlu($poe['titlu'])  . '/' . $poe['id'] . '">' . 'citește mai mult »</a>'; ?>
+						<div class="red read_more_red">
+							<?php echo '<a href="' . BASE_URL . 'poezie.php/' . $poe['alias_poet'] . '/' . creare_url_din_titlu($poe['titlu'])  . '/' . $poe['id'] . '" class="red">' . 'citește mai mult »</a>'; ?>
 						</div>	
 					</div>
 					<?php endforeach;?>
@@ -201,27 +201,28 @@ include "controllers/home-partial.php";
 
 					<div class="pl40 pr35  pb20 mb25 border_left_darkgray child_poem_section relative">
 						<div class="uppercase font15 semibold mb35">
-<!--							<span class="red font23 title_lspacing">Tematica</span><br/> poeziei carcerale-->
 							<span class="red font23 title_lspacing">
 								<a href="tematica-poeziei-carcerale.html" style="color: var(--red-1)">
 								Tematica</a></span><br/> poeziei carcerale
 						</div>
 						<ul class="thematic_list mb20">
 							<?php foreach ($taguri as $tag) {
-								echo '<li>' . strtolower($tag['nume']) . '</li>';
+								echo '<li>' . 
+								'<a href="' .  BASE_URL . 'tematica-poeziei-carcerale.php/' . creare_url_din_titlu($tag['nume']) . '/' . $tag['id'] . '">' .
+								strtolower($tag['nume']) . '</a></li>';
 							}?>
 						</ul>
 						<div class="see_all_thematic absolute">
-							<a href="javascript:void(0)">Vezi toate subiectele &raquo;</a>
+							<a href="<?php echo BASE_URL . 'tematica-poeziei-carcerale.php';?>">Vezi toate subiectele &raquo;</a>
 						</div>
 					</div>
 				</div>
 			</div>
 
+<!-- Videoteca 
+
 			<div class="video_section flex_space_between mb35">
 				<div class="uppercase font32 title_video_section">
-<!--					temporar-->
-<!--					<p>videoteca</p>-->
 					<a href="videoteca.html" style="color: white">videotecă</a>
 				</div>
 				<div class="video_section_list">
@@ -274,8 +275,8 @@ include "controllers/home-partial.php";
 					</ul>
 				</div>
 			</div>
-
-			<hr class="red_hr mb20">
+end Videoteca -->
+			<hr class="red_hr mt50 mb20">
 
 			<div class="comm_section relative pb25">
 				<span class="red semibold font34 uppercase">Comemorări</span>
@@ -284,80 +285,35 @@ include "controllers/home-partial.php";
 			</div>
 
 			<div class="all_poets pl10">
-				<div class="single_poet flex_start mb35">
-					<img src="images/poet.jpg" alt="poet">
-					<div class="single_poet_content ml20">
-						<div class="single_poet_name semibold font29 mb20">
-							Nechifor crainic
-						</div>
-						<div class="single_poet_info1 font15 red">
-							11 octombrie
-						</div>
-						<div class="single_poet_info2 font15">
-							57 de aani de la trecerea la Domnul
-						</div>
-					</div>
-				</div>
 
+			<?php foreach ($poetiComemorari as $poetc): 
+				
+				if ($poetc['avatar'] == NULL OR $poetc['avatar'] == '') {
+					$calePoza = BASE_URL . 'images/avatare/poet-necunoscut.jpg';
+				} else {
+					$calePoza = BASE_URL . 'images/avatare/' . $poetc['avatar'];
+				}	
+				
+				
+			?>
 				<div class="single_poet flex_start mb35">
-					<img src="images/poet.jpg" alt="poet">
+					<?php
+					echo '<a href="' . BASE_URL . 'poezii-poet.php/' . $poetc['alias'] . '/' . $poetc['idPoet'] . '"><img src="' . $calePoza . '" alt = "' . $poetc['prenume'] . ' '  . $poetc['nume'] . '"></a>';
+					?>
 					<div class="single_poet_content ml20">
 						<div class="single_poet_name semibold font29 mb20">
-							Nechifor crainic
+							<?php echo $poetc['prenume'] . ' ' . $poetc['nume']; if ($poetc['nume_pseudonim'] == NULL) {echo "";} else echo ' (' . $poetc['nume_pseudonim'] . ')';?>
 						</div>
 						<div class="single_poet_info1 font15 red">
-							11 octombrie
+							<?php echo $poetc['zi'] . ' ' . $lunile_anului[intval($poetc['luna'])];?>
 						</div>
 						<div class="single_poet_info2 font15">
-							57 de aani de la trecerea la Domnul
+						<?php echo $poetc['difAni'] . ' ani de la trecerea la Domnul';?>
 						</div>
 					</div>
 				</div>
-
-				<div class="single_poet flex_start mb35">
-					<img src="images/poet.jpg" alt="poet">
-					<div class="single_poet_content ml20">
-						<div class="single_poet_name semibold font29 mb20">
-							Nechifor crainic
-						</div>
-						<div class="single_poet_info1 font15 red">
-							11 octombrie
-						</div>
-						<div class="single_poet_info2 font15">
-							57 de aani de la trecerea la Domnul
-						</div>
-					</div>
-				</div>
-
-				<div class="single_poet flex_start mb35">
-					<img src="images/poet.jpg" alt="poet">
-					<div class="single_poet_content ml20">
-						<div class="single_poet_name semibold font29 mb20">
-							Nechifor crainic
-						</div>
-						<div class="single_poet_info1 font15 red">
-							11 octombrie
-						</div>
-						<div class="single_poet_info2 font15">
-							57 de aani de la trecerea la Domnul
-						</div>
-					</div>
-				</div>
-
-				<div class="single_poet flex_start mb35">
-					<img src="images/poet.jpg" alt="poet">
-					<div class="single_poet_content ml20">
-						<div class="single_poet_name semibold font29 mb20">
-							Nechifor crainic
-						</div>
-						<div class="single_poet_info1 font15 red">
-							11 octombrie
-						</div>
-						<div class="single_poet_info2 font15">
-							57 de aani de la trecerea la Domnul
-						</div>
-					</div>
-				</div>
+			<?php endforeach;?>
+			
 			</div>
 		</div>
 
