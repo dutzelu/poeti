@@ -300,23 +300,42 @@ a.read_more:hover {
     padding: 45px 30px;
 }
 
+.image-container {
+    width: 310px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+    overflow: hidden;  
+}
+.image-container img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image to fit the container */
+}
+
 .text_content_event {
     overflow: hidden;
-    height: 98px;
+    /* height: 98px; */
     -webkit-line-clamp: 4;
     display: -webkit-box;
     -webkit-box-orient: vertical;
+    width:300px;
 }
 
-.read_more_red {
+.read_more_red a {
     padding: 5px 10px;
-    font-weight: 500;
+    /* font-weight: 500; */
     font-size: 15px;
-    border: 1px solid #4c4b49;
     display: inline-block;
     margin-top: 20px;
     cursor: pointer;
     border-radius: 2px;
+    border: 1px solid #000;
+}
+
+
+.read_more_red a:hover {
+    background:red;
+    color:#FFF!important;
+    border:none!important;
 }
 
 .red_hr {
@@ -386,7 +405,7 @@ a.read_more:hover {
 
 .title_txt_right {
     overflow: hidden;
-    height: 60px;
+    /* height: 60px; */
     -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -402,8 +421,11 @@ a.read_more:hover {
     max-width: 207px;
 }
 
+div.content_syntheses_right:nth-child(3) > div:nth-child(1) {display:none;}
+div.content_syntheses_right:nth-child(3) > div:nth-child(2) {margin-left:0px;}
+
 .more_syntheses {
-    bottom: 0;
+    bottom: -2px;
     right: 0;
 }
 

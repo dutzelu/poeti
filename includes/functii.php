@@ -35,7 +35,7 @@ function replaceSpecialChars ($string){
   function creare_url_din_titlu ($titlu_articol) {
     $titlu_articol = replaceSpecialChars ($titlu_articol);
     
-    $caractere_select = ['.',',','?',';',':'];
+    $caractere_select = ['.',',','?',';',':', '”', '„'];
     $caractere_elim = ['','','','',''];
     $titlu_articol = str_replace($caractere_select, $caractere_elim, $titlu_articol); 
   
@@ -95,11 +95,28 @@ function rezumatPoezie ($string, $wordsreturned)
     echo $retval;
 }
 
+ // Functie selectare articole pe o anumită categorie
 
-// functie de verificare daca un numar e par sau impar
+function articole_din_categ($id) {
+  global $conn, $articole;
+  $stmt = $conn->prepare("
+  select art.*, aut.nume, aut.prenume
+  from fcp_articole art 
+  left join fcp_autori aut
+  on art.autor_id = aut.id 
+  where cat_id = $id
+  order by id desc"
+);
 
-function numarPar ($n) {
-  global $nr;
-  if ($n & 1) {$nr = "par";} 
-  else {$nr = "impar";}
+$stmt->execute();
+return $articole = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$idArticol =  NULL;
+$titluArticol =  NULL;
+$continutArticol =  NULL;
+$numeAutorArticol =  NULL;
+$prenumeAutorArticol = NULL; 
+$aliasArticol = NULL;
+$imagineArticol = NULL;
+
 }

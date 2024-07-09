@@ -45,3 +45,25 @@ foreach ($citate as $citat) {
     $autorAvatar = $citat['alias_autor'];
     $autorAlias = $citat['avatar_autor'];
 }
+
+// Selectare articole cu categoria Povestea Poeziei
+
+$stmt = $conn->prepare("
+        select fart.*, faut.nume, faut.prenume
+        from fcp_articole fart 
+        left join fcp_autori faut
+        on fart.autor_id = faut.id 
+        where cat_id = 4
+        order by id desc
+        limit 3"
+);
+$stmt->execute();
+$articole = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$idArticol =  NULL;
+$titluArticol =  NULL;
+$continutArticol =  NULL;
+$numeAutorArticol =  NULL;
+$prenumeAutorArticol = NULL; 
+$aliasArticol = NULL;
+

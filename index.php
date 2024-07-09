@@ -58,42 +58,45 @@ include "controllers/home-partial.php";
 
 			<div class="events_section mb35">
 				<div class="event_title uppercase font19">
-					<p>Evenimente</p>
+					<p>Povestea poeziei</p>
 				</div>
+
 				<div class="content_evens flex_start_between">
+
+				<?php 
+
+					// articole Povestea poeziei id = 4
+					articole_din_categ(4);
+					$articole = array_slice($articole, 0, 3); // limitez la 3 numarul de articole
+
+					foreach ($articole as $articol):
+						$idArticol = $articol['id'];
+						$titluArticol = $articol['titlu'];
+						$continutArticol = $articol['continut'];
+						$numeAutorArticol = $articol['nume'];
+						$prenumeAutorArticol = $articol['prenume'];
+						$imagineArticol = $articol['imagine'];
+						$aliasArticol = creare_url_din_titlu ($titluArticol);		
+
+				?>
+
 					<div class="content_evens_child">
-						<div class="mb35">
-							<img src="images/events.jpg" alt="events"/>
+						<div class="image-container mb35">
+							<a href="<?php echo BASE_URL . 'articole.php/' . $aliasArticol . '/' . $idArticol; ?>" class="red">
+								<img class="" src="<?php echo BASE_URL . 'images/articole/' . $imagineArticol; ?>" />
+							</a>
 						</div>
 						<div class="semibold font20 text_content_event">
-							<p>Transfigurarea suferinței prin rugăciune şi poezie - Mesajul Patriarhului Daniel la Colocviul de literatură creştină</p>
+							<p><?php echo $titluArticol; ?></p>
 						</div>
 						<div class="red read_more_red">
-							<a href="javascript:void(0)" class="red">citește mai departe</a>
+							<a href="<?php echo BASE_URL . 'articole.php/' . $aliasArticol . '/' . $idArticol; ?>" class="red">citește mai departe</a>
 						</div>
 					</div>
-					<div class="content_evens_child">
-						<div class="mb35">
-							<img src="images/events.jpg" alt="events"/>
-						</div>
-						<div class="semibold font20 text_content_event">
-							<p>Transfigurarea suferinței prin rugăciune şi poezie - Mesajul Patriarhului Daniel la Colocviul de literatură creştină</p>
-						</div>
-						<div class="red read_more_red">
-							<a href="javascript:void(0)" class="red">citește mai departe</a>
-						</div>
-					</div>
-					<div class="content_evens_child">
-						<div class="mb35">
-							<img src="images/events.jpg" alt="events"/>
-						</div>
-						<div class="semibold font20 text_content_event">
-							<p>Transfigurarea suferinței prin rugăciune şi poezie - Mesajul Patriarhului Daniel la Colocviul de literatură creştină Transfigurarea suferinței prin rugăciune şi poezie - Mesajul Patriarhului Daniel la Colocviul de literatură creştină</p>
-						</div>
-						<div class="red read_more_red">
-							<a href="javascript:void(0)" class="red">citește mai departe</a>
-						</div>
-					</div>
+
+					<?php endforeach; $articole = [];?>
+					
+
 				</div>
 			</div>
 
@@ -115,40 +118,44 @@ include "controllers/home-partial.php";
 				</div>
 
 				<div class="syntheses_right">
+
+				<?php 
+
+					// articole Fenomenul Poeziei Carcerale id = 126
+					articole_din_categ(126);
+					$articole = array_slice($articole, 0, 3); // limitez la 3 numarul de articole
+
+					foreach ($articole as $articol):
+						$idArticol = $articol['id'];
+						$titluArticol = $articol['titlu'];
+						$continutArticol = $articol['continut'];
+						$numeAutorArticol = $articol['nume'];
+						$prenumeAutorArticol = $articol['prenume'];
+						$imagineArticol = $articol['imagine'];
+						$aliasArticol = creare_url_din_titlu ($titluArticol);		
+
+				?>
+
 					<div class="content_syntheses_right mt15 pt10 flex_start_between">
 						<div class="img_syntheses_right center">
-							<img src="images/sinteza.png" alt="">
+							<a href="<?php echo BASE_URL . 'articole.php/' . $aliasArticol . '/' . $idArticol; ?>" class="red">
+								<img class="" src="<?php echo BASE_URL . 'images/articole/' . $imagineArticol; ?>" />
+							</a>
 						</div>
 						<div class="txt_syntheses_right ml20">
 							<div class="font22 semibold mb20 title_txt_right">
-<!--								culoare temporara pana se apbroba-->
-								<a href="pagina-articol.html" style="color: black">În ce condiții s-a născut poezia din închisori</a>
+								<a href="<?php echo BASE_URL . 'articole.php/' . $aliasArticol . '/' . $idArticol; ?>" >
+									<?php echo $titluArticol; ?>
+								</a>
 							</div>
 							<div class="gray font17 details_txt_right">
-								<p>În libertate timpul este un dar preţios care îţi permite să faci tot ce doreşti. În închisoare timpul... </p>
+								<p><?php echo rezumatPoezie($continutArticol, 20); ?></p>
 							</div>							
 						</div>
 					</div>
 
-					<div class="content_syntheses_right mt15 pt10 flex_start_between">
-						<div class="img_syntheses_right center">
-							<img src="images/sinteza.png" alt="">
-						</div>
-						<div class="txt_syntheses_right ml20">
-							<div class="font22 semibold mb20 title_txt_right">
-<!--								culoare temporara pana se aproba-->
-								<a href="pagina-articol.html" style="color: black">În ce condiții s-a născut poezia din închisori</a>
-							</div>
-							<div class="gray font17 details_txt_right">
-								<p>În libertate timpul este un dar preţios care îţi permite să faci tot ce doreşti. În închisoare timpul... </p>
-							</div>							
-						</div>
-					</div>
-					
-					<div class="flex_start font22 semibold mt15 pt10 pb20 more_articles mobile_block">
-<!--						<p>Circularea poeziilor prin închisori <span class="red">&raquo;</span></p>-->
-						<p style="font-size: 20px">Ce au reprezentat poetii si poezia lor pentru patimitorii din inchisori <span class="red">&raquo;</span></p>
-					</div>				
+				<?php endforeach; ?>
+		
 
 				</div>
 
@@ -162,7 +169,7 @@ include "controllers/home-partial.php";
 
 			<hr class="gray-border"/>
 
-			<div class="thematic_poems">
+			<div class="thematic_poems pt50">
 				<div class="title_thematic_poems semibold uppercase center font32 pb50 pt30">
 					<p>Poezii cu subiectul <span class="red">foamea</span></p>
 				</div>
