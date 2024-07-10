@@ -3,10 +3,7 @@ include 'includes/db.php';
 include 'includes/functii.php';
 include 'controllers/home-partial.php';
 
-
-foreach ($poeziiPeSubiect as $poe) {
-
-    echo $poe['nume_poet'] . ' '. $poe['prenume_poet'] . '<br>';
-    echo $poe['titlu'] .  '<br><hr>';
-    echo $poe['continut'] . '<br><hr>';
+for ($i = 1; $i <= 10000; $i++) {
+    $class = ($i % 2 !== 0) ? '' : ' class="row pt-1 pb-1' . 'grey-background' . '"';
+    echo '<div' . $class . '>';
 }

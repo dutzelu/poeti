@@ -136,7 +136,7 @@ $stmt = $conn->prepare("
             FROM fcp_personaje fp
             LEFT JOIN fcp_personaje2roluri fpr
             ON fp.id = fpr.personaj_id 
-            WHERE DATE_FORMAT(CURDATE(),'%d')-5 <= DATE_FORMAT(data_adormire,'%d') AND DATE_FORMAT(data_adormire,'%d') <= DATE_FORMAT(CURDATE(),'%d') + 5
+            WHERE DATE_FORMAT(CURDATE(),'%d')-7 <= DATE_FORMAT(data_adormire,'%d') AND DATE_FORMAT(data_adormire,'%d') <= DATE_FORMAT(CURDATE(),'%d') + 7
             AND DATE_FORMAT(CURDATE(),'%m') = DATE_FORMAT(data_adormire,'%m')
             and fpr.rol_id = 12
             ORDER BY zi ASC"

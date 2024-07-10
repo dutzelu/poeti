@@ -7,20 +7,17 @@ include "controllers/home-partial.php";
 
 		<div class="main_container">
 			<div class="testimonal_section flex_space_between pt25 pb25 mb35">
-				<div class="center red font28" style="width:28%";>
-					<p>
+				<div class="center" style="width:15%;">
+					<?php 			
+					echo '<img class="pozaCitat" src="' . BASE_URL . 'images/avatare/' . $autorAvatar . '.jpg"/>';?>
+				</div>
+				<div class="quotation_mark relative pl50 pr60" style="width:85%";>
+					<p><?php echo $citatContinut;?></p>
+					<p class="red mt10">
 						<?php 
 						echo $autorPrenume . ' <span class="uppercase">' . $autorNume . '</span>';
 						if ($autorPseudonim != NULL) {echo ' (' . $autorPseudonim . ')' ;}?>
 					</p>	
-				</div>
-				<div style="width:12%;">
-					<?php 			
-					echo '<img class="pozaCitat" src="' . BASE_URL . 'images/avatare/' . $autorAvatar . '.jpg"/>';?>
-				</div>
-				<div class="quotation_mark relative pl50 pr60" style="width:60%";>
-					<p><?php echo $citatContinut;?></p>
-					<p><?php echo $citatSursa;?></p>
 				</div>				
 			</div>
 
