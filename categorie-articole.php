@@ -16,9 +16,11 @@ include "controllers/categorie-articole-partial.php";
         <li>
         <div class="row pt-1 pb-1">
             <div class="col-7">
-                <h2 class="title-h2 pl-2 pt-1"><?php echo $articol['titlu'];?></h2>
+                <a href="<?php echo BASE_URL . 'articole.php/' . creare_url_din_titlu($articol['titlu']) . '/' . $articol['id'];?>">
+                    <h2 class="title-h2 pl-2 pt-1"><?php echo $articol['titlu'];?></h2>
+                </a>
                 <div class="text-para p-2 content-article" >
-                    <?php echo rezumatPoezie($articol['continut'], 70);?>
+                    <?php echo substr(strip_tags($articol['continut']), 0, 500) . "...";?>
                 </div>
                 <div class="info-link">
                     <a href="<?php echo BASE_URL . 'articole.php/' . creare_url_din_titlu($articol['titlu']) . '/' . $articol['id'];?>" class="p-2 bold-videoteca">citește mai departe

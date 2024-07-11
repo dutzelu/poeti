@@ -30,6 +30,33 @@ a, a:hover {
     text-decoration: none;
 }
 
+.title_cat a {
+    color:#000;
+}
+
+.sageataTitluCategorie {
+    font-size:20px;
+    margin-left:20px;
+}
+h2 {
+    margin:30px 0 10px 0;
+    font-size:20px;
+}
+.content_single_art {
+    font-size:1.1em;
+    text-align: justify;
+    margin-bottom:30px;
+}
+
+.custom_pagination {
+    line-height:42px;
+}
+
+.toatepoeziile .poems {
+    width:32%;
+    margin:5px 0 30px 0!important;
+}
+
 @font-face {
     font-family: 'Museo300_Regular';
     src: url('../fonts/Museo300-Regular.eot'); /* IE9 Compat Modes */
@@ -554,6 +581,33 @@ li {
     list-style: none;
 }
 
+.content_single_art li {
+    list-style: circle;
+    list-style-position: inside;
+  }
+
+.content_single_art ul,.content_single_art ol {
+    margin-bottom:30px;
+}
+.content_single_art ol li{
+    border:none;
+}
+
+ul.tematica {
+    columns: 4;
+    margin-left: 10px;
+    -webkit-columns: -moz-columns: 4;
+    column-gap: 40px;
+}
+
+.tematica > li > a:hover {
+    color: red;
+    }
+
+blockquote {
+    padding: 30px;
+    color:red;
+}
 .hide_md {
     display: none;
 }
@@ -1291,11 +1345,9 @@ li {
 }
 
 
-
-
 .content_single_art p {
-    margin-bottom: 25px;
-}
+    margin-bottom: 12px;
+  }
 
 .lightgray {
     color: #7f7f7f;
@@ -1318,6 +1370,9 @@ li {
     right: 0;
 }
 
+ul.right > li > a:hover {
+	color:red!important;
+}
 
 .share_btn span {
     border: 1px solid #f0f0f0;

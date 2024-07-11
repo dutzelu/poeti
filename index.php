@@ -159,7 +159,7 @@ include "controllers/home-partial.php";
 				<div class="absolute more_syntheses flex_start_between">
 					<div class="triangle_red"></div>
 					<div class="more_syntheses_bg">
-						<a href="javascript:void(0)" class="uppercase">Vezi toate sintezele</a>
+						<a href="<?php echo BASE_URL;?>categorie-articole.php/fenomenul-poeziei-carcerale/126" class="uppercase">Vezi toate sintezele</a>
 					</div>
 				</div>
 			</div>
@@ -210,7 +210,7 @@ include "controllers/home-partial.php";
 							}?>
 						</ul>
 						<div class="see_all_thematic absolute">
-							<a href="<?php echo BASE_URL . 'tematica-poeziei-carcerale.php';?>">Vezi toate subiectele &raquo;</a>
+							<a href="<?php echo BASE_URL . 'tematica-poeziei-carcerale.php?litera=A';?>">Vezi toate subiectele &raquo;</a>
 						</div>
 					</div>
 				</div>

@@ -1,11 +1,26 @@
 <?php
 
-// Selectare articole din baza de date dintr-o categorie
 
 $url = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $path = parse_url($url, PHP_URL_PATH);
 $parts = explode('/', trim($path, '/'));
 $idCateg= (int)$parts[count($parts) - 1];
+
+// Datele despre categorie
+
+$stmt = $conn->prepare("
+        select *
+        from fcp_articole_categorii fac 
+        where id= :id
+    ");
+$stmt->bindParam(':id', $idCateg, PDO::PARAM_INT); 
+$stmt->execute();
+$articoleCategorie = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($articoleCategorie as $art) {
+    $titluCategorie = $art['nume'];
+}
+
+// Toate articole dintr-o categorie
 
 $stmt = $conn->prepare("
         select art.*, categ.nume as nume_categorie
@@ -18,9 +33,7 @@ $stmt = $conn->prepare("
 $stmt->bindParam(':id', $idCateg, PDO::PARAM_INT); 
 $stmt->execute();
 $articoleCategorie = $stmt->fetchAll(PDO::FETCH_ASSOC);
-foreach ($articoleCategorie as $art) {
-    $titluCategorie = $art['nume_categorie'];
-}
+ 
 
 // Paginatie articole din categorie
 
@@ -31,10 +44,10 @@ if (isset($_GET['pageno'])) {
 }
 $no_of_records_per_page = 10;
 $offset = ($pageno-1) * $no_of_records_per_page;
-$total_rows = count($articoleCategorie);
+$total_rows = count($articoleCategorie); // numarul de articole din categorie
 $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-// Articole ale categoriei selectate pe pagină
+// Articole ale categoriei selectate pe pagină - limitate la 10 pe pagină
 
 $sql = "Select *
 FROM fcp_articole

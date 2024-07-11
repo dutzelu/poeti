@@ -5,6 +5,7 @@ setlocale(LC_TIME, 'ro_RO');
 include "db.php";
 include "functii.php";
 include "controllers/slider-header.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -57,33 +58,27 @@ include "controllers/slider-header.php";
 							<nav class="nav_widthp">
 								<ul class="list_style">
 									<li class="angle_down">
-										<a href="index.html">
+										<a href="#">
 											Despre proiect
 											<i class="fa fa-caret-down" aria-hidden="true"></i>
 										</a>
 										<ul class="dropdown_list">
-											<li class="active_link"><a href="index.html">Povestea proiectului</a></li>
-											<li><a href="index.html">echipa noastră</a></li>
-											<li><a href="index.html">drepturi de preluare</a></li>
+											<!-- active_link -->
+											<li><a href="<?php echo BASE_URL; ?>articole.php/povestea-proiectului-poetii-inchisorilor/42">Povestea proiectului</a></li>
+											<li><a href="<?php echo BASE_URL; ?>articole.php/obiective-invatam-istorie-si-cultivam-memorie/46">Obiective</a></li>
+											<li><a href="<?php echo BASE_URL; ?>articole.php/echipa-noastra/43">echipa noastră</a></li>
+											<li><a href="<?php echo BASE_URL; ?>articole.php/conditii-de-preluare-si-citare/44">drepturi de preluare</a></li>
 										</ul>
 									</li>
 									<li class="angle_down">
-										<a href="bibliografie.html">
-											Bibliografie
-											<i class="fa fa-caret-down" aria-hidden="true"></i>
-										</a>
-										<ul class="dropdown_list">
-											<li class="active_link"><a href="index.html">Povestea proiectului</a></li>
-											<li><a href="index.html">echipa noastră</a></li>
-											<li><a href="index.html">drepturi de preluare</a></li>
-										</ul>
+										<a href="<?php echo BASE_URL; ?>articole.php/continutul-si-logica-proiectului-poetii-inchisorilor/45">Ce oferim</a>
 									</li>
-									<li><a href="index.html">Sustine</a></li>
-									<li><a href="index.html">Contact</a></li>
+									<li><a href="<?php echo BASE_URL; ?>articole.php/cateva-moduri-prin-care-ne-poti-sustine-sau-prin-care-poti-deveni-parte-din-echipa/47">Sustine</a></li>
+									<li><a href="<?php echo BASE_URL; ?>articole.php/contact/48">Contact</a></li>
 								</ul>
 							</nav>
 
-							<p class="fcp"><a class="uppercase" href="index.html">fcp</a></p>
+							<p class="fcp"><a class="uppercase" href="https://fericiticeiprigoniti.net" target="_blank">fcp</a></p>
 						</div>
 						<div class="set_tablet_max_width">
 							<div class="mob_logo">

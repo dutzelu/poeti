@@ -8,6 +8,7 @@ $parts = explode('/', trim($path, '/'));
 $aliasArticol = $parts[count($parts) - 2];
 $idArticol= (int)$parts[count($parts) - 1];
 
+
 $stmt = $conn->prepare("
         select art.*, categ.nume as nume_categorie, autori.nume as nume_autor, autori.prenume as prenume_autor
         from fcp_articole art

@@ -39,7 +39,7 @@
     color: transparent;
     border: none;
     outline: none;
-    background: transparent;
+    background: #CCC;
 }
 .slick-prev:hover,
 .slick-prev:focus,

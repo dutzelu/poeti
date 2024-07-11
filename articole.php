@@ -3,6 +3,9 @@
 include "includes/header.php";
 include "controllers/articol-partial.php";
 
+// $fmt = new IntlDateFormatter('ro_ro', NULL, NULL);
+// $fmt->setPattern('d MMMM yyyy');
+
 ?>
 
 
@@ -11,19 +14,26 @@ include "controllers/articol-partial.php";
 		<hr class="red_hr">
 		<div class="title_cat uppercase semibold center">
 			<a href="<?php echo BASE_URL . 'categorie-articole.php/' . creare_url_din_titlu($categorie) . '/' . $categ_id; ?>">
-				<p class="title-page"><?php echo $categorie;?></p>
+				<p class="title-page"><?php echo $categorie;?><span class="sageataTitluCategorie"><i class="fa fa-angle-double-right red" aria-hidden="true"></i></span<</p>
 			</a>
 		</div>
 		<hr class="small_hr">
 
 		<div class="flex_start_between remove_flex768">
 			<div class="first-col border_none">
-				<img src="<?php echo BASE_URL . 'images/articole/' . $imagine;?>" alt="articol">
 
+				<?php
+				if ($imagine != NULL) {
+                            echo '<img src="' . BASE_URL . 'images/articole/' . $imagine . '"' . 'alt="' . $titlu . '">';
+                        } else {
+                            echo '<img src="' . BASE_URL . 'images/articole/articol.jpg' . '" alt=' . $titlu . '">' ;
+
+                        }
+				?>
 				<div class="mt25 font17 mb30">
 					<p><span class="lightgray">Autor:</span> <?php echo $autor;?></p>
-					<p><span class="lightgray">Publicat pe:</span> <?php echo (strftime('%d %B %Y', strtotime($dataPublicare)));?></p>
-					<!-- <p><span class="lightgray">Nr vizualizari:</span> 112</p> -->
+					<p><span class="lightgray">Publicat pe:</span> <?php echo $dataPublicare; ?></p>
+					<!-- echo $fmt->format(new DateTime($dataPublicare)); data in lb romana -->
 				</div>
 
 				<div class="share_btn pb25">
@@ -76,10 +86,12 @@ include "controllers/articol-partial.php";
 				<div class="content_single_art">
 					<?php echo $continut;?>
 				</div>
+				<?php if ($sursa != NULL):?>
 				<div class="source_single_art font17 mb30 semibold">
 					<span class="red">Sursa:</span>
 					<span><?php echo $sursa;?></span>
 				</div>
+				<?php endif;?>
 			</div>
 		</div>
 

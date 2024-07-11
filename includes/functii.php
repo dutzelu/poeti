@@ -120,3 +120,14 @@ $aliasArticol = NULL;
 $imagineArticol = NULL;
 
 }
+
+
+// Calculează câte poezii sunt în total
+
+$stmt = $conn->prepare("select * from fcp_poezii");
+$stmt->execute();
+$total = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$totalPoezii = count($total);
+
+
