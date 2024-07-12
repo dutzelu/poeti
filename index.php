@@ -205,7 +205,7 @@ include "controllers/home-partial.php";
 						<ul class="thematic_list mb20">
 							<?php foreach ($taguri as $tag) {
 								echo '<li>' . 
-								'<a href="' .  BASE_URL . 'tematica-poeziei-carcerale.php/' . creare_url_din_titlu($tag['nume']) . '/' . $tag['id'] . '">' .
+								'<a href="' .  BASE_URL . 'teme.php/' . creare_url_din_titlu($tag['nume']) . '/' . $tag['id'] . '">' .
 								strtolower($tag['nume']) . '</a></li>';
 							}?>
 						</ul>

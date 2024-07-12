@@ -1,7 +1,6 @@
 <?php
 
 include "includes/header.php";
-include "controllers/poezii-tag-partial.php";
 
 ?>
 
@@ -10,7 +9,7 @@ include "controllers/poezii-tag-partial.php";
             <hr class="red_hr">
 
             <div class="title_cat uppercase semibold center">
-                <p class="title-page">Poezii</p>
+                <p class="title-page">Poezii (total: <?php echo $totalPoezii;?>)</p>
             </div>
 
             <hr class="small_hr">

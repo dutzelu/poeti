@@ -131,3 +131,12 @@ $total = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $totalPoezii = count($total);
 
 
+// Calculează câte poezii sunt create în detenție
+
+$stmt = $conn->prepare("select * from fcp_poezii WHERE perioada_creatiei_id = 4");
+$stmt->execute();
+$total = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$poeziiDetentie = count($total);
+
+

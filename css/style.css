@@ -54,7 +54,23 @@ h2 {
 
 .toatepoeziile .poems {
     width:32%;
-    margin:5px 0 30px 0!important;
+    margin:30px 0 30px 0!important;
+}
+.sectiune_teme {
+    display:flex;
+    flex-wrap:wrap;
+}
+.poezie_tag {
+    flex: 0 0 33.3333%;
+    margin-bottom:50px;
+}
+.poezie_tag .poem_content {
+    height:108px;
+    overflow: hidden;
+    width:96%;
+}
+.poezie_tag .result-title {
+    width:96%;
 }
 
 @font-face {
@@ -1331,6 +1347,9 @@ blockquote {
     color: #999;
     font-size: 20px;
     margin-left: 5px;
+}
+.alphabetic_list_bottom .active-link {
+    color:red!important;
 }
 
 /* E N D  Poeti pe litere */
