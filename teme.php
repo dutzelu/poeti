@@ -21,7 +21,13 @@ include ('controllers/teme-partial.php');
     <div class="border-bottom-big"></div>
 
     <div  class="filter-ul">
-           <p class="center"> <?php echo $nrPoeziiTag;?> rezultate</p>
+           <p class="center"> 
+            <?php if ($nrPoeziiTag == 1) {
+                        echo $nrPoeziiTag . ' rezultat';} 
+                        else {echo $nrPoeziiTag . ' rezultate';} 
+            ?> |
+           
+           <a class="red" href="<?php echo BASE_URL . 'tematica-poeziei-carcerale.php?litera=A';?>">  vezi toate subiectele &raquo;</a> </p>
     </div>
 
 
@@ -36,7 +42,10 @@ include ('controllers/teme-partial.php');
                             <p class="result-title"><?php echo $tagP['titlu'];?></p>
                         </div>
                         <div class="sublink-result">
-                            <p><span class="red"><?php echo $tagP['nume'] . ' ' . $tagP['prenume'];?>  </span>| <?php echo $tagP['nr_strofe'];?>x strofe</p>
+                            <p><span class="red">
+                                <?php echo $tagP['prenume'] . ' ' . $tagP['nume'];?>  
+                                <?php if ($tagP['nume_pseudonim'] == NULL) {echo "";} else {echo '(' . $tagP['nume_pseudonim'] . ')';}?> </span>| 
+                                <?php echo $tagP['nr_strofe'];?>x strofe</p>
                             <!-- <p>Creata in detentie | 5 septembrie 1952</p>
                             <p>Penitenciarul Jilava</p> -->
                         </div>
@@ -48,6 +57,7 @@ include ('controllers/teme-partial.php');
                         </div>
                 </div>
             <?php endforeach;?>
+                           
     </div>
         
 

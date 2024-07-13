@@ -199,7 +199,7 @@ include "controllers/home-partial.php";
 					<div class="pl40 pr35  pb20 mb25 border_left_darkgray child_poem_section relative">
 						<div class="uppercase font15 semibold mb35">
 							<span class="red font23 title_lspacing">
-								<a href="tematica-poeziei-carcerale.html" style="color: var(--red-1)">
+								<a href="<?php echo BASE_URL . 'tematica-poeziei-carcerale.php?litera=A';?>" style="color: var(--red-1)">
 								Tematica</a></span><br/> poeziei carcerale
 						</div>
 						<ul class="thematic_list mb20">
@@ -299,7 +299,13 @@ end Videoteca -->
 					?>
 					<div class="single_poet_content ml20">
 						<div class="single_poet_name semibold font29 mb20">
-							<?php echo $poetc['prenume'] . ' ' . $poetc['nume']; if ($poetc['nume_pseudonim'] == NULL) {echo "";} else echo ' (' . $poetc['nume_pseudonim'] . ')';?>
+							<?php 
+							echo '<a href="' . BASE_URL . 'poezii-poet.php/' . $poetc['alias'] . '/' . $poetc['idPoet'] . '">';
+								echo $poetc['prenume'] . ' ' . $poetc['nume']; 
+								if ($poetc['nume_pseudonim'] == NULL) {echo "";} 
+								else {echo ' (' . $poetc['nume_pseudonim'] . ')';}
+							echo '</a>';
+							?>
 						</div>
 						<div class="single_poet_info1 font15 red">
 							<?php echo $poetc['zi'] . ' ' . $lunile_anului[intval($poetc['luna'])];?>

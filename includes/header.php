@@ -140,7 +140,7 @@ include "controllers/slider-header.php";
 									</ul>
 									<div class="douaBtnHeader">
 										<a class="poetiPeLitere" href="<?php echo BASE_URL;?>poeti-pe-litere.php?litera=A">Poeți pe litere »</a>
-										<a class="PoeziiHeader" href="<?php echo BASE_URL;?>poezii.php">Poezii »</a>
+										<a class="PoeziiHeader" href="<?php echo BASE_URL;?>filtre-poezii.php">Poezii »</a>
 									</div>
 								</div>
 							</div>

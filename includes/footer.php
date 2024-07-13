@@ -7,7 +7,7 @@
 						<!--						<p>Un proiect al <span class="silver">Asociatiei Ortodoxia Tinerilor</span></p>-->
 					</div>
 					<div class="footer_second_logo">
-						<a href="javascript:void(0)"><img  style="width: 193px" src="images/fcp_logo.jpg" alt="fericiti cei prigoniti"></a>
+						<a href="javascript:void(0)"><img  style="width: 193px" src="<?php echo BASE_URL;?>images/fcp_logo.jpg" alt="fericiti cei prigoniti"></a>
 					</div>
 					<div class="footer_contact font17">
 						<ul class="footer_contact_net mb20">

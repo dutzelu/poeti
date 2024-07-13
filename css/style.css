@@ -1148,6 +1148,7 @@ blockquote {
     padding: 40px 5px 30px 40px;
     max-width: 250px;
     width: 100%;
+    height:fit-content;
 }
 
 .more_details_poetry {

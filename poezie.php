@@ -29,11 +29,10 @@ include "controllers/poezie-partial.php";
             <div class="source_poetry font17">
                 <p class="author-title">Poezie culeasă de: <?php echo $poem['sursa_culegator'];?></span>
                 </p>
-                <p class="author-title">Sursa: <span class="italic author-description">--conect cu db--</span><span
-                        class="author-description"> --conect cu db--</span>
+                <p class="author-title">Sursa: <span class="italic author-description"> <?php echo $poem['sursa_titlu'];?></span>
                 </p>
             </div>
-            <div class="alternative_poetry">
+            <!-- <div class="alternative_poetry">
                 <p class="alternative_title">Varianta : </p>
                 <ul class="alternative_ul">
                     <li class="alternative_link active-href"> 1</li>
@@ -51,22 +50,22 @@ include "controllers/poezie-partial.php";
                     <li class="alternative_link"> 7</li>
                     |
                 </ul>
-            </div>
+            </div> -->
         </div>
 
         <div class="details_poetry relative mt40">
             <div class="absolute more_details_poetry red uppercase">
                 Detalii poezie
             </div>
-
+<!-- 
             <div class="structure_poetry mb20">
                 <div class="poetry_subtitle uppercase semibold font15 mb10 red">
                     Nr,. variante poezie : --db--
                 </div>
 
-            </div>
+            </div> -->
 
-            <div class="structure_poetry mb20">
+            <div class="structure_poetry mb20 red">
                 <div class="poetry_subtitle uppercase semibold font15 mb10">
                     Perioada creației
                 </div>
@@ -80,19 +79,22 @@ include "controllers/poezie-partial.php";
                     Subiectul poeziei
                 </div>
                 <ul class="poetry_subcategory">
-                    <li><?php echo $poem['subiect'];?></li>
+                    <li><?php echo $poem['tag'];?></li>
                 </ul>
             </div>
-
+            
+        <?php if ($nrTaguriSecundare != NULL):?>
             <div class="structure_poetry mb20">
                 <div class="poetry_subtitle uppercase semibold font15 mb10">
                     Subiecte secundare
                 </div>
                 <ul class="poetry_subcategory">
-                    <li>-db-</li>
-                    <li>-db-</li>
+                    <?php foreach ($taguriSecundare as $tags):?>
+                         <li><?php echo $tags['nume'];?></li>
+                    <?php endforeach;?>
                 </ul>
             </div>
+        <?php endif;?>
 
             <div class="structure_poetry mb20">
                 <div class="poetry_subtitle uppercase semibold font15 mb10">
@@ -108,7 +110,7 @@ include "controllers/poezie-partial.php";
                     Ciclul poeziei
                 </div>
                 <ul class="poetry_subcategory">
-                    <li><?php echo $poem['ciclu'];?></li>
+                    <li><?php echo $poem['nume_ciclu'];?></li>
                 </ul>
             </div>
 
@@ -136,7 +138,7 @@ include "controllers/poezie-partial.php";
                     Rima
                 </div>
                 <ul class="poetry_subcategory">
-                    <li>rima împerecheată</li>
+                    <li><?php echo $poem['nume_rima'];?></li>
                 </ul>
             </div>
 
@@ -145,20 +147,19 @@ include "controllers/poezie-partial.php";
                     Picior metric
                 </div>
                 <ul class="poetry_subcategory">
-                    <li>iamb</li>
+                    <li><?php echo $poem['nume_picior_metric'];?></li>
                 </ul>
             </div>
 
             <div class="structure_poetry">
                 <div class="poetry_subtitle uppercase semibold font15">
-                    Numar de strofe: <span class="red">6</span>
+                    Numar de strofe: <span class="red"><?php echo $poem['nr_strofe'];?></span>
                 </div>
             </div>
-<!--            ==========-->
-         <div class="poetry_visualization">
+
+         <!-- <div class="poetry_visualization">
              Număr accesări : 58
-         </div>
-<!--            ==========-->
+         </div> -->
 
         </div>
 

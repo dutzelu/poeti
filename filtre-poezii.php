@@ -26,7 +26,7 @@ include ('controllers/filtre-poezii-partial.php');
     </div>
 
     <!--filtre-->
-    
+<!--     
     <div class="container">
         <div class="row">
             <div class="row-flex-wrap">
@@ -114,145 +114,56 @@ include ('controllers/filtre-poezii-partial.php');
             </div>
         </div>
     </div>
-    
+     -->
     <!--    nr rezultate -->
     <div class="display-flex red-box">
-        <h3 class="red-box-title"><?php echo $nrPoeziiTag;?> rezultate</h3>
+        <h3 class="red-box-title"><?php echo $totalPoezii;?> rezultate</h3>
     </div>
-    <!--    rezultate-->
-    <div class="container">
-        <div class="row mt-1">
-            <div class="row-flex-wrap">
-                <div class="result-title-container">
-                    <div class="semibold mb5">
-                        <p class="result-title">Unde sunt cei care nu mai sunt</p>
-                    </div>
-                    <div class="sublink-result">
-                        <p><span class="red">Nichifor Crainic  </span>| 6 strofe</p>
-                        <p>Creata in detentie | 5 septembrie 1952</p>
-                        <p>Penitenciarul Jilava</p>
-                    </div>
-                    <div class="poem_content">
-                        <p style="font-size: var(--f-standard)!important; color: var(--font-grey-2) !important">
-                            Întrebat-am vîntul, zburătorul<br/>
-                            Bidiviu pe care-aleargă norul dsa ads dsadsa<br/>
-                            Către-albastre margini de pămînt:<br/>
-                            Unde sînt cei care nu mai sînt?<br/>
-                            Unde sînt cei care nu mai sînt?
-                        </p>
-                        <div class="read_more">
-                            <a href="poezie.html">Citește mai departe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-flex-wrap">
-                <div class="result-title-container">
-                    <div class="semibold mb5">
-                        <p class="result-title">Unde sunt cei care nu mai sunt</p>
-                    </div>
-                    <div class="sublink-result">
-                        <p><span class="red">Nichifor Crainic  </span>| 6 strofe</p>
-                        <p>Creata in detentie | 5 septembrie 1952</p>
-                        <p>Penitenciarul Jilava</p>
-                    </div>
-                    <div class="poem_content">
-                        <p style="font-size: var(--f-standard)!important; color: var(--font-grey-2) !important">
-                            Întrebat-am vîntul, zburătorul<br/>
-                            Bidiviu pe care-aleargă norul dsa ads dsadsa<br/>
-                            Către-albastre margini de pămînt:<br/>
-                            Unde sînt cei care nu mai sînt?<br/>
-                            Unde sînt cei care nu mai sînt?
-                        </p>
-                        <div class="read_more">
-                            <a href="poezie.html">Citește mai departe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-flex-wrap">
-                <div class="result-title-container">
-                    <div class="semibold mb5">
-                        <p class="result-title">Unde sunt cei care nu mai sunt</p>
-                    </div>
-                    <div class="sublink-result">
-                        <p><span class="red">Nichifor Crainic  </span>| 6 strofe</p>
-                        <p>Creata in detentie | 5 septembrie 1952</p>
-                        <p>Penitenciarul Jilava</p>
-                    </div>
-                    <div class="poem_content">
-                        <p style="font-size: var(--f-standard)!important; color: var(--font-grey-2) !important">
-                            Întrebat-am vîntul, zburătorul<br/>
-                            Bidiviu pe care-aleargă norul dsa ads dsadsa<br/>
-                            Către-albastre margini de pămînt:<br/>
-                            Unde sînt cei care nu mai sînt?<br/>
-                            Unde sînt cei care nu mai sînt?
-                        </p>
-                        <div class="read_more">
-                            <a href="poezie.html">Citește mai departe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="mt30 sectiune_teme">
+        <?php foreach ($poeziiPePagina as $poezie):
 
+        $continut =$poezie['continut'];
 
-        </div>
+        ?>
+            <div class="poezie_tag">
+                    <div class="semibold mb5">
+                        <p class="result-title"><?php echo $poezie['titlu'];?></p>
+                    </div>
+                    <div class="sublink-result">
+                        <p><span class="red">
+                            <?php echo $poezie['prenume'] . ' ' . $poezie['nume'];?>  
+                            <?php if ($poezie['nume_pseudonim'] == NULL) {echo "";} else {echo '(' . $poezie['nume_pseudonim'] . ')';}?> </span>| 
+                            <?php echo $poezie['nr_strofe'];?>x strofe</p>
+                        <!-- <p>Creata in detentie | 5 septembrie 1952</p>
+                        <p>Penitenciarul Jilava</p> -->
+                    </div>
+                    <div class="poem_content">
+                        <?php echo $continut;?>
+                    </div>
+                    <div class="read_more_red">
+                        <a href="<?php echo BASE_URL . 'poezie.php/' . $poezie['alias'] . '/' . creare_url_din_titlu($poezie['titlu']) . '/' . $poezie['id'];?>">Citește mai departe</a>
+                    </div>
+            </div>
+        <?php endforeach;?>        
     </div>
-    <!--    border-->
-    <div class="border-grey"></div>
-    <!--    rezultate 2-->
-    <div class="container">
-        <div class="row mb-2">
-            <div class="row-flex-wrap-100">
-                <div class="result-title-container">
-                    <div class="semibold mb5">
-                        <p class="result-title">Unde sunt cei care nu mai sunt</p>
-                    </div>
-                    <div class="sublink-result">
-                        <p><span class="red">Nichifor Crainic  </span>| 6 strofe</p>
-                        <p>Creata in detentie | 5 septembrie 1952</p>
-                        <p>Penitenciarul Jilava</p>
-                    </div>
-                    <div class="poem_content">
-                        <p style="font-size: var(--f-standard)!important; color: var(--font-grey-2) !important">
-                            Întrebat-am vîntul, zburătorul<br/>
-                            Bidiviu pe care-aleaas (...)<br/>
-                            Către-albastre margini de pămînt:<br/>
-                            Unde sînt cei care nu mai sînt?<br/>
-                        </p>
-                        <div class="read_more">
-                            <a href="poezie.html">Citește mai departe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row-flex-wrap-100">
-                <div class="result-title-container">
-                    <div class="semibold mb5">
-                        <p class="result-title">Unde sunt cei care nu mai sunt</p>
-                    </div>
-                    <div class="sublink-result">
-                        <p><span class="red">Nichifor Crainic  </span>| 6 strofe</p>
-                        <p>Creata in detentie | 5 septembrie 1952</p>
-                        <p>Penitenciarul Jilava</p>
-                    </div>
-                    <div class="poem_content">
-                        <p style="font-size: var(--f-standard)!important; color: var(--font-grey-2) !important">
-                            Întrebat-am vîntul, zburătorul<br/>
-                            Bidiviu pe care-aleargă (...))<br/>
-                            Către-albastre margini de pămînt:<br/>
-                            Unde sînt cei care nu mai sînt?<br/>
-                        </p>
-                        <div class="read_more">
-                            <a href="poezie.html">Citește mai departe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-
-        </div>
+    <div class="text-center m-3">
+        <ul class="custom_pagination">
+            <li><a href="?pageno=1">Prima</a></li>
+            <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><i aria-hidden="true" class="fa fa-angle-double-left"></i></a>
+            </li>
+            <?php for ($i; $i<=$total_pages; $i++) {
+                echo '<li><a href="?pageno=' . $i . '">' . $i . '</a></li>';
+            }?>
+            <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a>
+            </li>
+            <li><a href="?pageno=<?php echo $total_pages; ?>">Ultima</a></li>
+        </ul>
     </div>
+
+
 </div>
 
 <?php include ('includes/footer.php');?> 
