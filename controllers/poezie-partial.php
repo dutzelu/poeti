@@ -16,7 +16,8 @@ $stmt = $conn->prepare("
     fcp_poezii_cicluri.name as nume_ciclu, 
     fcp_poezii_specii.nume as specie, 
     fcp_poezii_rime.nume as nume_rima, 
-    fcp_poezii_picioaremetrice.nume as nume_picior_metric
+    fcp_poezii_picioaremetrice.nume as nume_picior_metric,
+    fcp_articole.id id_articol_comentariu, fcp_articole.titlu as titlu_articol_comentariu, fcp_articole.continut as continut_articol_comentariu
 
     from fcp_poezii  
 
@@ -37,6 +38,9 @@ $stmt = $conn->prepare("
 
     left join fcp_poezii_rime
     on fcp_poezii.rima_id = fcp_poezii_rime.id
+
+    left join fcp_articole
+    on fcp_articole.id = fcp_poezii.comentariu_articol_id 
 
     left join fcp_poezii_picioaremetrice
     on fcp_poezii_picioaremetrice.id  = fcp_poezii.picior_metric_id 

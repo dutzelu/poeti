@@ -79,7 +79,11 @@ include "controllers/poezie-partial.php";
                     Subiectul poeziei
                 </div>
                 <ul class="poetry_subcategory">
-                    <li><?php echo $poem['tag'];?></li>
+                    <li>
+                        <a href="<?php echo BASE_URL . 'teme.php/' . creare_url_din_titlu($poem['tag']) . '/' . $poem['tag_id']; ?>">
+                            <?php echo $poem['tag'];?>
+                        </a>
+                    </li>
                 </ul>
             </div>
             
@@ -90,7 +94,7 @@ include "controllers/poezie-partial.php";
                 </div>
                 <ul class="poetry_subcategory">
                     <?php foreach ($taguriSecundare as $tags):?>
-                         <li><?php echo $tags['nume'];?></li>
+                         <li><a href="<?php echo BASE_URL . 'teme.php/' . creare_url_din_titlu($tags['nume']) . '/' . $tags['id']; ?>"><?php echo $tags['nume'];?></a></li>
                     <?php endforeach;?>
                 </ul>
             </div>
@@ -164,9 +168,9 @@ include "controllers/poezie-partial.php";
         </div>
 
     </div>
+<!-- Variante audio
 
     <div class="section_audio_poetry">
-        <!-- Varianta 1 -->
         <div class="audio_version_no pb10">
             <div class="audio_poetry uppercase semibold font17">
                 <p>Interpretare audio <span class="silver">[varianta 1]</span></p>
@@ -181,9 +185,7 @@ include "controllers/poezie-partial.php";
 
             <hr class="big_gray_hr"/>
         </div>
-        <!-- E N D  Varianta 1 -->
 
-        <!-- Varianta 2 -->
         <div class="audio_version_no pb10">
             <div class="audio_poetry uppercase semibold font17">
                 <p>Interpretare audio <span class="silver">[varianta 2]</span></p>
@@ -198,9 +200,8 @@ include "controllers/poezie-partial.php";
 
             <hr class="big_gray_hr"/>
         </div>
-        <!-- E N D  Varianta 2 -->
 
-    </div>
+    </div> -->
 
 
     <div class="poetry_story flex_between mb35">
@@ -209,16 +210,7 @@ include "controllers/poezie-partial.php";
                 <p>povestea poeziei</p>
             </div>
             <div class="poetry_story_content">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                    esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                    pariatur?"</p>
+                
             </div>
         </div>
         <div class="poetry_story_comment">
@@ -226,16 +218,7 @@ include "controllers/poezie-partial.php";
                 <p>comentariu</p>
             </div>
             <div class="poetry_story_content">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                    esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                    pariatur?"</p>
+                <?php echo $poem['continut_articol_comentariu'];?>
             </div>
         </div>
     </div>
