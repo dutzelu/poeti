@@ -75,6 +75,11 @@ h2 {
 
 div.structure_poetry > ul > li > a:hover {color:red!important;}
 
+.cinciPoezii {
+    flex:1 0 0;
+    width:0;
+}
+
 @font-face {
     font-family: 'Museo300_Regular';
     src: url('../fonts/Museo300-Regular.eot'); /* IE9 Compat Modes */

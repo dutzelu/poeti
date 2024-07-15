@@ -2,6 +2,7 @@
 
 include "includes/header.php";
 include "controllers/poet-partial.php";
+
 ?>
 
 		<div class="main_container">
@@ -28,37 +29,83 @@ include "controllers/poet-partial.php";
 						<div class="details_of_author mb15">
 							<p><span>Data nașterii: </span><span><?php echo $dataNastere;?></span></p>
 							<p><span>Locul nașterii: </span><span><?php echo $loculNasterii . ', jud. ' . $judetulNasterii;?></span></p>
-							<p><span>Religia: </span><span><?php echo $confesiune;?></span></p>
+							<p><span>Naționalitate: </span><span><?php echo $nationalitate;?></span></p>
+							<p><span>Religie/confesiune: </span><span><?php echo $confesiune;?></span></p>
 							<p><span>Ocupație: </span><span><?php echo $ocupatii; ?></span></p>
+						</div>
+						<div class="details_of_author mb15">
 							<p><span>Data adormirii: </span><span><?php echo $dataAdormire;?></span></p>
 							<p><span>Locul morții: </span><span><?php echo $loculMortii; ?></span></p>
 							<p><span>Locul înmormântării: </span><span><?php echo $decesNumeCimitir; ?></span></p>
-						</div>
-						<div class="details_of_author mb15">
-							<p><span>Ocupația la arestare: </span><span></span></p>
-							<p><span>Număr de condamnări: </span><span><?php ?></span></p>
-							<p><span>Condamnat la: </span><span><?php ?> de ani </span></p>
-							<p><span>Întemnițat timp de: </span><span><?php echo $aniInchisoare;?> ani</span></p>
-							<p><span>Întemnițat la: </span><span><?php ?></span></p>
+							<p><span>Părinții: </span><span>
+								<?php 
+									if ($prenumeMama !==NULL AND $prenumeTata !== NULL){
+										echo $prenumeTata . ' și ' . $prenumeMama;
+									}
+								
+								?></span></p>
+							<p><span>Copiii: </span><span>
+								<?php 
+								
+								if ($baieti != NULL) {
+									if ($baieti == 1){
+										echo 'un băiat';
+									} else {
+										echo $baieti . ' băieți';
+									}
+								}
+								
+								if ($baieti !== NULL AND $fete !== NULL) {
+									echo ' și ';
+								}
+
+								if ($fete != NULL) {
+									if ($fete == 1){
+										echo 'o fată';
+									} else {
+										echo $fete . ' fete';
+									}
+								}
+								
+								
+								?></span></p>
 						</div>
 					</div>
-					<div class="author_confess mb20">
-						<a href="<?php echo $poetPeFCP;?>" class="custom_go_to_page"><span>Mărturii despre <?php echo $numeComplet;?></span></a>
-					</div>
-					<div class="about_auth">
+	
+					<div class="about_auth mt50">
+
+						<div class="about_auth_title mb15">
+							<h3>Profesiuni, funcții și demnități publice</h3>
+						</div>
+						<ul class="list_of_articles mb30">
+							<?php foreach ($functii as $functie) :
+								echo '<li>' . $functie['data_start'] . ' - ' . $functie['data_end'] . ': ' . $functie['nume'] . '</li>';
+							endforeach;?>
+						</ul>
+
+						<div class="about_auth_title mb15">
+							<h3>Premii, distincții și afilieri socio-profesionale</h3>
+						</div>
+						<ul class="list_of_articles mb30">
+							<?php foreach ($distinctii as $distinctie) :
+								echo '<li>' . $distinctie['data'] . ' - ' . $distinctie['titlu_primit'] . '</li>';
+							endforeach;?>
+						</ul>
+
 						<div class="about_auth_title mb15">
 							<h3>Opera</h3>
 						</div>
 						<ul class="list_of_articles mb30">
 							<li><a href="javascript:;">-</a></li>
-
 						</ul>
+
 						<div class="about_auth_title mb15">
 							<h3>Cărți despre poet</h3>
 						</div>
 						<ul class="list_of_articles mb30">
 							<li><a href="javascript:;">-</a></li>
 						</ul>
+
 					</div>
 				</div>
 			</div>	

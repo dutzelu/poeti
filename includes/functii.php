@@ -140,3 +140,52 @@ $total = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $poeziiDetentie = count($total);
 
 
+
+// Date despre poet 
+
+function poetData($idPoet) {
+
+  global $conn, $idPoet, $pd;
+  
+  $stmt = $conn->prepare("
+  select fp.*, nl.nume as localitate_nastere, nj.nume as judet, fc.nume as confesiune, fn.nume as nationalitate 
+  from fcp_personaje fp 
+  left join nom_localitati nl 
+  on fp.nastere_loc_id = nl.id 
+  left join nom_judete nj 
+  on nl.id_judet = nj.id 
+  left join fcp_confesiuni fc 
+  on fp.confesiune_id = fc.id 
+  left join fcp_nationalitati fn 
+  on fp.nationalitate_id = fn.id 
+  where fp.id = :id  
+  ");
+  
+  $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+  $stmt->execute();
+  $poetData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  
+  foreach ($poetData as $pd) {
+    
+    $numeComplet = $pd['prenume'] . ' ' . $pd['nume'];
+    $numePseudonim = $pd['nume_pseudonim'];
+    $fotoBiografie = BASE_URL . 'images/biografie/'. creare_url_din_titlu($pd['nume'] . ' ' . $pd['prenume']) . '.jpg';
+    $poetPeFCP = 'https:/fericiticeiprigoniti.net/' . $pd['alias'];
+    $aliasPoet = $pd['alias'];
+    $dataNastere =  strftime('%d %B %Y', strtotime($pd['data_nastere']));
+    $dataAdormire  =  strftime('%d %B %Y', strtotime($pd['data_adormire']));
+    $aniInchisoare = $pd['ani_inchisoare'];
+    $loculNasterii = $pd['localitate_nastere'];
+    $judetulNasterii = $pd['judet'];
+    $loculMortii = $pd['deces_locul_mortii'];
+    $decesNumeCimitir = $pd['deces_nume_cimitir'];
+    $confesiune = $pd['confesiune'];
+    $ocupatii = $pd['ocupatii_socioprofesionale'];
+    $confesiune = $pd['confesiune'];
+    $nationalitate = $pd['nationalitate'];
+    $prenumeTata = $pd['prenume_tata'];
+    $prenumeMama = $pd['prenume_mama'];
+    $baieti = $pd['count_copii_b'];
+    $fete = $pd['count_copii_f'];
+  }
+}

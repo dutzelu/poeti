@@ -49,7 +49,9 @@ include "controllers/poet-partial.php";
 					<div class="poems">
 						<div class="poem_title">
                         <p class="poem-title">
-							<?php echo $poezie['titlu'];?>
+                            <a href="<?php echo BASE_URL . 'poezie.php/' . $aliasPoet . '/' . creare_url_din_titlu($poezie['titlu'])  . '/' . $poezie['id'];?>">
+							    <?php echo $poezie['titlu'];?>
+                            </a>    
                         </p>
 						</div>
 							

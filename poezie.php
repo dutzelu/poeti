@@ -210,7 +210,7 @@ include "controllers/poezie-partial.php";
                 <p>povestea poeziei</p>
             </div>
             <div class="poetry_story_content">
-                
+            <?php echo $poem['continut_povestea_poeziei'];?>
             </div>
         </div>
         <div class="poetry_story_comment">
@@ -224,92 +224,66 @@ include "controllers/poezie-partial.php";
     </div>
 
     <div class="event_title uppercase font19">
-        <p>Alte poezii de nechifor crainic</p>
+            <p>Alte poezii de <?php echo $poem['prenume'] . ' ' . $poem['nume']; if ($poem['nume_pseudonim'] == NULL) {echo "";} else {echo ' (' . $poem['nume_pseudonim'] . ')';}?>
+                </p>
     </div>
 
     <hr class="small_border"/>
 
 
     <ul class="flex_between other_poetries mb20">
-        <li class="border_left_gray">
-            <div class="semibold font23 mb10">
-                <p>Noaptea învierii</p>
-            </div>
-            <div class="red semibold font15 mb15">
-                <p>creată în temnițe și lagăre</p>
-            </div>
-        </li>
-        <li class="border_left_gray">
-            <div class="semibold font23 mb10">
-                <p>Cântecul potirului</p>
-            </div>
-            <div class="red semibold font15 mb15">
-                <p>creată în temnițe și lagăre</p>
-            </div>
-        </li>
-        <li class="border_left_gray">
-            <div class="semibold font23 mb10">
-                <p>Șoim peste prăpastie</p>
-            </div>
-            <div class="red semibold font15 mb15">
-                <p>creată în deportare</p>
-            </div>
-        </li>
-        <li class="border_left_gray">
-            <div class="semibold font23 mb10">
-                <p>Prolog</p>
-            </div>
-            <div class="red semibold font15 mb15">
-                <p>creată în deportare</p>
-            </div>
-        </li>
-        <li class="border_left_gray">
-            <div class="semibold font23 mb10">
-                <p>Portret</p>
-            </div>
-            <div class="red semibold font15 mb15">
-                <p>creată în deportare</p>
-            </div>
-        </li>
+        <?php foreach ($cinciPoeziiPoet as $cinci):?>
+            <div class="cinciPoezii">
+                <a href="<?php echo BASE_URL . 'poezie.php/' . $poem['alias'] . '/' . creare_url_din_titlu($cinci['titlu'] . '/' . $cinci['id']);?>">
+            <li class="border_left_gray">
+                <div class="semibold font23 mb10">
+                    <p><?php echo $cinci['titlu'];?></p>
+                </div>
+                <div class="red semibold font15 mb15">
+                    <p>creată: <?php echo $cinci['perioada_creatiei'];?></p>
+                </div>
+            </li>
+        </a>
+        </div>
+        <?php endforeach;?>
     </ul>
 
     <div class="see_all_potries right font15 semibold mb35">
-        <a href="javascript:void(0)">Vezi toate poeziile acestui autor</a>
-        <a class="see_all_arrow" href="javascript:void(0)"><i aria-hidden="true" class="fa fa-long-arrow-right"></i></a>
+        <a href="<?php echo BASE_URL . 'poezii-poet.php/' . $poem['alias'] . '/' . $idPoet;?>">Vezi toate poeziile acestui autor <i aria-hidden="true" class="fa fa-long-arrow-right"></i></a>
     </div>
 
     <div class="single_poet flex_start mb35 btn_poet">
-        <img alt="poet" src="/images/nechifor_crainic.jpg">
+        <img width="300" alt="poet" src="<?php echo $fotoBiografie;?>">
         <div class="single_poet_content pl50 width100">
             <div class="single_poet_name border_b_red semibold font17 pr40 pb10 mb20">
-                Nechifor Crainic
+                <p><?php echo '<a class="red" href="' . BASE_URL . 'fisa-biografica.php/' . $poem['alias'] . '/' . $poem['id_poet'] . '">';
+                echo $poem['prenume'] . ' ' . $poem['nume']; if ($poem['nume_pseudonim'] == NULL) {echo "";} else {echo ' (' . $poem['nume_pseudonim'] . ')';}?></a>
+                </p>
             </div>
 
             <div class="flex_start poet_info">
                 <ul class="poet_info1 pr40 font17">
-                    <li><span>Nascut:</span> 22 Decembrie 1889</li>
-                    <li><span>Locul nasterii:</span> Bulbucata, Giurgiu</li>
-                    <li><span>Ocupatia la arestare:</span> poet, profesor, ziarist</li>
-                    <li><span>Intemnitat timp de:</span> 15 ani</li>
-                    <li><span>Intemnitat la:</span> Jilava, Vaicaresti, Aiud</li>
-                    <li><span>Data adormirii:</span> 20 August 1972</li>
+                           <li><span>Data nașterii: </span><span><?php echo $dataNastere;?></span></li>
+							<li><span>Locul nașterii: </span><span><?php echo $loculNasterii . ', jud. ' . $judetulNasterii;?></span></li>
+							<li><span>Naționalitate: </span><span><?php echo $nationalitate;?></span></li>
+							<li><span>Religie/confesiune: </span><span><?php echo $confesiune;?></span></li>
+							<li><span>Ocupație: </span><span><?php echo $ocupatii; ?></span></li>
                 </ul>
                 <ul class="poet_info2 font17">
                     <li>
                         <span>Site-uri:</span>
-                        <p>Poezii Nechifor Crainic</p>
-                        <p>Citate Nechifor Crainic</p>
+                        <p>--db--</p>
+                        <p>--db--</p>
                     </li>
                 </ul>
             </div>
 
             <div class="poet_testimonials font15 semibold mb15 red">
-                <a class="red" href="javascript:void(0)">Mărturii despre Nechifor Crainic</a>
-                <a class="testimonials_arrow" href="javascript:void(0)"><i aria-hidden="true"
-                                                                           class="fa fa-long-arrow-right"></i></a>
+                <a class="red" href="https://fericiticeiprigoniti.net/<?php echo $aliasPoet;?>">Mărturii despre Nechifor Crainic</a>
+                <a class="testimonials_arrow" href="javascript:void(0)">
+                    <i aria-hidden="true" class="fa fa-long-arrow-right"></i></a>
             </div>
-            <button class="font18">Biografie</button>
-            <button class="font18">Sinteza operei</button>
+            <button onclick="document.location='<?php echo BASE_URL . 'biografie-poet.php/' . $aliasPoet . '/' . $idPoet; ?>'" class="font18">Biografie</button>
         </div>
     </div>
 </div>

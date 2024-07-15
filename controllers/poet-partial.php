@@ -29,15 +29,19 @@ $dataAdormire = NULL;
 
 // Date despre poet 
 
-    $stmt = $conn->prepare("Select fcp_personaje.*, nom_localitati.nume as localitate_nastere, nom_judete.nume as judet, fcp_confesiuni.nume as confesiune
-        FROM fcp_personaje 
-        LEFT JOIN nom_localitati
-        ON fcp_personaje.nastere_loc_id  = nom_localitati.id
-        left join nom_judete
-        on nom_localitati.id_judet = nom_judete.id
-        left join fcp_confesiuni
-        on fcp_personaje.confesiune_id = fcp_confesiuni.id
-        WHERE fcp_personaje.id = :id");
+    $stmt = $conn->prepare("
+        select fp.*, nl.nume as localitate_nastere, nj.nume as judet, fc.nume as confesiune, fn.nume as nationalitate 
+        from fcp_personaje fp 
+        left join nom_localitati nl 
+        on fp.nastere_loc_id = nl.id 
+        left join nom_judete nj 
+        on nl.id_judet = nj.id 
+        left join fcp_confesiuni fc 
+        on fp.confesiune_id = fc.id 
+        left join fcp_nationalitati fn 
+        on fp.nationalitate_id = fn.id 
+        where fp.id = :id  
+    ");
 
     $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
     $stmt->execute();
@@ -59,6 +63,12 @@ $dataAdormire = NULL;
         $decesNumeCimitir = $pd['deces_nume_cimitir'];
         $confesiune = $pd['confesiune'];
         $ocupatii = $pd['ocupatii_socioprofesionale'];
+        $confesiune = $pd['confesiune'];
+        $nationalitate = $pd['nationalitate'];
+        $prenumeTata = $pd['prenume_tata'];
+        $prenumeMama = $pd['prenume_mama'];
+        $baieti = $pd['count_copii_b'];
+        $fete = $pd['count_copii_f'];
         
     }
         
@@ -100,7 +110,39 @@ $dataAdormire = NULL;
         $stmt->execute();
         $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $nrPoeziiDetentie = count($poeziiInDetentie);
-        // dd($nrPoeziiDetentie);
+        
+        
+        // Distincțiile poetului
+
+        $stmt = $conn->prepare("
+            SELECT *
+            FROM fcp_personaje_distinctii fpd
+            WHERE fpd.personaj_id  = :id
+            ");
+        
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $distinctii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrDistinctii = count($distinctii);
+
+        
+        // Functii ale poetului
+
+        $stmt = $conn->prepare("
+            select *
+            from fcp_personaje2functii fpf 
+            left join fcp_personaje_functii fpf2 
+            on fpf.functie_id = fpf2.id 
+            where fpf.personaj_id = :id
+            ");
+        
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $functii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrfunctii = count($functii);
+
+
+
 
 // Paginatie poezii poet
 
