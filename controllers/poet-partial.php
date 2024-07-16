@@ -69,79 +69,78 @@ $dataAdormire = NULL;
         $prenumeMama = $pd['prenume_mama'];
         $baieti = $pd['count_copii_b'];
         $fete = $pd['count_copii_f'];
-        
     }
         
-        // Poeziile poetului afisate initial
+// Poeziile poetului afisate initial
         
-        $stmt = $conn->prepare("Select * FROM fcp_poezii WHERE personaj_id = :id");
+    $stmt = $conn->prepare("Select * FROM fcp_poezii WHERE personaj_id = :id");
+    
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $poezii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $poeziiPopulare= array_slice ($poezii, 0, 25);
+    $poeziiAfisateInitial= array_slice ($poezii, 0, 12);
         
-        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
-        $stmt->execute();
-        $poezii = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $poeziiPopulare= array_slice ($poezii, 0, 25);
-        $poeziiAfisateInitial= array_slice ($poezii, 0, 12);
+// Toate Poeziile poetului 
+    
+    $stmt = $conn->prepare("Select poezii.*, pers.alias as alias_poet
+    FROM fcp_poezii poezii 
+    left join fcp_personaje pers 
+    on poezii.personaj_id = pers.id 
+    WHERE personaj_id = :id
+    
+    ");
+    
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $toatePoeziilePoetului = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrPoezii = count($toatePoeziilePoetului);
+    // dd($nrPoezii);
         
-        // Toate Poeziile poetului 
-        
-        $stmt = $conn->prepare("Select poezii.*, pers.alias as alias_poet
-        FROM fcp_poezii poezii 
-        left join fcp_personaje pers 
-        on poezii.personaj_id = pers.id 
-        WHERE personaj_id = :id
-        
+// Toate Poeziile create in temnita 
+    
+    $stmt = $conn->prepare("
+        SELECT *
+        FROM fcp_poezii fp 
+        WHERE fp.personaj_id  = :id and fp.perioada_creatiei_id =4
         ");
-        
-        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
-        $stmt->execute();
-        $toatePoeziilePoetului = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $nrPoezii = count($toatePoeziilePoetului);
-        // dd($nrPoezii);
-        
-        // Toate Poeziile create in temnita 
-        
-        $stmt = $conn->prepare("
-            SELECT *
-            FROM fcp_poezii fp 
-            WHERE fp.personaj_id  = :id and fp.perioada_creatiei_id =4
-            ");
-        
-        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
-        $stmt->execute();
-        $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $nrPoeziiDetentie = count($poeziiInDetentie);
+    
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrPoeziiDetentie = count($poeziiInDetentie);
         
         
-        // Distincțiile poetului
+// Distincții și premii poetului
 
-        $stmt = $conn->prepare("
-            SELECT *
-            FROM fcp_personaje_distinctii fpd
-            WHERE fpd.personaj_id  = :id
-            ");
-        
-        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
-        $stmt->execute();
-        $distinctii = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $nrDistinctii = count($distinctii);
+    $stmt = $conn->prepare("
+    SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+    FROM fcp_personaje_realizari_socioprofesionale rsp 
+    INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+    WHERE rsp.personaj_id =:id 
+    AND (rsp.realizare_tip_id = 3 OR rsp.realizare_tip_id = 4);
+    ");
+
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $distinctii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrDistinctii = count($distinctii);
 
         
-        // Functii ale poetului
+// Functii si demnitati publice, afilieri socio-profesionale, afilieri politice ale poetului
 
-        $stmt = $conn->prepare("
-            select *
-            from fcp_personaje2functii fpf 
-            left join fcp_personaje_functii fpf2 
-            on fpf.functie_id = fpf2.id 
-            where fpf.personaj_id = :id
-            ");
-        
-        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
-        $stmt->execute();
-        $functii = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $nrfunctii = count($functii);
-
-
+    $stmt = $conn->prepare("
+        SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+        FROM fcp_personaje_realizari_socioprofesionale rsp 
+        INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+        WHERE rsp.personaj_id =:id 
+        AND (rsp.realizare_tip_id = 1 OR rsp.realizare_tip_id = 2 OR rsp.realizare_tip_id = 5);
+        ");
+    
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $functii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrfunctii = count($functii);
 
 
 // Paginatie poezii poet
@@ -175,4 +174,55 @@ $stmt->execute();
 $poeziiPePagina = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $i=1;
 
+// Opera poetului
+
+$stmt = $conn->prepare("
+    select fbc.*, fpc.*,fbe1.nume as nume_editura1, fbe2.id as nume_editura2
+    from fcp_biblioteca_carti fbc
+
+    left join fcp_personaje2carti fpc 
+    on fpc.carte_id = fbc.id 
+
+    left join fcp_biblioteca_edituri fbe1 
+    on fbc.editura_id = fbe1.id 
+
+    left join fcp_biblioteca_edituri fbe2 
+    on fbc.editura2_id = fbe2.id
+
+    where fpc.personaj_id = :id and fpc.carte_tip = 1
+
+    order by fbc.anul_publicatiei DESC
+
+");
+
+$stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+$stmt->execute();
+$operaPoetului = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$nrOperaPoetului = count($operaPoetului);
+
+
+// Carti despre Poet
+
+$stmt = $conn->prepare("
+    select fbc.*, fpc.*,fbe1.nume as nume_editura1, fbe2.id as nume_editura2
+    from fcp_biblioteca_carti fbc
+
+    left join fcp_personaje2carti fpc 
+    on fpc.carte_id = fbc.id 
+
+    left join fcp_biblioteca_edituri fbe1 
+    on fbc.editura_id = fbe1.id 
+
+    left join fcp_biblioteca_edituri fbe2 
+    on fbc.editura2_id = fbe2.id
+
+    where fpc.personaj_id = :id and fpc.carte_tip = 2
+    order by fbc.anul_publicatiei DESC
+
+");
+
+$stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+$stmt->execute();
+$cartiDesprePoet = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$nrCartiDesprePoet = count($cartiDesprePoet);
 

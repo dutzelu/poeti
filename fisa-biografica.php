@@ -72,14 +72,20 @@ include "controllers/poet-partial.php";
 						</div>
 					</div>
 	
-					<div class="about_auth mt50">
+					<div class="about_auth mt30">
 
 						<div class="about_auth_title mb15">
-							<h3>Profesiuni, funcții și demnități publice</h3>
+							<h3>Profesiuni, funcții, demnități publice și afilieri politice</h3>
 						</div>
 						<ul class="list_of_articles mb30">
 							<?php foreach ($functii as $functie) :
-								echo '<li>' . $functie['data_start'] . ' - ' . $functie['data_end'] . ': ' . $functie['nume'] . '</li>';
+								echo '<li>' . $functie['data_inceput'];
+								
+								if($functie['data_sfarsit'] != NULL){
+									echo ' - ' . $functie['data_sfarsit'];
+								}
+								
+								echo ': ' . $functie['nume_realizare'] . '</li>';
 							endforeach;?>
 						</ul>
 
@@ -87,8 +93,14 @@ include "controllers/poet-partial.php";
 							<h3>Premii, distincții și afilieri socio-profesionale</h3>
 						</div>
 						<ul class="list_of_articles mb30">
-							<?php foreach ($distinctii as $distinctie) :
-								echo '<li>' . $distinctie['data'] . ' - ' . $distinctie['titlu_primit'] . '</li>';
+						<?php foreach ($distinctii as $distinctie) :
+								echo '<li>' . $distinctie['data_inceput'];
+								
+								if($distinctie['data_sfarsit'] != NULL){
+									echo ' - ' . $distinctie['data_sfarsit'];
+								}
+								
+								echo ': ' . $distinctie['nume_realizare'] . '</li>';
 							endforeach;?>
 						</ul>
 
@@ -96,14 +108,84 @@ include "controllers/poet-partial.php";
 							<h3>Opera</h3>
 						</div>
 						<ul class="list_of_articles mb30">
-							<li><a href="javascript:;">-</a></li>
-						</ul>
+							<?php foreach ($operaPoetului as $opera) :
+									echo '<li>';
+
+									if ($opera['backup_bAutor'] != NULL OR $opera['backup_bAutor'] !='') {
+										echo $opera['backup_bAutor'];
+									}
+
+									echo ', <em>' . $opera['titlu'] . '</em>';
+
+									 if ($opera['subtitlu'] != NULL) {
+										echo ', ' . $opera['subtitlu'] . '</em>';
+									 } else {echo '</em>';}
+
+									 if ($opera['nume_editura1'] != NULL) {
+									 echo ', Editura ' . $opera['nume_editura1'];
+									 } 
+
+									 if ($opera['nume_editura2'] != NULL) {
+										echo ', Editura ' . $opera['nume_editura2'];
+									 }
+									 
+									 if ($opera['backup_localitate'] != NULL) {
+										 echo ', ' . $opera['backup_localitate'];
+									 }
+
+									 if ($opera['anul_publicatiei'] !=NULL ) {
+										 echo ' ' . $opera['anul_publicatiei'];
+									 }
+
+									 $nr_pagini = (int)$opera['nr_pagini'];
+									 if ($nr_pagini != NULL || $nr_pagini != 0) {
+										 echo ', ' . $opera['nr_pagini'] . ' pag.';
+									 }
+
+									echo '</li>';
+								endforeach;?>
+							</ul>
 
 						<div class="about_auth_title mb15">
 							<h3>Cărți despre poet</h3>
 						</div>
 						<ul class="list_of_articles mb30">
-							<li><a href="javascript:;">-</a></li>
+						<?php foreach ($cartiDesprePoet as $carte) :
+									echo '<li>';
+
+									if ($carte['backup_bAutor'] != NULL OR $carte['backup_bAutor'] !='') {
+										echo $carte['backup_bAutor'] . ', ';
+									}
+
+									echo '<em>' . $carte['titlu'] . '</em>';
+
+									 if ($carte['subtitlu'] != NULL) {
+										echo ', ' . $carte['subtitlu'] . '</em>';
+									 } else {echo '</em>';}
+
+									 if ($carte['nume_editura1'] != NULL) {
+									 echo ', Editura ' . $carte['nume_editura1'];
+									 } 
+
+									 if ($carte['nume_editura2'] != NULL) {
+										echo ', Editura ' . $carte['nume_editura2'];
+									 }
+									 
+									 if ($carte['backup_localitate'] != NULL) {
+										 echo ', ' . $carte['backup_localitate'];
+									 }
+
+									 if ($carte['anul_publicatiei'] !=NULL ) {
+										 echo ' ' . $carte['anul_publicatiei'];
+									 }
+
+									 $nr_pagini = (int)$carte['nr_pagini'];
+									 if ($nr_pagini != NULL || $nr_pagini != 0) {
+										 echo ', ' . $carte['nr_pagini'] . ' pag.';
+									 }
+
+									echo '</li>';
+								endforeach;?>
 						</ul>
 
 					</div>

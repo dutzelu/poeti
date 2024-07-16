@@ -1603,9 +1603,6 @@ ul.right > li > a:hover {
 
 .list_of_articles {
     padding-left: 15px;
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
 }
 
 .list_of_articles a {
@@ -1615,7 +1612,10 @@ ul.right > li > a:hover {
 
 .list_of_articles li {
     padding-left: 5px;
+    list-style-type: disc;
 }
+
+
 
 .list_of_articles a:before {
     /*fixme resursa negasita */
