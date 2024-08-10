@@ -19,10 +19,13 @@ include "controllers/slider-header.php";
 	      <link rel="stylesheet" href="<?php echo BASE_URL;?>css/style.css">
 	      <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/slick.css"/>
 	      <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>css/slick-theme.css"/>
+		  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
 
 	      <!--font-awesome-->
 	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	</head>
 	<body>
 
@@ -41,10 +44,10 @@ include "controllers/slider-header.php";
 							<div class="flex_startp searchp">
 								<button type="button" class="hide_md menu_mobile"></button>
 								<div class="searchp_form">
-									<form method="POST">
+									<form method="POST" action="<?php echo BASE_URL . 'cautare.php' ?>">
 										<div class="flex_centerp active_input">
-											<input type="text" name="input-search" class="input_searchp"
-												   placeholder="Caută o poezie sau un poet">
+											<input type="text" name="input" class="input_searchp"
+												   placeholder="Caută în site" required>
 											<button type="submit" class="button_searchp"></button>
 										</div>
 									</form>

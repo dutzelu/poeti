@@ -7,7 +7,7 @@ include "controllers/poet-partial.php";
 
 		<div class="main_container">
 			<div class="flex_start_between remove_flex768">
-				<div class="first_col remove_border_right">
+				<div class="first_col">
 					<div class="portret mb20">
 						<img src="<?php echo $fotoBiografie; ?>" alt="<?php echo $numeComplet . ' (' . $numePseudonim . ')';?>">
 					</div>
@@ -73,37 +73,98 @@ include "controllers/poet-partial.php";
 					</div>
 	
 					<div class="about_auth mt30">
-
+					
+					<?php if ($nrFunctii != 0):?>
 						<div class="about_auth_title mb15">
-							<h3>Profesiuni, funcții, demnități publice și afilieri politice</h3>
+							<h3>Funcții și demnități publice</h3>
 						</div>
 						<ul class="list_of_articles mb30">
 							<?php foreach ($functii as $functie) :
-								echo '<li>' . $functie['data_inceput'];
-								
+
+								echo '<li>' . $functie['nume_realizare'] . ' (';
+								echo  $functie['data_inceput'];
 								if($functie['data_sfarsit'] != NULL){
-									echo ' - ' . $functie['data_sfarsit'];
-								}
-								
-								echo ': ' . $functie['nume_realizare'] . '</li>';
+									echo ' - ' . $functie['data_sfarsit'] . ')';
+								} else {echo ')';}
+
+								echo '</li>';
 							endforeach;?>
 						</ul>
+					<?php endif;?>
 
+					<?php if ($nrAfilieri != 0):?>
 						<div class="about_auth_title mb15">
-							<h3>Premii, distincții și afilieri socio-profesionale</h3>
+							<h3>Afilieri socio-profesionale</h3>
+						</div>
+						<ul class="list_of_articles mb30">
+						<?php foreach ($afilieri as $afi) :
+								echo '<li>' . $afi['nume_realizare'] . ' (' ;
+
+								echo  $afi['data_inceput'];
+								
+								if($afi['data_sfarsit'] != NULL){
+									echo ' - ' . $afi['data_sfarsit'] . ')';
+								} else {echo ')';}
+								echo '</li>';
+							endforeach;?>
+						</ul>
+					<?php endif;?>
+
+					<?php if ($nrDistinctii != 0):?>
+						<div class="about_auth_title mb15">
+							<h3>Distincții</h3>
 						</div>
 						<ul class="list_of_articles mb30">
 						<?php foreach ($distinctii as $distinctie) :
-								echo '<li>' . $distinctie['data_inceput'];
+								echo '<li>' . $distinctie['nume_realizare'] . ' (' ;
+								
+								echo  $distinctie['data_inceput'];
 								
 								if($distinctie['data_sfarsit'] != NULL){
-									echo ' - ' . $distinctie['data_sfarsit'];
-								}
-								
-								echo ': ' . $distinctie['nume_realizare'] . '</li>';
+									echo ' - ' . $distinctie['data_sfarsit'] . ')';
+								} else {echo ')';}
+								echo '</li>';
 							endforeach;?>
 						</ul>
+					<?php endif;?>
 
+					<?php if ($nrPremii != 0):?>
+						<div class="about_auth_title mb15">
+							<h3>Premii</h3>
+						</div>
+						<ul class="list_of_articles mb30">
+						<?php foreach ($premii as $premiu) :
+								echo '<li>' . $premiu['nume_realizare'] . ' (' ;
+								
+								echo  $premiu['data_inceput'];
+								
+								if($premiu['data_sfarsit'] != NULL){
+									echo ' - ' . $premiu['data_sfarsit'] . ')';
+								} else {echo ')';}
+								echo '</li>';
+							endforeach;?>
+						</ul>
+					<?php endif;?>
+
+					<?php if ($nrPolitice != 0):?>
+						<div class="about_auth_title mb15">
+							<h3>Afilieri politice</h3>
+						</div>
+						<ul class="list_of_articles mb30">
+						<?php foreach ($politice as $pol) :
+								echo '<li>' . $pol['nume_realizare'] . ' (' ;
+								
+								echo  $pol['data_inceput'];
+								
+								if($pol['data_sfarsit'] != NULL){
+									echo ' - ' . $pol['data_sfarsit'] . ')';
+								} else {echo ')';}
+								echo '</li>';
+							endforeach;?>
+						</ul>
+					<?php endif;?>
+					
+					<?php if ($nrOperaPoetului != 0):?>
 						<div class="about_auth_title mb15">
 							<h3>Opera</h3>
 						</div>
@@ -145,7 +206,9 @@ include "controllers/poet-partial.php";
 									echo '</li>';
 								endforeach;?>
 							</ul>
+						<?php endif;?>
 
+						<?php if ($nrCartiDesprePoet != 0):?>
 						<div class="about_auth_title mb15">
 							<h3>Cărți despre poet</h3>
 						</div>
@@ -187,7 +250,7 @@ include "controllers/poet-partial.php";
 									echo '</li>';
 								endforeach;?>
 						</ul>
-
+						<?php endif;?>
 					</div>
 				</div>
 			</div>	

@@ -3,21 +3,21 @@ include 'includes/db.php';
 include 'includes/functii.php';
 include 'controllers/home-partial.php';
 
-function catePoezii ($id) {
+$cautare = 'iad';
 
-    global $conn;
-  
-    $stmt = $conn->prepare("select *
-        from fcp_poezii fp 
-        left join fcp_taguri ft 
-        on fp.subiect_id = ft.id 
-        where ft.id = :id");
-   
-    $stmt->bindParam(':id', $id, PDO::PARAM_INT); 
-    $stmt->execute();
-    $poeziiPeTag = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  
-    echo count($poeziiPeTag);
-  }
+ // Căutare 
 
-catePoezii(12);
+ $cautare_cu_tag = "%$cautare%";
+ $sql = "
+  SELECT po.id, po.titlu, po.continut, pers.id AS autor_id, pers.nume, pers.prenume, pers.nume_pseudonim, pers.alias
+  FROM fcp_poezii po
+  LEFT JOIN fcp_personaje pers 
+  ON po.personaj_id = pers.id
+  WHERE po.continut LIKE :cautare OR po.titlu LIKE :cautare";
+ $stmt = $conn->prepare($sql);
+ $stmt->bindParam(':cautare', $cautare_cu_tag, PDO::PARAM_STR);
+ $stmt->execute();
+ $cautari = $stmt->fetchAll(PDO::FETCH_ASSOC);
+ 
+
+dd($rows);

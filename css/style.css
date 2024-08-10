@@ -80,6 +80,13 @@ div.structure_poetry > ul > li > a:hover {color:red!important;}
     width:0;
 }
 
+.rezultate_extra_cautare {
+    background:red;
+    padding:5px 10px;
+    color:#FFF;
+    width:max-content;
+}
+
 @font-face {
     font-family: 'Museo300_Regular';
     src: url('../fonts/Museo300-Regular.eot'); /* IE9 Compat Modes */
@@ -1637,7 +1644,7 @@ ul.right > li > a:hover {
     border-right: none;
 }
 
-.add_border_left {
+.add_border_left, .add_border_right {
     border-left: 1px solid #cdcdcd;
 }
 

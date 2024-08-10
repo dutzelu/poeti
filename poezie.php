@@ -3,6 +3,9 @@
 include "includes/header.php";
 include "controllers/poezie-partial.php";
 
+$cautare = isset( $_GET['cautare']) ? $_GET['cautare'] : NULL;
+$cuvant_cautat_html = '<b>' . $cautare . '</b>';
+
 ?>
 <div class="main_container">
 
@@ -23,7 +26,12 @@ include "controllers/poezie-partial.php";
                 <p><?php if ($poem['titlu_varianta'] != NULL) {echo $poem['titlu_varianta'];}?></p>
             </div>
             <div class="poem_content">
-                <?php echo $poem['continut'];?>
+                <?php 
+
+                // subliniere cu bold cuvant cautat
+                $continut = str_ireplace($cautare, $cuvant_cautat_html, $poem['continut']); 
+                echo $continut;
+                ?>
             </div>
             <div class="border-top"></div>
             <div class="source_poetry font17">

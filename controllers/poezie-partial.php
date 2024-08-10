@@ -113,7 +113,11 @@ foreach ($poetData as $pd) {
   
   $numeComplet = $pd['prenume'] . ' ' . $pd['nume'];
   $numePseudonim = $pd['nume_pseudonim'];
-  $fotoBiografie = BASE_URL . 'images/biografie/'. creare_url_din_titlu($pd['nume'] . ' ' . $pd['prenume']) . '.jpg';
+  if ($pd['biografie_poza'] != NULL) {
+      $fotoBiografie = BASE_URL . 'images/biografie/'. creare_url_din_titlu($pd['nume'] . ' ' . $pd['prenume']) . '.jpg';
+    } else {
+      $fotoBiografie = BASE_URL . 'images/avatare/poet-necunoscut.jpg';
+  }
   $poetPeFCP = 'https:/fericiticeiprigoniti.net/' . $pd['alias'];
   $aliasPoet = $pd['alias'];
   $dataNastere =  strftime('%d %B %Y', strtotime($pd['data_nastere']));

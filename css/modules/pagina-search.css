@@ -29,13 +29,16 @@
     padding-left: .5rem;
 }
 .search-list{
-    margin: 1rem 2rem;
+    margin: 0;
 }
 .search-list-item{
     font-size: var(--f-standard);
-    margin: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
     line-height: 18px;
 
+}
+.extras {
+    margin-left:1.4rem;
 }
 .search-author{
     margin-left: 1.4rem;

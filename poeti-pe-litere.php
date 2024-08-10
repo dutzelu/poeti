@@ -13,61 +13,7 @@ include "controllers/poetipelitere-partial.php";
     <hr class="small_hr">
 
     <div class="all_letter flex_wrap_between">
-
-    <?php
-        foreach ($poeti as $row) {
-            $id = $row['id'];
-            $nume = $row['nume'] ;
-            $prenume = $row['prenume'];
-            $numeComplet = $nume . ' ' . $prenume;
-
-            if ($row['avatar'] == NULL OR $row['avatar'] == '') {
-                $calePoza = BASE_URL . 'images/avatare/poet-necunoscut.jpg';
-            } else {
-                $calePoza = BASE_URL . 'images/avatare/' . $row['avatar'];
-            }
-            $localitateNastere = $row['localitate_nastere'];
-            $judet = $row['judet'];
-            $avatar = 'images/avatare/poet-necunoscut.jpg';
-            $alias = $row['alias'];
-   
-            $ocupatie = $row['ocupatii_socioprofesionale'];
-        
-            // aflu nr. de poezii
-        
-            $stmt = $conn->prepare("Select * FROM fcp_poezii WHERE personaj_id = $id");
-            $stmt->execute();
-            $poezii = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $nrPoezii = count($poezii);
-        
-        echo '<div class="single_poet_letter flex_start mb35 mr40 ml40">';
-            echo '<a href="' . BASE_URL . 'poezii-poet.php/' . $alias . '/' . $id . '">';
-             echo '<img src="' . $calePoza . '">';
-            echo '</a>';
-            echo '<div class="single_poet_content ml20">';
-                echo '<div class="single_poet_name semibold font22 mb5">';
-                echo '<a href="' . BASE_URL . 'poezii-poet.php/' . $alias . '/' . $id . '">';
-                     echo $numeComplet;
-                echo '</a>';
-                echo '</div>';
-                echo '<div class="count_poem red">';
-                    echo $nrPoezii . ' poezii';
-                echo '</div>';
-                echo '<div class="poet_birth_location">';
-                   echo'Locul nașterii: ' . $localitateNastere . ' (' . $judet . ')';
-                echo '</div>';
-                echo '<div class="single_poet_info2">';
-                    echo 'Ocupația: ' . $ocupatie;
-                echo '</div>';
-            echo '</div>';
-        echo '</div>';
-        
-        } ?>
-
-
-
-
-
+        <?php include "controllers/lista-poeti.php";?>
     </div>
 
     <div class="mb20 letter_alphabetic center mt25 relative">

@@ -110,38 +110,77 @@ $dataAdormire = NULL;
     $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $nrPoeziiDetentie = count($poeziiInDetentie);
         
+// Functii si demnitati publice
+    
+        $stmt = $conn->prepare("
+            SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+            FROM fcp_personaje_realizari_socioprofesionale rsp 
+            INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+            WHERE rsp.personaj_id =:id AND rsp.realizare_tip_id = 1;
+            ");
         
-// Distincții și premii poetului
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $functii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrFunctii = count($functii);
+        
+// Afilieri socio-profesionale
+    
+        $stmt = $conn->prepare("
+            SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+            FROM fcp_personaje_realizari_socioprofesionale rsp 
+            INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+            WHERE rsp.personaj_id =:id AND rsp.realizare_tip_id = 2;
+            ");
+        
+        $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+        $stmt->execute();
+        $afilieri = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $nrAfilieri = count($afilieri);
+        
+// Distincții
 
     $stmt = $conn->prepare("
-    SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
-    FROM fcp_personaje_realizari_socioprofesionale rsp 
-    INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
-    WHERE rsp.personaj_id =:id 
-    AND (rsp.realizare_tip_id = 3 OR rsp.realizare_tip_id = 4);
+            SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+            FROM fcp_personaje_realizari_socioprofesionale rsp 
+            INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+            WHERE rsp.personaj_id =:id AND rsp.realizare_tip_id = 3;
     ");
 
     $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
     $stmt->execute();
     $distinctii = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $nrDistinctii = count($distinctii);
-
         
-// Functii si demnitati publice, afilieri socio-profesionale, afilieri politice ale poetului
+// Premii
 
     $stmt = $conn->prepare("
-        SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
-        FROM fcp_personaje_realizari_socioprofesionale rsp 
-        INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
-        WHERE rsp.personaj_id =:id 
-        AND (rsp.realizare_tip_id = 1 OR rsp.realizare_tip_id = 2 OR rsp.realizare_tip_id = 5);
-        ");
-    
+            SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+            FROM fcp_personaje_realizari_socioprofesionale rsp 
+            INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+            WHERE rsp.personaj_id =:id AND rsp.realizare_tip_id = 4;
+    ");
+
     $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
     $stmt->execute();
-    $functii = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $nrfunctii = count($functii);
+    $premii = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrPremii = count($premii);
+        
+// Afilieri politice
 
+    $stmt = $conn->prepare("
+            SELECT rsp.realizare_tip_id, rsp.nume_realizare, rsp.data_inceput, rsp.data_sfarsit 
+            FROM fcp_personaje_realizari_socioprofesionale rsp 
+            INNER JOIN fcp_personaje_realizari_tipuri rt ON rsp.realizare_tip_id = rt.id
+            WHERE rsp.personaj_id =:id AND rsp.realizare_tip_id = 5;
+    ");
+
+    $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
+    $stmt->execute();
+    $politice = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrPolitice = count($politice);
+
+        
 
 // Paginatie poezii poet
 

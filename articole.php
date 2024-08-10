@@ -3,6 +3,10 @@
 include "includes/header.php";
 include "controllers/articol-partial.php";
 
+
+$cautare = isset( $_GET['cautare']) ? $_GET['cautare'] : NULL;
+$cuvant_cautat_html = '<b>' . $cautare . '</b>';
+
 // $fmt = new IntlDateFormatter('ro_ro', NULL, NULL);
 // $fmt->setPattern('d MMMM yyyy');
 
@@ -84,7 +88,12 @@ include "controllers/articol-partial.php";
 					<?php echo $titlu;?>
 				</div>
 				<div class="content_single_art">
-					<?php echo $continut;?>
+					<?php 
+					
+					$continut = str_ireplace($cautare, $cuvant_cautat_html, $continut); 
+					echo $continut;
+					
+					?>
 				</div>
 				<?php if ($sursa != NULL):?>
 				<div class="source_single_art font17 mb30 semibold">
