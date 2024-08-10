@@ -1,6 +1,13 @@
 <?php
 
 include "includes/header.php";
+
+if (isset($_GET['tip']) ) {
+    $tip = $_GET['tip'];
+} else {
+    $tip = NULL;
+}
+
 include "controllers/poet-partial.php";
 
 ?>
@@ -36,7 +43,22 @@ include "controllers/poet-partial.php";
                         <div class="custom_name_of_author">
                             <h2><?php echo $numeComplet;?></h2>
                             <div class="sublink-result">
-                                <p style="color: var(--font-grey-2)"><span class="red">Toate poeziile (<?php echo $nrPoezii;?>) | </span> Poezii carcerale (<?php echo $nrPoeziiDetentie;?>)</p>
+                                <p style="color: var(--font-grey-2)">
+                                    
+                                    <?php
+
+                                    if (isset($_GET['tip']) ) {
+                                        echo '<a class="red" href="' . BASE_URL . 'poezii-poet.php/' . $aliasPoet . '/' . $idPoet . '">Toate poeziile (' . $nrPoezii . ') </a> | ';
+                                        echo 'Poezii carcerale (' . $nrPoeziiCarcerale . ')';
+                                    }
+                                    else {
+                                        echo 'Toate poeziile (' . $nrPoezii . ') | ';
+                                        echo '<a class="red" href="?tip=carcerale">Poezii carcerale ( ' . $nrPoeziiCarcerale . ')</a>';
+                                    }
+                                    
+                                                   
+                                    ?>                              
+                                </p>
                             </div>
                         </div>
                 </div>
@@ -73,6 +95,7 @@ include "controllers/poet-partial.php";
                 <!--        pagination-->
                 <div class="text-center m-3">
 
+                <?php if (!isset($_GET['tip']) ): ?>
                     <ul class="custom_pagination">
                         <li><a href="?pageno=1">Prima</a></li>
                         <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
@@ -86,6 +109,25 @@ include "controllers/poet-partial.php";
                         </li>
                         <li><a href="?pageno=<?php echo $total_pages; ?>">Ultima</a></li>
                     </ul>
+                <?php endif;?>
+
+                <?php if (isset($_GET['tip']) ): ?>
+                    <ul class="custom_pagination">
+                        <li><a href="?tip=carcerale&pageno=1">Prima</a></li>
+                        <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?tip=carcerale&pageno=".($pageno - 1); } ?>"><i aria-hidden="true" class="fa fa-angle-double-left"></i></a>
+                        </li>
+                        <?php for ($i; $i<=$total_pages; $i++) {
+                            echo '<li><a href="?tip=carcerale&pageno=' . $i . '">' . $i . '</a></li>';
+                        }?>
+                        <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?tip=carcerale&pageno=".($pageno + 1); } ?>"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a>
+                        </li>
+                        <li><a href="?tip=carcerale&pageno=<?php echo $total_pages; ?>">Ultima</a></li>
+                    </ul>
+                <?php endif;?>
+
+
 
                 </div>
             </div>

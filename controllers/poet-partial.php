@@ -97,7 +97,7 @@ $dataAdormire = NULL;
     $nrPoezii = count($toatePoeziilePoetului);
     // dd($nrPoezii);
         
-// Toate Poeziile create in temnita 
+// Toate Poeziile create in temnita (poezii carcerale)
     
     $stmt = $conn->prepare("
         SELECT *
@@ -107,8 +107,8 @@ $dataAdormire = NULL;
     
     $stmt->bindParam(':id', $idPoet, PDO::PARAM_INT); 
     $stmt->execute();
-    $poeziiInDetentie = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $nrPoeziiDetentie = count($poeziiInDetentie);
+    $poeziiCarcerale= $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $nrPoeziiCarcerale = count($poeziiCarcerale);
         
 // Functii si demnitati publice
     
@@ -193,18 +193,30 @@ if (isset($_GET['pageno'])) {
 $no_of_records_per_page = 10;
 $offset = ($pageno-1) * $no_of_records_per_page;
 
-$total_rows = $nrPoezii;
+if ($tip == NULL) {
+    $total_rows = $nrPoezii;
+} elseif ($tip = "carcerale") {
+    $total_rows = $nrPoeziiCarcerale;
+}
 $total_pages = ceil($total_rows / $no_of_records_per_page);
 
 
 // Poezii ale poetului selectate pe pagina 
 
+
+if ($tip == NULL) {
 $sql = "Select poezii.*, pers.alias as alias_poet
     FROM fcp_poezii poezii 
     left join fcp_personaje pers 
     on poezii.personaj_id = pers.id 
     WHERE personaj_id = :id LIMIT :offset, :no_of_records_per_page;";
-
+} elseif ($tip = "carcerale") {
+    $sql = "Select poezii.*, pers.alias as alias_poet
+    FROM fcp_poezii poezii 
+    left join fcp_personaje pers 
+    on poezii.personaj_id = pers.id 
+    WHERE personaj_id = :id AND perioada_creatiei_id =4 LIMIT :offset, :no_of_records_per_page;";
+}
 $stmt=$conn->prepare($sql);
 $stmt->bindParam(':id',$idPoet,PDO::PARAM_INT);
 $stmt->bindParam(':offset',$offset,PDO::PARAM_INT);
